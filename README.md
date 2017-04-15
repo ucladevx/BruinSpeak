@@ -1,24 +1,33 @@
-# README
+# BruinSpeak README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the main source code for BruinSpeak
 
-Things you may want to cover:
+Rails version: 5.0.2
 
-* Ruby version
+Dependencies: Ruby >= 2.3.0, postgreSQL >= 9.6.2
 
-* System dependencies
+# Deployment Instructions:
 
-* Configuration
+Download the project:
+`$ git clone https://github.com/ucladevx/BruinSpeak`
 
-* Database creation
+Install gems:
+`$ bundle install`
 
-* Database initialization
+Initialize postgreSQL: This can be done through the command line, or through the Postgres app (https://postgresapp.com/)
 
-* How to run the test suite
+Start postgreSQL databases: This can be done through the command line, or through the Postgres app
 
-* Services (job queues, cache servers, search engines, etc.)
+Create databases:
+`$ rails db:create`
 
-* Deployment instructions
+Migrate database:
+`$ rails db:migrate`
 
-* ...
+Start the server:
+`$ rails s`
+
+# Additional Commands:
+
+View all available routes:
+`$ rails routes`
