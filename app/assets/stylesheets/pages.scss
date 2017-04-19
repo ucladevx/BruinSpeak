@@ -1,3 +1,80 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+li {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+div {
+  position: relative;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 323px;
+  height: 440px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.petition-img {
+  height: 176px;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.like-button {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 10px;
+  position: relative;
+}
+
+.container.bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.petition-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.petition-author {
+  margin: 0;
+}
+
+.petition-desc {
+  font-size: 14px;
+}
+
+.petition-stats {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stats-value {
+  font-weight: bold;
+}
