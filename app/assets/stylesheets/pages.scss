@@ -118,3 +118,58 @@ h2 {
   font-weight: bold;
   font-size: 14px;
 }
+
+//Fix bootstrap defaults
+.notice {
+    margin: 0px;
+}
+
+.alert {
+    padding: 0px;
+    margin-bottom: 0px;
+    border: 0px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 323px;
+    }
+
+}
+
+//Changing Bootstrap Navbar Defaults
+.navbar-custom {
+    background-color:white;
+    color:blue;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:blue;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color:transparent;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: gold;
+}
+
+.navbar-custom .navbar-brand {
+    color:blue;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
