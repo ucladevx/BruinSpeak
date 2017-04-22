@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20170422013849) do
     t.string   "last_name",                           null: false
     t.string   "major"
     t.text     "organizations"
-    t.integer  "user_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

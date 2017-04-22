@@ -9,10 +9,10 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand pls" href="#">
+      <%= link_to petitions_new_path, :class => "navbar-brand pls" do %>
           <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
           <div>Start Petition</div>
-      </a>
+      <% end %>
 
   </div>
 
@@ -22,12 +22,16 @@
             <li><a href="#">Start Petition</a></li>
         </ul> -->
         <ul class="nav navbar-nav navbar-center midNav">
-            <li><a href="#">BRUIN<span>SPEAK<span></a></li>
+            <li>
+              <%= link_to root_path do %>
+                BRUIN<span>SPEAK<span>
+              <% end %>
+            </li>
         </ul>
         <ul class="nav navbar-nav navbar-right rightNav">
             <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Signup</a></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Signup", new_user_registration_path %></li>
         </ul>
     </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
