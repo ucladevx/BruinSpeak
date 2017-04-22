@@ -186,3 +186,10 @@ span {
     font-size: 25px;
     font-weight: bold;
 }
+
+.pls {
+  display: inline-flex; /* make element size relative to content */
+  align-items: center; /* vertical alignment of contents */
+  line-height: 40px; /* control height with line-height or padding */
+  padding: 0px 10px; /* horizontal with padding-l/r */
+}
