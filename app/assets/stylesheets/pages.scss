@@ -5,17 +5,27 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-li {
-  display: inline-block;
-  padding-right: 5px;
-}
-
 div {
   position: relative;
 }
 
 h2 {
   margin: 0;
+}
+
+li {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+span {
+    color: blue;
+}
+
+.alert {
+    padding: 0px;
+    margin-bottom: 0px;
+    border: 0px;
 }
 
 .button {
@@ -72,6 +82,10 @@ h2 {
   bottom: 0;
 }
 
+.leftNav, .rightNav {
+    font-size: 18px;
+}
+
 .like-button {
   position: absolute;
   bottom: 15px;
@@ -84,6 +98,43 @@ h2 {
 
 .like-button:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.midNav {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.navbar-custom {
+    background-color:white;
+    color:black;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:black;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color:transparent;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: gold;
+}
+
+.navbar-custom .navbar-brand {
+    color:black;
+}
+
+.notice {
+    margin: 0px;
 }
 
 .petition-author {
@@ -116,24 +167,20 @@ h2 {
   text-decoration: none;
 }
 
+.pls {
+  display: inline-flex; /* make element size relative to content */
+  align-items: center; /* vertical alignment of contents */
+  line-height: 40px; /* control height with line-height or padding */
+  padding: 0px 10px; /* horizontal with padding-l/r */
+}
+
+.stats-label {
+  color: black;
+}
+
 .stats-value {
   font-weight: bold;
   font-size: 14px;
-}
-
-span {
-    color: blue;
-}
-
-//Fix bootstrap defaults
-.notice {
-    margin: 0px;
-}
-
-.alert {
-    padding: 0px;
-    margin-bottom: 0px;
-    border: 0px;
 }
 
 @media (min-width: 768px) {
@@ -143,55 +190,10 @@ span {
 
 }
 
-//Changing Bootstrap Navbar Defaults
-.navbar-custom {
-    background-color:white;
-    color:black;
-    border-radius:0;
-}
-
-.navbar-custom .navbar-nav > li > a {
-    color:black;
-}
-
-.navbar-custom .navbar-nav > .active > a {
-    color: #ffffff;
-    background-color:transparent;
-}
-
-.navbar-custom .navbar-nav > li > a:hover,
-.navbar-custom .navbar-nav > li > a:focus,
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus,
-.navbar-custom .navbar-nav > .open >a {
-    text-decoration: none;
-    background-color: gold;
-}
-
-.navbar-custom .navbar-brand {
-    color:black;
-}
-
 @media (min-width: 768px) {
   .navbar-nav.navbar-center {
     position: absolute;
     left: 50%;
     transform: translatex(-50%);
   }
-}
-
-.leftNav, .rightNav {
-    font-size: 18px;
-}
-
-.midNav {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.pls {
-  display: inline-flex; /* make element size relative to content */
-  align-items: center; /* vertical alignment of contents */
-  line-height: 40px; /* control height with line-height or padding */
-  padding: 0px 10px; /* horizontal with padding-l/r */
 }
