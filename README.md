@@ -18,6 +18,9 @@ Initialize postgreSQL: This can be done through the command line, or through the
 
 Start postgreSQL databases: This can be done through the command line, or through the Postgres app
 
+Install Image Magic: This can be done through the command line
+`$ brew install imagemagick`
+
 Create databases:
 `$ rails db:create`
 

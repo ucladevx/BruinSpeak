@@ -22,3 +22,5 @@
 # Ignore ctags
 tags
 
+# Ignore all uploads
+/uploads/*

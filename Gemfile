@@ -26,6 +26,9 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# image processing
+gem "mini_magick"
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
@@ -43,6 +46,9 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 #Font Awesome for icons
 gem 'font-awesome-sass', '~> 4.6.2'
+
+# file uploads
+gem 'carrierwave', '~> 1.0'
 
 group :development do
 
