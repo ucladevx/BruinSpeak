@@ -38,15 +38,21 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.2'
 
+#Bootstrap for navbar
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+
+#Font Awesome for icons
+gem 'font-awesome-sass', '~> 4.6.2'
+
 group :development do
-  
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
-  
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

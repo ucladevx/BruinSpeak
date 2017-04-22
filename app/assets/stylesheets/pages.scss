@@ -1,6 +1,10 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 li {
   display: inline-block;
   padding-right: 5px;
@@ -10,6 +14,24 @@ div {
   position: relative;
 }
 
+h2 {
+  margin: 0;
+}
+
+.button {
+  background-color: #0099cc;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  font-family: 'Abel', serif;
+  letter-spacing: 3px;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -17,16 +39,37 @@ div {
   height: 440px;
   border-radius: 5px;
   position: relative;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.petition-img {
-  height: 176px;
-  width: 100%;
-  border-radius: 5px 5px 0 0;
+.center-info {
+  text-align: center;
+  margin: auto;
+  display: block;
+  height: 320px;
+  width: 50%;
+  padding-top: 50px;
+  background-size: 100% 320px;
+  background-image: url("/assets/royce.jpg");
+  background-color: rgba(255,255,255,0.6);
+  background-blend-mode: lighten;
+  background-repeat: no-repeat;
+}
+
+.container {
+  padding: 10px;
+  position: relative;
+}
+
+.container.bottom {
+  position: absolute;
+  bottom: 0;
 }
 
 .like-button {
@@ -43,38 +86,112 @@ div {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.container {
-  padding: 10px;
-  position: relative;
-}
-
-.container.bottom {
-  position: absolute;
-  bottom: 0;
-}
-
-.petition-title {
-  margin: 0;
-  font-weight: bold;
-  font-size: 18px;
-  color: inherit;
-  text-decoration: none;
-}
-
 .petition-author {
   margin: 0;
+  font-size: 16px;
+}
+
+.petition-img {
+  height: 176px;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
 }
 
 .petition-desc {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .petition-stats {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-size: 14px;
+}
+
+.petition-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 22px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .stats-value {
   font-weight: bold;
+  font-size: 14px;
+}
+
+span {
+    color: blue;
+}
+
+//Fix bootstrap defaults
+.notice {
+    margin: 0px;
+}
+
+.alert {
+    padding: 0px;
+    margin-bottom: 0px;
+    border: 0px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 323px;
+    }
+
+}
+
+//Changing Bootstrap Navbar Defaults
+.navbar-custom {
+    background-color:white;
+    color:black;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:black;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color:transparent;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: gold;
+}
+
+.navbar-custom .navbar-brand {
+    color:black;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
+
+.leftNav, .rightNav {
+    font-size: 18px;
+}
+
+.midNav {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.pls {
+  display: inline-flex; /* make element size relative to content */
+  align-items: center; /* vertical alignment of contents */
+  line-height: 40px; /* control height with line-height or padding */
+  padding: 0px 10px; /* horizontal with padding-l/r */
 }
