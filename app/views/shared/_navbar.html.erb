@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      <%= link_to petitions_new_path, :class => "navbar-brand pls" do %>
+      <%= link_to new_petition_path, :class => "navbar-brand pls" do %>
           <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
           <div>Start Petition</div>
       <% end %>
@@ -30,8 +30,12 @@
         </ul>
         <ul class="nav navbar-nav navbar-right rightNav">
             <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= link_to "Signup", new_user_registration_path %></li>
+            <% if current_user %>
+              <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <li><%= link_to "Signup", new_user_registration_path %></li>
+            <% end %>
         </ul>
     </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
