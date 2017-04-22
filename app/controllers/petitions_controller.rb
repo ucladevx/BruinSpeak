@@ -1,12 +1,17 @@
 class PetitionsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def new
     @petition = Petition.new
   end
 
   def create
-    @petition = Petition.new(petitionParams)
-    @petition.save
-    redirect_to root_path, :notice => "Your petition has been created"
+    @petition = current_user.petitions.build(petitionParams)
+    if @petition.save
+      redirect_to @petition, :notice => "Your petition has been created"
+    else
+      render :new
+    end
   end
 
   def show
@@ -16,6 +21,6 @@ class PetitionsController < ApplicationController
   private
 
   def petitionParams
-    params.require(:petition).permit(:title, :description)
+    params.require(:petition).permit(:title, :description, :image)
   end
 end

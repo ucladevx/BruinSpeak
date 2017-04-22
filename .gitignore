@@ -23,4 +23,4 @@
 tags
 
 # Ignore all uploads
-/uploads/*
+/public/uploads/*
