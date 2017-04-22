@@ -119,6 +119,10 @@ h2 {
   font-size: 14px;
 }
 
+span {
+    color: blue;
+}
+
 //Fix bootstrap defaults
 .notice {
     margin: 0px;
@@ -140,12 +144,12 @@ h2 {
 //Changing Bootstrap Navbar Defaults
 .navbar-custom {
     background-color:white;
-    color:blue;
+    color:black;
     border-radius:0;
 }
 
 .navbar-custom .navbar-nav > li > a {
-    color:blue;
+    color:black;
 }
 
 .navbar-custom .navbar-nav > .active > a {
@@ -163,7 +167,7 @@ h2 {
 }
 
 .navbar-custom .navbar-brand {
-    color:blue;
+    color:black;
 }
 
 @media (min-width: 768px) {
@@ -172,4 +176,13 @@ h2 {
     left: 50%;
     transform: translatex(-50%);
   }
+}
+
+.leftNav, .rightNav {
+    font-size: 18px;
+}
+
+.midNav {
+    font-size: 25px;
+    font-weight: bold;
 }
