@@ -86,18 +86,13 @@ span {
     font-size: 18px;
 }
 
-.like-button {
+.sign-icon {
   position: absolute;
   bottom: 15px;
-  left: 15px;
+  right: 15px;
   width: 35px;
   height: 35px;
-  border-radius: 15px;
   cursor: pointer;
-}
-
-.like-button:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .midNav {
