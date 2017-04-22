@@ -1,14 +1,10 @@
 <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" %>
 
 <div class="center-info">
-  <% if current_user %>
-    <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %>
-    <%= link_to "Create Petition", petitions_new_path %>
-  <% end %>
   <h1>UCLA's platform for change</h1>
   <h2>12,342 students are taking action.</h2>
   <h2 style="color:#cc0000">Victories every day.</h2>
-  <a href="#" class="button">START PETITION</a>
+  <%= link_to "START PETITION", new_petition_path, :class => "button" %>
 </div>
 <% Petition.all.each do |p| %>
   <%= render partial: 'shared/post' %>

@@ -9,6 +9,10 @@ class PetitionsController < ApplicationController
     redirect_to root_path, :notice => "Your petition has been created"
   end
 
+  def show
+    @petition = Petition.find(params[:id])
+  end
+
   private
 
   def petitionParams
