@@ -6,6 +6,16 @@
   <h2 style="color:#cc0000">Victories every day.</h2>
   <%= link_to "START PETITION", new_petition_path, :class => "button" %>
 </div>
+<% count = 0 %>
+<ul style="list-style-type=none">
 <% Petition.all.each do |p| %>
-  <%= render partial: 'shared/post' %>
+  <% if count % 4 == 0 && count != 0 %>
+    </ul>
+    <ul style="list-style-type=none">
+  <% end %>
+  <li>
+    <%= render partial: 'shared/post' %>
+  </li>
+  <% count = count + 1 %>
 <% end %>
+</ul>
