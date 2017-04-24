@@ -1,13 +1,19 @@
 <div class="card">
   <div>
-    <a href="#"><img class="petition-img" src=http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg alt="Avatar"></a>
+    <% if petition.image.url %>
+      <%= link_to petition_path(petition.id) do %>
+        <img class="petition-img" src=<%= image_url(petition.image.url) %> alt="Avatar">
+      <% end %>
+    <% else %>
+      <%= link_to petition_path(petition.id) do %>
+        <img class="petition-img" src=http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg alt="Avatar">
+      <% end %>
+    <% end %>
   </div>
   <div class="container">
-    <a class="petition-title" href="#">Petition for Squirrels</a>
-    <p class="petition-author">Katie Luangkote</p>
-    <p class="petition-desc">Description of stuff. Blah blah blah. selktjasetoiwsat. wtahoaIhwoitah. ASISeiotha.
-      sdflkjsdlkfjdslkfjsdlfkj sdlkjfselfjwesoitj eiot hoieathawoiuth wailuthawiluth wael wuiathawlsietuhwailtuh weiat
-      wehtliauwetyhw siuolhweat.</p>
+    <%= link_to petition.title, petition_path(petition.id), class: "petition-title" %>
+    <p class="petition-author"><%= petition.user.first_name + " " + petition.user.last_name %></p>
+    <p class="petition-desc"><%= petition.description %></p>
   </div>
   <div class="container bottom">
     <ul class="petition-stats">

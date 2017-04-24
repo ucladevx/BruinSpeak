@@ -8,13 +8,13 @@
 </div>
 <% count = 0 %>
 <ul style="list-style-type=none">
-<% Petition.all.each do |p| %>
+<% @petitions.each do |petition| %>
   <% if count % 4 == 0 && count != 0 %>
     </ul>
     <ul style="list-style-type=none">
   <% end %>
   <li>
-    <%= render partial: 'shared/post' %>
+    <%= render 'shared/post', petition: petition %>
   </li>
   <% count = count + 1 %>
 <% end %>
