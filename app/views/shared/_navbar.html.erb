@@ -10,33 +10,34 @@
       </button>
 
       <%= link_to new_petition_path, :class => "navbar-brand pls" do %>
-          <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-          <div>Start Petition</div>
+      <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+      <div>Start Petition</div>
       <% end %>
 
-  </div>
+    </div>
+
+    <ul class="nav navbar-nav navbar-center midNav">
+      <li>
+        <%= link_to root_path do %>
+        BRUIN<span>SPEAK<span>
+        <% end %>
+      </li>
+    </ul>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
         <!-- <ul class="nav navbar-nav navbar-left leftNav">
             <li><a href="#">Start Petition</a></li>
-        </ul> -->
-        <ul class="nav navbar-nav navbar-center midNav">
-            <li>
-              <%= link_to root_path do %>
-                BRUIN<span>SPEAK<span>
-              <% end %>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right rightNav">
+          </ul> -->
+          <ul class="nav navbar-nav navbar-right rightNav">
             <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
             <% if current_user %>
-              <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
             <% else %>
-              <li><%= link_to "Login", new_user_session_path %></li>
-              <li><%= link_to "Signup", new_user_registration_path %></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Signup", new_user_registration_path %></li>
             <% end %>
-        </ul>
-    </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
-</nav>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
