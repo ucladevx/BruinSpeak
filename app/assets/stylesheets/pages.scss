@@ -14,12 +14,17 @@ h2 {
 }
 
 li {
-  display: inline-block;
+  display: block;
   padding-right: 5px;
+  float: left;
 }
 
 span {
     color: #248DD9;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .alert {
@@ -81,6 +86,7 @@ span {
 
 .container.bottom {
   position: absolute;
+  width: inherit;
   bottom: 0;
 }
 
@@ -89,11 +95,9 @@ span {
 }
 
 .sign-icon {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  width: 35px;
-  height: 35px;
+  float: right;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
 }
 
@@ -155,6 +159,10 @@ span {
   margin: 0;
   padding: 0;
   font-size: 14px;
+}
+
+.petition-stats li:last-child {
+  float: right;
 }
 
 .petition-title {
