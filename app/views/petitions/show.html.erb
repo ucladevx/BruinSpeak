@@ -55,3 +55,8 @@
     </div>
   </div>
 </div>
+
+<%= render "comments/new_comment", comment: @new_comment %>
+<% @comments.each do |comment| %>
+  <%= render "comments/comment", comment: comment %>
+<% end %>
