@@ -1,6 +1,10 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -32,6 +36,20 @@ ul {
     margin-bottom: 0px;
     border: 0px;
     background-color: #FF6961;
+}
+
+.board-members {
+  margin: 0;
+}
+
+.board-members a {
+  color: #328FD6;
+}
+
+.bottom-petition-text {
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: 18px
 }
 
 .button {
@@ -139,6 +157,27 @@ ul {
     background-color: #77DD77;
 }
 
+.pet-container {
+  margin-bottom: inherit;
+}
+
+.pet-container div {
+  display: inline-block;
+}
+
+.pet-content {
+  margin-left: 50px;
+  margin-bottom: inherit;
+  width: 50%;
+  float: left;
+}
+
+.pet-img-container {
+   border: 1px solid #DDDDDD;
+   width: 700px;
+   height: 400px;
+}
+
 .petition-author {
   margin: 0;
   font-size: 16px;
@@ -152,6 +191,30 @@ ul {
 
 .petition-desc {
   font-size: 13px;
+}
+
+.petition-page-author {
+  font-size: 20px;
+  margin-top: 0;
+  width: 320px;
+  float: left;
+}
+
+.petition-page-author p {
+  margin-top: 0;
+}
+
+.petition-page-title {
+  font-size: 25px;
+  text-align: center;
+  width: 500px;
+  overflow: auto;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.petition-page-title div {
+  display: inline-block;
 }
 
 .petition-stats {
@@ -180,6 +243,30 @@ ul {
   padding: 0px 10px; /* horizontal with padding-l/r */
 }
 
+.profile-icon {
+  width: 130px;
+  padding-right: 0;
+  padding-bottom: 20px;
+  float: left;
+}
+
+.picture {
+  width: 50px;
+  height: 50px;
+  float: right;
+}
+
+.share-pet-card {
+  float: right;
+  width: 40%;
+  margin-right: 50px;
+}
+
+.share-pet-card img {
+  margin: auto;
+  display: block;
+}
+
 .stats-label {
   color: black;
 }
@@ -187,6 +274,14 @@ ul {
 .stats-value {
   font-weight: bold;
   font-size: 14px;
+}
+
+.tag {
+   float: left;
+   position: absolute;
+   left: -15px;
+   top: -15px;
+   border-radius: 5px;
 }
 
 @media (min-width: 768px) {
