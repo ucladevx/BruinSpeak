@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" />
 
 <div class="petition-page-title">
-  <h1 style="margin-bottom:0">Petition Title</h1>
+  <h1 style="margin-bottom:0"><%= @petition.title %></h1>
   <div class="profile-icon">
     <% if @petition.user.profile_pic.url %>
       <img class="picture" src=<%= image_path(@petition.user.profile_pic.url) %> alt="Profile picture">
@@ -10,7 +10,7 @@
     <% end %>
   </div>
   <div class="petition-page-author">
-    <p>Katie Luangkote | 2nd Year Computer Science</p>
+    <p><%= @petition.user.first_name + " " + @petition.user.last_name %></p>
   </div>
 </div>
 
@@ -22,13 +22,7 @@
       </div>
       <img src="http://www.placehold.it/700x400">
     </div>
-    <p>Lorem ipsum dolor sit amet, harum ullamcorper nam eu, in sed zril disputando. Cibo ubique sententiae at quo, legere albucius rationibus ad eam. At quo mundi molestiae. Brute tantas eleifend vix et, discere inimicus te has. Tempor dictas adversarium ad pro, at sit blandit propriae mediocritatem, cu alia forensibus mea. Cibo instructior reprehendunt vis no.
-    Ad tantas omnium abhorreant nam, alia pertinacia democritum vim in. Cibo saepe reformidans eos at, est ut electram suscipiantur. Atqui inimicus suavitate eum ei, nec vocibus noluisse splendide at. Eam malis melius eu, in vel alii quaestio, vix dolorem molestiae gubergren cu. Ea sed impetus deseruisse conclusionemque.</p>
-    <p>Duo labore deseruisse in. Ne utroque omittam disputationi sea, habemus forensibus in per.
-    Vel ut cibo primis, rebum percipit pertinax sed at. Nec inani suscipiantur et, ea ius veri imperdiet democritum. Ne natum expetenda inciderint vix, sed id mediocrem necessitatibus, principes repudiare mea in. Ex eos sanctus scaevola similique, id molestie imperdiet vim, ad nibh detracto eleifend eos. Ea pri detracto abhorreant, est tincidunt constituto cu.</p>
-    <p>Tation dictas at vis, odio phaedrum assueverit ut eos.
-    Intellegam philosophia ne vix. Per in impetus oporteat accusamus, ne quo erant homero ridens, per at partem detraxit. Vel ei dicit altera habemus. Tale vulputate ullamcorper an mea, minim ubique lobortis sea te. Feugiat dolorem torquatos pro eu. Ea est populo scaevola, ea qui eius integre.
-    Nobis alterum quo et, elit altera deserunt et qui, ad lucilius maiestatis his. No vel verear malorum, quo solet mollis accusamus eu, his iuvaret aliquam noluisse te. Ei dico ferri quando mea, et qui choro vulputate comprehensam. Qui falli tation ancillae an. Augue zril no pro, quidam fuisset ea sed. Id oratio percipit per.</p>
+    <p><%= @petition.description %></p>
     <p class="bottom-petition-text">This petition will be delivered to:</p>
     <p class="board-members"><a href="#">Danny Siegel</a></p>
     <p class="board-members"><a href="#">Sabrina Zeigler</a></p>
