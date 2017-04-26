@@ -20,7 +20,11 @@
       <div class="tag">
         <img src=<%= image_path("closed_badge.png") %>>
       </div>
-      <img src="http://www.placehold.it/700x400">
+      <% if @petition.image.url %>
+        <img src=<%= image_path(@petition.image.url) %> width="700" height="400">
+      <% else %>
+        <img src="http://www.placehold.it/700x400">
+      <% end %>
     </div>
     <p><%= @petition.description %></p>
     <p class="bottom-petition-text">This petition will be delivered to:</p>
