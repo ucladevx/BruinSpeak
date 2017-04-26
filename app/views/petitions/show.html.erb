@@ -3,7 +3,11 @@
 <div class="petition-page-title">
   <h1 style="margin-bottom:0">Petition Title</h1>
   <div class="profile-icon">
-    <img class="picture" src="Profile Picture.png" alt="Profile picture">
+    <% if @petition.user.profile_pic.url %>
+      <img class="picture" src=<%= image_path(@petition.user.profile_pic.url) %> alt="Profile picture">
+    <% else %>
+      <img class="picture" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+    <% end %>
   </div>
   <div class="petition-page-author">
     <p>Katie Luangkote | 2nd Year Computer Science</p>
@@ -14,7 +18,7 @@
   <div class="pet-content">
     <div class="pet-img-container">
       <div class="tag">
-        <img src="Closed Badge.png">
+        <img src=<%= image_path("closed_badge.png") %>>
       </div>
       <img src="http://www.placehold.it/700x400">
     </div>

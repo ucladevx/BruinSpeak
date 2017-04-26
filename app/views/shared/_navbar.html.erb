@@ -34,7 +34,9 @@
                 <% if current_user %>
                 <li><%= current_user.first_name + " " + current_user.last_name %></li>
                 <% if current_user.profile_pic.url %>
-                <li><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle" width="50" alt="edit" /></li>
+                    <li><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle" width="50" alt="edit" /></li>
+                <% else %>
+                    <li><img src=<%= image_path("default_profile_picture.png") %> class="img-circle" width="50" alt="edit" /></li>
                 <% end %>
                 <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
                 <% else %>
