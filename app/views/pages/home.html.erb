@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" %>
-
+<div>
 <div class="center-info">
   <h1>UCLA's platform for change</h1>
   <h2>12,342 students are taking action.</h2>
@@ -7,7 +7,7 @@
   <%= link_to "START PETITION", new_petition_path, :class => "button" %>
 </div>
 <% count = 0 %>
-<ul>
+<ul class="petition-ul">
 <% @petitions.each do |petition| %>
   <% if count % 4 == 0 && count != 0 %>
     </ul>
@@ -19,3 +19,4 @@
   <% count = count + 1 %>
 <% end %>
 </ul>
+</div>

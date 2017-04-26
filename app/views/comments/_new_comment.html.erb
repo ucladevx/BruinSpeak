@@ -1,0 +1,7 @@
+<%= form_for comment do |f| %>
+  <%= f.hidden_field :commentable_id, value: comment.commentable_id %>
+  <%= f.hidden_field :commentable_type, value: comment.commentable_type %>
+  <%= f.text_area :body, label: false, class: 'form-control' %>
+
+  <%= submit_tag 'Post comment', class: 'btn btn-primary' %>
+<% end %>
