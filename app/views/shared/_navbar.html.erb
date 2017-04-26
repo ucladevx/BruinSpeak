@@ -30,7 +30,12 @@
                 <li><a href="#">Start Petition</a></li>
             </ul> -->
             <ul class="nav navbar-nav navbar-right rightNav">
-                <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                <li><%= form_tag search_path, :method => 'get' do %>
+                    <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?"%>
+                    <%= button_tag do %>
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    <% end %>
+                <% end %></li>
                 <% if current_user %>
                 <li><%= current_user.first_name + " " + current_user.last_name %></li>
                 <% if current_user.profile_pic.url %>

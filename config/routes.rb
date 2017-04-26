@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :petitions
   root 'pages#home'
   get 'explore', to: "pages#explore"
+  get 'search', to: "pages#search"
 end
