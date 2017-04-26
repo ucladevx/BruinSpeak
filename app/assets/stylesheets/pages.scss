@@ -213,10 +213,35 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+    border-top: 1px solid #e7e7e7;
+    font-size: 16px;
 }
 
+.copyright {
+    padding-left: 10px;
+}
 
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
+.footer-right-elements a{
+    color: #333333;
+}
+// #vert {
+//     margin-left: auto;
+//     margin-right: auto;
+//     text-align: center;
+//     z-index: 99;
+//     opacity: 0.8;
+//     background-color: #000;
+// }
+// .copyright {
+//     color: #fff;
+//     line-height: 30px;
+//     min-height: 30px;
+//     padding: 7px;
+// }
+// .design {
+//     color: #fff;
+//     line-height: 30px;
+//     min-height: 30px;
+//     padding: 7px 0;
+//     text-align: right;
+// }
