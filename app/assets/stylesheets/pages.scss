@@ -235,6 +235,11 @@ ul {
   text-decoration: none;
 }
 
+.petition-ul {
+    bottom: 50px;
+    position: relative;
+}
+
 .pls {
   display: inline-flex; /* make element size relative to content */
   align-items: center; /* vertical alignment of contents */
@@ -347,13 +352,17 @@ body {
     padding-top: 10px;
 }
 
+.footer-padding {
+}
+
+
 .footer-stack {
     line-height: 20px;
 }
 
 .copyright a {
     color: #19172A;
-    
+
 }
 // #vert {
 //     margin-left: auto;
