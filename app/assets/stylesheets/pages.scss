@@ -19,13 +19,14 @@ li {
 }
 
 span {
-    color: blue;
+    color: #248DD9;
 }
 
 .alert {
     padding: 0px;
     margin-bottom: 0px;
     border: 0px;
+    background-color: #FF6961;
 }
 
 .button {
@@ -103,12 +104,12 @@ span {
 
 .navbar-custom {
     background-color:white;
-    color:black;
+    color:#19172A;
     border-radius:0;
 }
 
 .navbar-custom .navbar-nav > li > a {
-    color:black;
+    color:#19172A;
 }
 
 .navbar-custom .navbar-nav > .active > a {
@@ -126,11 +127,12 @@ span {
 }
 
 .navbar-custom .navbar-brand {
-    color:black;
+    color:#19172A;
 }
 
 .notice {
     margin: 0px;
+    background-color: #77DD77;
 }
 
 .petition-author {
@@ -222,7 +224,11 @@ body {
 }
 
 .footer-right-elements a{
-    color: #333333;
+    color: #19172A;
+}
+
+.copyright a {
+    color: #19172A;
 }
 // #vert {
 //     margin-left: auto;
