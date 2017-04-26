@@ -7,4 +7,6 @@ class Petition < ApplicationRecord
   mount_uploader :image, PetitionImageUploader
 
   belongs_to :user
+
+  acts_as_commentable
 end
