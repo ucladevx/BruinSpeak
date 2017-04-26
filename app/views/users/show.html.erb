@@ -1,0 +1,18 @@
+<h2><%= @user.first_name + " " + @user.last_name %></h2>
+
+<% if @user.profile_pic.url %>
+  <img class="picture" src=<%= image_path(@user.profile_pic.url) %> alt="Profile picture">
+<% else %>
+  <img class="picture" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+<% end %>
+
+
+<h2>Major</h2>
+<h3>
+  <%= @user.major %>
+</h3>
+
+<h2>Organizations</h2>
+<h3>
+  <%= @user.organizations %>
+</h3>
