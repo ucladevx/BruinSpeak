@@ -255,15 +255,29 @@ ul {
   float: right;
 }
 
-.share-pet-card {
-  float: right;
-  width: 40%;
-  margin-right: 50px;
+.share-card {
+  margin-left: 50px;
+  width: 325px;
+  height: 450px;
+  box-shadow: 0 4px 8px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  position: relative;
 }
 
-.share-pet-card img {
-  margin: auto;
-  display: block;
+.share-container {
+  float: right;
+  width: 35%;
+}
+
+.share-icon {
+  width: 25px;
+  height:25px;
+}
+
+.share-title {
+  padding-top: 20px;
+  padding-left: 20px;
+  font-weight: bold;
 }
 
 .stats-label {
@@ -329,8 +343,17 @@ body {
     color: #19172A;
 }
 
+.footer-logo{
+    padding-top: 10px;
+}
+
+.footer-stack {
+    line-height: 20px;
+}
+
 .copyright a {
     color: #19172A;
+    
 }
 // #vert {
 //     margin-left: auto;
