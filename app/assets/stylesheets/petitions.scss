@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+progress[value] {
+  width: 250px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .board-members {
   margin: 0;
 }
@@ -40,7 +46,7 @@
 
 .pet-img-container {
    border: 1px solid #DDDDDD;
-   width: 650px;
+   width: 700px;
    height: 450px;
 }
 
@@ -92,9 +98,9 @@
 }
 
 .share-card {
-  margin-left: 100px;
+  margin-left: 150px;
   width: 325px;
-  height: 450px;
+  height: 550px;
   box-shadow: 0 4px 8px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   position: relative;
@@ -102,6 +108,12 @@
 
 .share-container {
   width: 35%;
+}
+
+.share-facebook {
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 15px;
 }
 
 .share-icon {
@@ -123,4 +135,10 @@
    left: -15px;
    top: -15px;
    border-radius: 5px;
+}
+
+.write-box {
+  width: 290px;
+  height: 50%;
+  margin-left: 20px;
 }

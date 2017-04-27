@@ -29,7 +29,7 @@
       <% if @petition.image.url %>
         <img src=<%= image_path(@petition.image.url) %>
       <% else %>
-        <img src="http://www.placehold.it/650x450">
+        <img src="http://www.placehold.it/700x450">
       <% end %>
     </div>
     <p><%= @petition.description %></p>
@@ -52,6 +52,9 @@
           <p style="letter-spacing:0.9px; font-size:16px">1967/2000 Supporters</p>
         </li>
       </ul>
+      <progress value="1967" max="2000"></progress>
+      <textarea class="write-box"></textarea>
+      <img class="share-facebook" src="/assets/facebook_share_button">
     </div>
   </div>
 </div>
