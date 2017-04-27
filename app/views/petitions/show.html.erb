@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" />
 
-<div class="petition-page-title">
-  <h1 style="margin-bottom:0"><%= @petition.title %></h1>
+<div class="petition-page-header">
+  <h1 class="petition-page-title"><%= @petition.title %></h1>
   <div class="profile-icon">
     <% if @petition.user.profile_pic.url %>
       <img class="picture" src=<%= image_path(@petition.user.profile_pic.url) %> alt="Profile picture">
@@ -27,9 +27,9 @@
         <% end %>
       </div>
       <% if @petition.image.url %>
-        <img src=<%= image_path(@petition.image.url) %> width="700" height="400">
+        <img src=<%= image_path(@petition.image.url) %>
       <% else %>
-        <img src="http://www.placehold.it/700x400">
+        <img src="http://www.placehold.it/650x450">
       <% end %>
     </div>
     <p><%= @petition.description %></p>
@@ -44,12 +44,12 @@
   <div class="share-container">
     <div class="share-card">
       <h3 class="share-title">Petition Closed!</h3>
-      <ul style="padding-left:25px">
+      <ul style="padding-left:20px">
         <li>
           <img class="share-icon" src="/assets/default_profile_picture.png">
         </li>
         <li>
-          <p>1967/2000 Supporters</p>
+          <p style="letter-spacing:0.9px; font-size:16px">1967/2000 Supporters</p>
         </li>
       </ul>
     </div>

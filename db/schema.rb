@@ -31,18 +31,6 @@ ActiveRecord::Schema.define(version: 20170426203536) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string   "slug",           limit: 191, null: false
-    t.integer  "sluggable_id",               null: false
-    t.string   "sluggable_type", limit: 50
-    t.string   "scope",          limit: 191
-    t.datetime "created_at",                 null: false
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
-    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
-    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
-  end
-
   create_table "petitions", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -70,7 +58,6 @@ ActiveRecord::Schema.define(version: 20170426203536) do
     t.string   "last_name",                           null: false
     t.string   "major"
     t.text     "organizations"
-    t.integer  "user_id"
     t.string   "profile_pic"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
