@@ -146,6 +146,18 @@ ul {
   background-repeat: no-repeat;
 }
 
+.circle {
+    border-radius:50%;
+    position:absolute;
+    z-index: -10;
+}
+#container {
+    width:500px;
+    height:200px;
+    position:relative;
+}
+
+
 .col-half-offset{
     margin-left:4.166666667%
 }
