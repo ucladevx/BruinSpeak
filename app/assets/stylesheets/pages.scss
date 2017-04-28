@@ -317,16 +317,12 @@ ul {
 }
 
 //footer
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
   margin-bottom: 60px;
-
 }
 .footer {
   position: absolute;
@@ -363,24 +359,3 @@ body {
     color: #19172A;
 
 }
-// #vert {
-//     margin-left: auto;
-//     margin-right: auto;
-//     text-align: center;
-//     z-index: 99;
-//     opacity: 0.8;
-//     background-color: #000;
-// }
-// .copyright {
-//     color: #fff;
-//     line-height: 30px;
-//     min-height: 30px;
-//     padding: 7px;
-// }
-// .design {
-//     color: #fff;
-//     line-height: 30px;
-//     min-height: 30px;
-//     padding: 7px 0;
-//     text-align: right;
-// }
