@@ -82,7 +82,10 @@
   </div>
 </div>
 
-<%= render "comments/new_comment", comment: @new_comment %>
+<% if user_signed_in? %>
+  <%= render "comments/new_comment", comment: @new_comment %>
+<% end %>
+
 <% @comments.each do |comment| %>
   <%= render "comments/comment", comment: comment %>
 <% end %>
