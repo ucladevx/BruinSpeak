@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def explore
+      @petitions = Petition.all
   end
 
   def search

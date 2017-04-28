@@ -37,7 +37,7 @@
                     <% end %>
                 <% end %></li>
                 <% if current_user %>
-                <li><%= current_user.first_name + " " + current_user.last_name %></li>
+                <li style="padding-top: 11px"><%= current_user.first_name + " " + current_user.last_name %></li>
                 <% if current_user.profile_pic.url %>
                     <li><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle" width="50" alt="edit" /></li>
                 <% else %>

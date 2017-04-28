@@ -32,10 +32,6 @@ ul {
 }
 
 .alert {
-    padding: 0px;
-    margin-bottom: 0px;
-    border: 0px;
-    background-color: #FF6961;
     text-align: center;
 }
 
@@ -149,7 +145,6 @@ ul {
 .navbar-custom .navbar-nav > .active > a:focus,
 .navbar-custom .navbar-nav > .open >a {
     text-decoration: none;
-    background-color: gold;
 }
 
 .navbar-custom .navbar-brand {
@@ -157,8 +152,6 @@ ul {
 }
 
 .notice {
-    margin: 0px;
-    background-color: #77DD77;
     text-align: center;
 }
 
