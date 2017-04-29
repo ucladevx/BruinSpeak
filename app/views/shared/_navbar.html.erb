@@ -36,6 +36,7 @@
                         <i class="fa fa-search" aria-hidden="true"></i>
                     <% end %>
                 <% end %></li>
+                <li><%= link_to "Explore", explore_path %></li>
                 <% if current_user %>
                 <li style="padding-top: 11px"><%= current_user.first_name + " " + current_user.last_name %></li>
                 <% if current_user.profile_pic.url %>
