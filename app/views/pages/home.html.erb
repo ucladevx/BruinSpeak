@@ -7,6 +7,7 @@
         <%= link_to "START PETITION", new_petition_path, :class => "button" %>
     </div>
     <% count = 0 %>
+    <h1 style="margin-bottom: 100px;">What's Popular</h1>
     <ul class="petition-ul">
         <% @petitions.each do |petition| %>
         <% if count % 4 == 0 && count != 0 %>
