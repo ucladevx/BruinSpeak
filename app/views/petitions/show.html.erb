@@ -27,9 +27,9 @@
         <% end %>
       </div>
       <% if @petition.image.url %>
-        <img src=<%= image_path(@petition.image.url) %>
+        <img src=<%= image_path(@petition.image.url) %> width="700" height="450"/>
       <% else %>
-        <img src="http://www.placehold.it/700x450">
+        <img src="http://www.placehold.it/700x450"/>
       <% end %>
     </div>
     <p><%= @petition.description %></p>
