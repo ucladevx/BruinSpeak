@@ -1,0 +1,8 @@
+<div class="comments-container">
+  <h4><%= commentable.comment_threads.count == 0 ? "No comments yet" : commentable.comment_threads.count %> comments</h4>
+
+  <%= commentable.root_comments.order('created_at asc').each do |comment| %>
+    <%= render "comments/comment", commentable: @petition, comment: comment %>
+  <% end %>
+  <%= render "comments/new_comment", new_comment: new_comment %>
+</div>

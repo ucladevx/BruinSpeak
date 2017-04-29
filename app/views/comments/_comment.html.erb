@@ -5,6 +5,21 @@
   <% end %>
 
   <h4><%= comment.user.first_name %></h4>
-  <p><%= comment.body %> ~~~~~~~~~~~~~~ id = <%= comment.id %></p>
+  <p>Body: <%= comment.body %></p>
+  <p>Id: <%= comment.id %></p>
+  <p>User_id: <%= comment.user_id %></p>
+  <!-- TODO: use time_diff gem to show '2 seconds ago', '11 months ago' etc -->
   <h6><%= comment.updated_at %></h6>
+
+  <% if user_signed_in? %>
+    <p class="reply">Reply</p>
+  <% end %>
+
+  <% if comment.has_children? %>
+    <div class="comment">
+      <% comment.children.each do |child| %>
+        <%= render "comments/comment", comment: child %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

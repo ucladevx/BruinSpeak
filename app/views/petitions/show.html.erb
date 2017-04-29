@@ -82,10 +82,4 @@
   </div>
 </div>
 
-<% if user_signed_in? %>
-  <%= render "comments/new_comment", comment: @new_comment %>
-<% end %>
-
-<% @comments.each do |comment| %>
-  <%= render "comments/comment", comment: comment %>
-<% end %>
+<%= render "comments/template", commentable: @petition, new_comment: @new_comment %>

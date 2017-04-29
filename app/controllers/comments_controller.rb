@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   # TODO:
-  #   * allow for nested comments
   #   * paginate after say 7-10 comments
 
   def create
@@ -40,11 +39,11 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :commentable_id, :commentable_type, :comment_id)
+    params.require(:comment).permit(:body, :commentable_id, :commentable_type, :id)
   end
 
   def make_child_comment
-    comment_id = comment_params[:comment_id]
+    comment_id = comment_params[:id]
     return "" if comment_id.blank?
 
     parent_comment = Comment.find comment_id
