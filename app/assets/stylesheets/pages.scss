@@ -459,14 +459,6 @@ ul {
   font-size: 14px;
 }
 
-.tag {
-   float: left;
-   position: absolute;
-   left: -15px;
-   top: -15px;
-   border-radius: 5px;
-}
-
 @media (min-width: 768px) {
     .container {
         width: 323px;
@@ -523,5 +515,4 @@ body {
 
 .copyright a {
     color: #19172A;
-
 }
