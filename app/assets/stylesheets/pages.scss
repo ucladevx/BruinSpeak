@@ -58,7 +58,8 @@ ul {
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin: 4px 2px;
+  margin-top: 0;
+  margin-bottom: 50px;
   font-family: 'Abel', serif;
   letter-spacing: 3px;
 }
@@ -128,7 +129,71 @@ ul {
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+}
+
+.carousel-bottom {
+  margin-top: 30px;
+}
+
+.carousel-content {
+  text-align: left;
+  float: left;
+  padding: 30px;
+  padding-right: 36px;
+  width: 50%;
+}
+
+.carousel-content p:first-of-type {
+  font-size: 33px;
+  font-weight: bold;
+  line-height: 120%;
+  color: black;
+}
+
+.carousel-content p:nth-child(2) {
+  font-size: 23px;
+  font-weight: normal;
+  color: grey;
+  margin-bottom: 20px;
+}
+
+.carousel-content p:nth-child(3) {
+  font-size: 16px;
+  font-weight: normal;
+  display: inline;
+}
+
+.carousel-content a {
+  font-size: 16px;
+}
+
+.carousel-control.right, .carousel-control.left {
+  background-image: none;
+  width: 50px;
+}
+
+.carousel-inner {
+  width: inherit;
+  height: inherit;
+  margin: auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+}
+
+.carousel-inner > .item > img {
+  height: 400px;
+  width: 50%;
+  float: left;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.carousel.slide {
+  width: 1000px;
+  height: 400px;
+  margin: auto;
 }
 
 .center-info {
@@ -136,10 +201,11 @@ ul {
   margin: auto;
   margin-bottom: 60px;
   display: block;
-  height: 320px;
-  width: 50%;
+  height: 700px;
+  width: 1200px;
   padding-top: 50px;
-  background-size: 100% 320px;
+  background-size: 100% 350px;
+  background-position: top;
   background-image: url("/assets/royce.jpg");
   background-color: rgba(255,255,255,0.6);
   background-blend-mode: lighten;
@@ -158,8 +224,18 @@ ul {
 }
 
 
-.col-half-offset{
+.col-half-offset {
     margin-left:4.166666667%
+}
+
+.center-info p {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.center-info span {
+  font-size: 25px;
 }
 
 .container {
@@ -302,6 +378,18 @@ ul {
 
 .petition-stats li:last-child {
   float: right;
+}
+
+.petition-stats-carousel {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 16px;
+}
+
+.petition-stats-carousel span {
+  font-size: 16px;
+  padding-left: 0;
 }
 
 .petition-title {
