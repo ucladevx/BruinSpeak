@@ -7,16 +7,17 @@
     <img src=<%= image_path("active_badge.png") %>>
   <% end %>
 </div>
-<% if petition.image.url %>
-  <img src=<%= image_url(petition.image.url) %> alt="Avatar">
-<% else %>
-  <img src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg">
+<%= link_to petition_path(petition.id) do %>
+  <% if petition.image.url %>
+    <img src=<%= image_url(petition.image.url) %> alt="Avatar">
+  <% else %>
+    <img src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg">
+  <% end %>
 <% end %>
 <div class="carousel-content">
-  <p><%= petition.title %></p>
+  <%= link_to petition.title, petition_path(petition.id), class: "petition-title" %>
   <p><%= petition.user.first_name + " " + petition.user.last_name %></p>
   <p><%= petition.description %></p>
-  <a href="#">Read More</a>
   <div class="carousel-bottom">
     <ul class="petition-stats-carousel">
       <li>
