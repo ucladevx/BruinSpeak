@@ -11,4 +11,5 @@ class Petition < ApplicationRecord
   acts_as_commentable
   has_many :signatures
   has_many :users, through: :signatures
+  acts_as_taggable
 end

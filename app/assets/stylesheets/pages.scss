@@ -133,11 +133,14 @@ ul {
 }
 
 .carousel-bottom {
-  margin-top: 30px;
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 20px;
 }
 
 .carousel-content {
   text-align: left;
+  height: 400px;
   float: left;
   padding: 30px;
   padding-right: 36px;
@@ -174,15 +177,18 @@ ul {
 }
 
 .carousel-inner {
-  width: inherit;
-  height: inherit;
+  width: 1000px;
+  height: 400px;
   margin: auto;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
-.carousel-inner > .item > img {
+.carousel-inner > .item > a > img {
   height: 400px;
   width: 50%;
   float: left;
@@ -194,6 +200,13 @@ ul {
   width: 1000px;
   height: 400px;
   margin: auto;
+}
+
+.carousel-wrapper {
+  width: 1015px;
+  height: 415px;
+  margin: auto;
+  border-radius: 8px;
 }
 
 .center-info {
@@ -457,6 +470,12 @@ ul {
 .stats-value {
   font-weight: bold;
   font-size: 14px;
+}
+
+.tag-carousel {
+  position: absolute;
+  z-index: 1;
+  border-radius: 5px;
 }
 
 @media (min-width: 768px) {
