@@ -24,3 +24,6 @@ tags
 
 # Ignore all uploads
 /public/uploads/*
+
+# Ignore schema
+*schema.rb
