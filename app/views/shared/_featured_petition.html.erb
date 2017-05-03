@@ -1,12 +1,3 @@
-<div class="tag">
-  <% if petition.status == "closed" %>
-    <img src=<%= image_path("closed_badge.png") %>>
-  <% elsif petition.status == "victory" %>
-    <img src=<%= image_path("victory_badge.png") %>>
-  <% else %>
-    <img src=<%= image_path("active_badge.png") %>>
-  <% end %>
-</div>
 <% if petition.image.url %>
   <img src=<%= image_url(petition.image.url) %> alt="Avatar">
 <% else %>
