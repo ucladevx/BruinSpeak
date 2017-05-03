@@ -21,6 +21,7 @@ class PetitionsController < ApplicationController
     @new_comment = Comment.build_from(@petition, current_user.id, "")
     @comments = @petition.comment_threads
     @root_comments = @petition.root_comments
+    @signature = Signature.new
   end
 
   private
