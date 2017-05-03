@@ -133,11 +133,14 @@ ul {
 }
 
 .carousel-bottom {
-  margin-top: 30px;
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 20px;
 }
 
 .carousel-content {
   text-align: left;
+  height: 400px;
   float: left;
   padding: 30px;
   padding-right: 36px;
