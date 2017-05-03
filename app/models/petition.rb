@@ -4,6 +4,8 @@ class Petition < ApplicationRecord
 
   validates :description, presence: true
 
+  validates :goal, presence: true, numericality: { only_integer: true, greater_than: 0 }
+
   mount_uploader :image, PetitionImageUploader
 
   belongs_to :user
