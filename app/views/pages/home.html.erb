@@ -15,17 +15,17 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-      <div class="item active">
-        <%= render 'shared/featured_petition' %>
-      </div>
-
-      <div class="item">
-        <%= render 'shared/featured_petition' %>
-      </div>
-
-      <div class="item">
-        <%= render 'shared/featured_petition' %>
-      </div>
+      <% @top_petitions.each_with_index do |petition, index| %>
+        <% if index == 0 %>
+          <div class="item active">
+            <%= render 'shared/featured_petition', petition: petition %>
+          </div>
+        <% else %>
+          <div class="item">
+            <%= render 'shared/featured_petition', petition: petition %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
 
       <!-- Left and right controls -->

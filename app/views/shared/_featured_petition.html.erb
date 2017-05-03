@@ -1,15 +1,21 @@
 <div class="tag">
-    <img src="/assets/victory_badge.png">
+  <% if petition.status == "closed" %>
+    <img src=<%= image_path("closed_badge.png") %>>
+  <% elsif petition.status == "victory" %>
+    <img src=<%= image_path("victory_badge.png") %>>
+  <% else %>
+    <img src=<%= image_path("active_badge.png") %>>
+  <% end %>
 </div>
-<img src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg">
+<% if petition.image.url %>
+  <img src=<%= image_url(petition.image.url) %> alt="Avatar">
+<% else %>
+  <img src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg">
+<% end %>
 <div class="carousel-content">
-  <p>Pauley Pavilion: Let's remodel our stadium</p>
-  <p>Katie Luangkote</p>
-  <p>Lorem ipsum dolor sit amet, pri case vero dignissim an. Quem civibus no qui.
-      Nam nisl debitis ancillae ut. Usu in velit incorrupte, nullam iudicabit eos an.
-      Assum regione recteque at sed, dicam quidam id usu. Dicat soluta antiopam in duo.
-      Est an ullum pertinax, ne est labores offendit. Vis ei clita praesent, meis veritus
-      disputationi vel at. Nec ludus omnium copiosae at, no malorum constituam...</p>
+  <p><%= petition.title %></p>
+  <p><%= petition.user.first_name + " " + petition.user.last_name %></p>
+  <p><%= petition.description %></p>
   <a href="#">Read More</a>
   <div class="carousel-bottom">
     <ul class="petition-stats-carousel">

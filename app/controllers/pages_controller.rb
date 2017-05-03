@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @petitions = Petition.all
+    @top_petitions = Petition.all.limit(3)
   end
 
   def explore
