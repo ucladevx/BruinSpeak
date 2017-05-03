@@ -9,4 +9,6 @@ class Petition < ApplicationRecord
   belongs_to :user
 
   acts_as_commentable
+  has_many :signatures
+  has_many :users, through: :signatures
 end

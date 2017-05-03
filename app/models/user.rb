@@ -13,4 +13,6 @@ class User < ApplicationRecord
   mount_uploader :profile_pic, ProfilePicUploader
 
   has_many :petitions, dependent: :destroy
+  has_many :signatures
+  has_many :petitions, through: :signatures
 end

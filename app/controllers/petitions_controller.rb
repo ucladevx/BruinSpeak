@@ -26,4 +26,8 @@ class PetitionsController < ApplicationController
   def petitionParams
     params.require(:petition).permit(:title, :description, :image)
   end
+
+  def signatureParams
+    params.require(:signature).permit(:support_text)
+  end
 end
