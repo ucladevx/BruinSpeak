@@ -53,6 +53,9 @@ gem 'carrierwave', '~> 1.0'
 # Commenting
 gem 'acts_as_commentable_with_threading'
 
+# Petition/post tagging
+gem 'acts-as-taggable-on', '~> 4.0'
+
 group :development do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -9,4 +9,5 @@ class Petition < ApplicationRecord
   belongs_to :user
 
   acts_as_commentable
+  acts_as_taggable
 end
