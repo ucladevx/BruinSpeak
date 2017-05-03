@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="tag">
   <% if petition.status == "closed" %>
     <img src=<%= image_path("closed_badge.png") %>>
@@ -13,6 +14,12 @@
   <% else %>
     <img src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg">
   <% end %>
+=======
+<% if petition.image.url %>
+  <img src=<%= image_url(petition.image.url) %> alt="Avatar">
+<% else %>
+  <img src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg">
+>>>>>>> cfd2f993dd34568972c4f66ed1f64823cd818f93
 <% end %>
 <div class="carousel-content">
   <%= link_to petition.title, petition_path(petition.id), class: "petition-title" %>
