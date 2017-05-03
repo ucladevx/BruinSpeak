@@ -5,10 +5,8 @@ class CommentsController < ApplicationController
   #   * paginate after say 7-10 comments
 
   def create
-    @comment_hash = params[:comment]
-    @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
-    # TODO: check to see whether the user has permission to create a comment on this object
-    @comment = Comment.build_from(@obj, current_user.id, @comment_hash[:body])
+    commentable = commentable_type.constantize.find(commentable_id)
+    @comment = Comment.build_from(commentable, current_user.id, body)
 
     respond_to do |format|
       if @comment.save
@@ -39,14 +37,30 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :commentable_id, :commentable_type, :id)
+    params.require(:comment).permit(:body, :commentable_id, :commentable_type, :comment_id)
+  end
+
+  def commentable_type
+    comment_params[:commentable_type]
+  end
+
+  def commentable_id
+    comment_params[:commentable_id]
+  end
+
+  def comment_id
+    comment_params[:comment_id]
+  end
+
+  def body
+    comment_params[:body]
   end
 
   def make_child_comment
-    comment_id = comment_params[:id]
     return "" if comment_id.blank?
 
     parent_comment = Comment.find comment_id
     @comment.move_to_child_of(parent_comment)
   end
+  
 end

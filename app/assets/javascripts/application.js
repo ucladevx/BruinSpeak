@@ -16,3 +16,10 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+function initComments() {
+  $('.comment-reply').click(function() {
+    $(this).closest('.comment').find('.reply-form').toggle();
+  });
+  console.log("Initializing comments.");
+}

@@ -19,7 +19,7 @@ class PetitionsController < ApplicationController
     @petition = Petition.find(params[:id])
     @signature = Signature.new
 
-    if user_logged_in?
+    if user_signed_in?
       @new_comment = Comment.build_from(@petition, current_user.id, "")
     end
   end
