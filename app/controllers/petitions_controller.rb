@@ -6,7 +6,9 @@ class PetitionsController < ApplicationController
   end
 
   def create
-    @petition = current_user.petitions.build(petitionParams)
+    @user = current_user
+    @petition = @user.petitions.build(petitionParams)
+    @petition.user_id = @user.id
     if @petition.save
       redirect_to @petition, :notice => "Your petition has been created"
     else
@@ -25,7 +27,7 @@ class PetitionsController < ApplicationController
   private
 
   def petitionParams
-    params.require(:petition).permit(:title, :description, :image, :tag_list)
+    params.require(:petition).permit(:title, :description, :image, :tag_list, :goal)
   end
 
   def signatureParams
