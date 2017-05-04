@@ -14,18 +14,6 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-wrapper">
-      <% @top_petitions.each_with_index do |petition, index| %>
-        <div class="tag-carousel">
-          <% if petition.status == "closed" %>
-            <img src=<%= image_path("closed_badge.png") %>>
-          <% elsif petition.status == "victory" %>
-            <img src=<%= image_path("victory_badge.png") %>>
-          <% else %>
-            <img src=<%= image_path("active_badge.png") %>>
-          <% end %>
-          </div>
-      <% end %>
     <div class="carousel-inner">
       <% @top_petitions.each_with_index do |petition, index| %>
         <% if index == 0 %>
@@ -39,7 +27,6 @@
         <% end %>
       <% end %>
     </div>
-  </div>
 
       <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">

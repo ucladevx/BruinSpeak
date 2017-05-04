@@ -10,12 +10,12 @@
       <% end %>
     <% end %>
   </div>
-  <div class="container">
+  <div class="con">
     <%= link_to petition.title, petition_path(petition.id), class: "petition-title" %>
     <p class="petition-author"><%= petition.user.first_name + " " + petition.user.last_name %></p>
     <p class="petition-desc"><%= petition.description %></p>
   </div>
-  <div class="container bottom">
+  <div class="con bottom">
     <ul class="petition-stats">
       <li>
         <div class="stats-value">100</div>
