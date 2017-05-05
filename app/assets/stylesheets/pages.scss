@@ -49,6 +49,24 @@ ul {
   font-size: 18px
 }
 
+@media (max-width: 786px){
+    .brand-small-view {
+    display: inline-flex !important;
+    }
+
+    .brand-large-view {
+    display: none !important;
+    }
+}
+
+// .brand-small-view {
+// display: none !important;
+// }
+//
+// .brand-large-view {
+// display: inline-flex !important;
+// }
+
 .button {
   background-color: #0099cc;
   border-radius: 10px;
@@ -229,6 +247,10 @@ ul {
     color:#19172A;
 }
 
+.navbar-dynam-content {
+    padding-top: 11px;
+}
+
 .notice {
     text-align: center;
 }
@@ -317,7 +339,7 @@ ul {
     position: relative;
 }
 
-.pls {
+.navbar-brand-styling {
   display: inline-flex; /* make element size relative to content */
   align-items: center; /* vertical alignment of contents */
   line-height: 40px; /* control height with line-height or padding */
