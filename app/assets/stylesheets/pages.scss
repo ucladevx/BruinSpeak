@@ -602,81 +602,65 @@ input, textarea {
 .navbar-form {
     padding-left: 0px;
 }
+///LLOLOL
 
-#input {
-    // width: 100%;
+.navbar-collapse form[role="search"] {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    z-index: 0;
+}
+.navbar-collapse form[role="search"] button,
+.navbar-collapse form[role="search"] input {
+    padding: 8px 12px;
+    border-radius: 0px;
+    border-width: 0px;
+    box-shadow: none;
+    outline: none;
 }
 
 
-#input input {
-    // display: block;
-    // position: absolute;
-    // top: 0;
-    // width: 75%;
-    height: 100%;
-
-    // border: none;
-    // background-color: #23688b;
-    // color: #fff;
-    // font-size: 18px;
-    // backface-visibility: none;
-    // border-radius: 0;
-    // transition: left 0;
-}
-
-/** hidden search field **/
-#searchbar {
-  display: none; //CHANGE LATER
-  float: left;
-  width: 100%;
-  border-top: 1px solid #d8d8d8;
-  padding-left: 0px;
-  padding-right: 10px;
-  z-index: 9999;
-  background: #fff;
-  -webkit-box-shadow: -1px 2px 2px rgba(0,0,0,0.2);
-  -moz-box-shadow: -1px 2px 2px rgba(0,0,0,0.2);
-  box-shadow: -1px 2px 2px rgba(0,0,0,0.2);
-}
-
-
-#searchbar .navbar-form input {
+.navbar-collapse form[role="search"] input {
     padding: 16px 12px;
     font-size: 14pt;
     font-style: italic;
-    color: rgb(160, 160, 160);
     box-shadow: none;
 }
-
+.navbar-collapse form[role="search"] button[type="reset"] {
+    display: none;
+}
 
 @media (min-width: 768px) {
-    #searchbar {
+    .navbar-collapse {
         padding-top: 0px !important;
         padding-right: 38px !important;
     }
-    #searchbar .navbar-form {
-        width: 608px;
-    }
-
-
-    #searchbar .navbar-form button,
-    #searchbar .navbar-form input {
+    .navbar-collapse form[role="search"] button,
+    .navbar-collapse form[role="search"] input {
         padding: 15px 12px;
     }
-
-    #searchbar .navbar-form.active {
+    .navbar-collapse form[role="search"] input {
+        font-size: 18pt;
+        opacity: 0;
+        display: none;
+        height: 50px;
+    }
+    .navbar-collapse form[role="search"].active {
         width: 100%;
     }
-    // #searchbar .navbar-form.active button,
-    // #searchbar .navbar-form.active input {
-    //     display: table-cell;
-    //     opacity: 1;
-    // }
-    #searchbar .navbar-form.active input {
+    .navbar-collapse form[role="search"].active button,
+    .navbar-collapse form[role="search"].active input {
+        display: table-cell;
+        opacity: 1;
+    }
+    .navbar-collapse form[role="search"].active input {
         width: 100%;
     }
 }
 
-.navbar-form .form-control {
-    width: inherit;
+form {
+    display: none; //COMMENT OUT TO WORK WITH SEARCH BAR
 }

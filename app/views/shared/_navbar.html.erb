@@ -16,18 +16,36 @@
             <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
             <div>Start Petition</div>
             <% end %>
-
+            
             <ul class="nav navbar-nav navbar-center midNav">
-                <li>
+                 <li>
                     <%= link_to root_path do %>
                     BRUIN<span>SPEAK<span>
                         <% end %>
-                    </li>
-                </ul>
+                </li>
+            </ul>
                 <ul class="nav navbar-nav navbar-right rightNav">
-                    <li class="navbar-dynam-content" id="searchtoggl">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </li>
+                            <%= form_tag(search_path, method: 'get', class: 'navbar-form navbar-right', id: 'input', role: 'search') do %>
+                                <div class="input-group">
+
+
+                                    <span class="input-group-btn">
+                                    <%= button_tag(class: 'btn btn-default', type: 'submit') do%>
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    <% end %>
+                                    </span>
+
+                                    <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "What are you looking for?"%>
+
+                                    <span class="input-group-btn">
+                                    <%= button_tag(class: 'btn btn-default', type: 'reset') do%>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    <% end %>
+                                </span>
+
+                                </div>
+                            <% end %>
+
 
                     <li><%= link_to "Explore", explore_path %></li>
                     <% if current_user %>
@@ -47,14 +65,3 @@
             </div>
         </div>
     </nav>
-
-
-    <div id="searchbar">
-        <%= form_tag(search_path, method: 'get', class: 'navbar-form navbar-right', id: 'input') do %>
-            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "What are you looking for?"%>
-            <%= button_tag(class: 'btn btn-default') do%>
-                <i class="fa fa-search fa-4x" aria-hidden="true"></i>
-
-            <% end %>
-        <% end %>
-    </div>

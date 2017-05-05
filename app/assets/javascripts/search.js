@@ -1,30 +1,27 @@
+$(function () {
+    // Remove Search if user Resets Form or hits Escape!
+    $('body, .navbar-collapse form[role="search"] button[type="reset"]').on('click keyup', function(event) {
+        console.log(event.currentTarget);
+        if (event.which == 27 && $('.navbar-collapse form[role="search"]').hasClass('active') ||
+            $(event.currentTarget).attr('type') == 'reset') {
+            closeSearch();
+        }
+    });
 
-$(function(){
-  var $searchlink = $('#searchtoggl i');
-  var $searchbar  = $('#searchbar');
-
-  $('#bs-example-navbar-collapse-1 ul li').on('click', function(e){
-    e.preventDefault();
-
-    if($(this).attr('id') == 'searchtoggl') {
-      if(!$searchbar.is(":visible")) {
-        // if invisible we switch the icon to appear collapsable
-        $searchlink.removeClass('fa-search').addClass('fa-search-minus');
-      } else {
-        // if visible we switch the icon to appear as a toggle
-        $searchlink.removeClass('fa-search-minus').addClass('fa-search');
-      }
-
-      $searchbar.slideToggle(300, function(){
-        // callback after search bar animation
-      });
+    function closeSearch() {
+        var $form = $('.navbar-collapse form[role="search"].active')
+        $form.find('input').val('');
+        $form.removeClass('active');
     }
-  });
 
+    // Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
+    $(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
+        event.preventDefault();
+        var $form = $(this).closest('form'),
+            $input = $form.find('input');
+        $form.addClass('active');
+        $input.focus();
 
-  $('#searchform').submit(function(e){
-    e.preventDefault(); // stop form submission
-  });
-
+    });
 
 });
