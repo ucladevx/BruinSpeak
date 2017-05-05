@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-custom">
+<nav id="topbar" class="navbar navbar-default navbar-custom">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -9,16 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <!-- <%= link_to new_petition_path, :class => "navbar-brand navbar-brand-styling brand-small-view" do %>
-            <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-            <div>Start Petition</div>
-            <% end %> -->
-
         </div>
-
-
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <%= link_to new_petition_path, :class => "navbar-brand navbar-brand-styling brand-large-view" do %>
@@ -34,14 +25,8 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right rightNav">
-
-                    <li class="navbar-dynam-content">
-                        <%= form_tag search_path, :method => 'get' do %>
-                        <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?"%>
-                        <%= button_tag do %>
+                    <li class="navbar-dynam-content" id="searchtoggl">
                         <i class="fa fa-search" aria-hidden="true"></i>
-                        <% end %>
-                        <% end %>
                     </li>
 
                     <li><%= link_to "Explore", explore_path %></li>
@@ -59,6 +44,16 @@
                     <li><%= link_to "Signup", new_user_registration_path %></li>
                     <% end %>
                 </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+            </div>
+        </div>
     </nav>
+
+
+    <div id="searchbar" class="clearfix">
+        <%= form_tag search_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?"%>
+        <%= button_tag do%>
+        <i class="fa fa-search fa-4x" aria-hidden="true"></i>
+        <% end %>
+        <% end %>
+    </div>

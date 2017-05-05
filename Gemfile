@@ -25,6 +25,7 @@ gem 'coffee-rails', '~> 4.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'thor', '>=0.14.4'
 
 # image processing
 gem "mini_magick"
