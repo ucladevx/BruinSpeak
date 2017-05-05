@@ -1,39 +1,28 @@
-<div class="tag">
-  <% if petition.status == "closed" %>
-    <img src=<%= image_path("closed_badge.png") %>>
-  <% elsif petition.status == "victory" %>
-    <img src=<%= image_path("victory_badge.png") %>>
+<%= link_to petition_path(petition.id) do %>
+  <% if petition.image.url %>
+    <img src=<%= image_url(petition.image.url) %> alt="Avatar">
   <% else %>
-    <img src=<%= image_path("active_badge.png") %>>
+    <img src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg">
   <% end %>
-</div>
-<div class="container-custom">
-  <%= link_to petition_path(petition.id) do %>
-    <% if petition.image.url %>
-      <img src=<%= image_url(petition.image.url) %> alt="Avatar">
-    <% else %>
-      <img class="image-custom" src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg">
-    <% end %>
-  <% end %>
-  <div class="carousel-content">
-    <%= link_to petition.title, petition_path(petition.id), class: "petition-title" %>
-    <p><%= petition.user.first_name + " " + petition.user.last_name %></p>
-    <p><%= petition.description %></p>
-    <div class="carousel-bottom">
-      <ul class="petition-stats-carousel">
-        <li>
-          <div class="stats-value">100</div>
-          <span class="stats-label">signed</span>
-        </li>
-        <li>
-          <div class="stats-value">50</div>
-          <span class="stats-label">needed</span>
-        </li>
-        <li>
-          <div class="stats-value">2</div>
-          <span class="stats-label">days remaining</span>
-        </li>
-      </ul>
-    </div>
+<% end %>
+<div class="carousel-content">
+  <%= link_to petition.title, petition_path(petition.id), class: "carousel-content-title" %>
+  <p class="carousel-content-author"><%= petition.user.first_name + " " + petition.user.last_name %></p>
+  <p class="carousel-content-desc"><%= petition.description %></p>
+  <div class="carousel-bottom">
+    <ul class="petition-stats-carousel">
+      <li>
+        <div class="stats-value">100</div>
+        <span class="stats-label">signed</span>
+      </li>
+      <li>
+        <div class="stats-value">50</div>
+        <span class="stats-label">needed</span>
+      </li>
+      <li>
+        <div class="stats-value">2</div>
+        <span class="stats-label">days remaining</span>
+      </li>
+    </ul>
   </div>
 </div>
