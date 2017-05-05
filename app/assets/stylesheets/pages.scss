@@ -270,15 +270,58 @@ ul {
     position:absolute;
     z-index: -10;
 }
+
+.comments-header {
+  position: relative;
+  clear: both;
+  border-bottom: 1px solid #CCCCCC;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.comments-container {
+  position: relative;
+  clear: both;
+  margin-left: 10px;
+
+  p {
+    margin-bottom: 0px;
+  }
+
+  .comment-nav {
+    margin-left: 5px;
+    margin-bottom: 10px;
+
+    a {
+      font-size: 10px;
+      font-weight: bold;
+      color: #888;
+    }
+  }
+}
+
+.reply-form {
+  display: none;
+}
+
+.comment-reply {
+  font-size: 10px;
+  color: blue;
+  cursor: pointer;
+}
+
+.comment {
+  margin-left: 25px;
+}
+
 #container {
     width:500px;
     height:200px;
     position:relative;
 }
 
-
 .col-half-offset {
-    margin-left:4.166666667%
+    margin-left:4.166666667%;
 }
 
 .center-info p {
@@ -480,6 +523,10 @@ ul {
   width: 50px;
   height: 50px;
   float: right;
+}
+
+.reply {
+  cursor: pointer;
 }
 
 .share-card {

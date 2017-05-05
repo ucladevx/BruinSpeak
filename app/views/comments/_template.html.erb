@@ -1,0 +1,8 @@
+<div class="comments-header">
+  <h4><%= commentable.comment_threads.count == 0 ? "No" : commentable.comment_threads.count %> comments</h4>
+</div>
+
+<%= render "comments/form", new_comment: new_comment %>
+<div class="comments-container">
+  <%= render "comments/reply", comments: commentable.root_comments.order('created_at DESC') %>
+</div>

@@ -1,0 +1,31 @@
+<% comments.each do |comment| %>
+  <div class="comment">
+    <% if comment.user_id == current_user.id %>
+      <%= link_to  "x", comment_path(comment), method: :delete, remote: false, confirm: "Are you sure you want to remove this comment?", disable_with: "x", class: 'close' %>
+    <% end %>
+
+    <h4><%= comment.user.first_name %></h4>
+    <div class="comment-body">
+      <%= comment.body %>
+    </div>
+    <p>User_id: <%= comment.user_id %></p>
+    <!-- TODO: use time_diff gem to show '2 seconds ago', '11 months ago' etc -->
+    <h6><%= comment.updated_at %></h6>
+  
+    <span class="comment-reply">reply</span>
+
+    <div class="reply-form">
+      <%= form_for @new_comment do |f| %>
+        <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
+        <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
+        <%= f.hidden_field :comment_id, value: comment.id %>
+
+        <%= f.text_area :body, class: 'form-control' %>
+
+        <%= submit_tag "Post Reply", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+
+    <%= render "comments/reply", comments: comment.children.order('created_at ASC') %>
+  </div>
+<% end %>
