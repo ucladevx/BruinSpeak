@@ -82,7 +82,5 @@
   </div>
 </div>
 
-<%= render "comments/new_comment", comment: @new_comment %>
-<% @comments.each do |comment| %>
-  <%= render "comments/comment", comment: comment %>
-<% end %>
+<%= render "comments/template", commentable: @petition, new_comment: @comment %>
+<script>initComments();</script>
