@@ -7,16 +7,16 @@
 <% end %>
 <div class="carousel-content">
   <%= link_to petition.title, petition_path(petition.id), class: "carousel-content-title" %>
-  <p class="carousel-content-author"><%= petition.user.first_name + " " + petition.user.last_name %></p>
+  <p class="carousel-content-author"><%= petition.user.full_name %></p>
   <p class="carousel-content-desc"><%= petition.description %></p>
   <div class="carousel-bottom">
     <ul class="petition-stats-carousel">
       <li>
-        <div class="stats-value">100</div>
+        <div class="stats-value"><%= petition.goal %></div>
         <span class="stats-label">signed</span>
       </li>
       <li>
-        <div class="stats-value">50</div>
+        <div class="stats-value"><%= petition.signatures.count %></div>
         <span class="stats-label">needed</span>
       </li>
       <li>
