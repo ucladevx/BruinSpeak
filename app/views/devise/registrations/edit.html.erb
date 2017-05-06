@@ -1,33 +1,55 @@
-<h2>Edit Profile</h2>
+<main class="wrapper-edit">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :major %><br />
-    <%= f.text_field :major %>
+  <header class="header-edit">
+    <h2>Edit Profile</h2>
+  </header>
+  <section class="image-edit-wrapper">
+    <% if current_user.profile_pic.url %>
+      <img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle" width="150" alt="profile picture" />
+    <% else %>
+      <img src=<%= image_path("default_profile_picture.png") %> class="img-circle" width="150" alt="profile picture" />
+    <% end %>
+  </section>
+  <div class="image-links-container">
+    <a href="#" id="profile_upload">Upload Picture</a>
+    <span> | </span>
+    <a href="#">Remove Picture</a>
   </div>
+  <section class="form-edit">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="field">
+        <%= f.label :year %><br />
+        <%= f.number_field :year %>
+      </div>
 
-  <div class="field">
-    <%= f.label :organizations %><br />
-    <%= f.text_area :organizations %>
-  </div>
+      <div class="field">
+        <%= f.label :major %><br />
+        <%= f.text_field :major %>
+      </div>
 
-  <div class="field">
-    <%= f.label :profile_pic %><br />
-    <%= f.file_field :profile_pic %>
-  </div>
+      <div class="field">
+        <%= f.label :organizations %><br />
+        <%= f.text_area :organizations %>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <div class="field">
+        <%= f.label "About me" %><br />
+        <%= f.text_area :about %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+      <div class="field hide">
+        <%= f.label :profile_pic %><br />
+        <%= f.file_field :profile_pic %>
+      </div>
 
-<h3>Cancel my account</h3>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+      <div class="actions">
+        <%= f.submit "Save" %>
+      </div>
+    <% end %>
+  </section>
+</main>

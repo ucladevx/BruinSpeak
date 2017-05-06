@@ -58,7 +58,7 @@ before_action :configure_sign_up_params, only: [:create]
 
   # If you have extra params to permit, append them to the sanitizer.
   def updateParams
-    params.require(:user).permit(:major, :organizations, :profile_pic)
+    params.require(:user).permit(:major, :organizations, :profile_pic, :year, :about)
   end
 
   # The path used after sign up.

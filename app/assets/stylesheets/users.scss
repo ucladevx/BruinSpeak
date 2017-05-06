@@ -1,3 +1,105 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'colors';
+
+$break-small: 375px;
+
+
+.wrapper-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  min-height: 85%;
+  overflow-y: hidden;
+  margin-bottom: 25px;
+}
+
+.header-edit {
+  margin-bottom: 25px;
+}
+
+.image-edit-wrapper {
+  .img-circle {
+    margin: auto;
+    border: 2px solid $bruinspeak_blue;
+  }
+}
+
+.image-links-container {
+  margin-top: 25px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+
+  span {
+    color: $bruinspeak_black;
+    font-weight: bolder;
+  }
+
+  a {
+    border-bottom: 2px solid $bruinspeak_blue;
+    color: $bruinspeak_blue;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+
+.form-edit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  form {
+    width: 70%;
+
+    @media (max-width: $break-small) {
+      width: 90%;
+    }
+
+    .field {
+      width: 100%;
+
+      input, textarea {
+        padding: 10px;
+        width: 100%;
+        border-radius: 3px;
+        border: solid 1px $bruinspeak_gray;
+        color: $bruinspeak_gray;
+      }
+    }
+
+    .actions {
+      margin-top: 25px;
+
+      input {
+        width: 150px;
+        height: 35px;
+        text-align: center;
+        color: white;
+        letter-spacing: 1.5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+        border-radius: 3px;
+        font-weight: 400;
+        text-transform: uppercase;
+        border: 0;
+        background-color: $bruinspeak_blue;
+      }
+    }
+  }
+}
