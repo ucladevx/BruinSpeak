@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" %>
+<h1 style="padding-left:50px; margin-bottom:40px">Theme: <%= @tag.name %></h1>
+<ul>
+  <% @petitions.each do |petition| %>
+    <li>
+      <%= render 'shared/post', petition: petition %>
+    </li>
+  <% end %>
+</ul>

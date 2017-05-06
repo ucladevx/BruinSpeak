@@ -8,36 +8,21 @@
 
         <div class="container-fluid" id="explore-buttons-grid">
             <div class="row show-grid">
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Clubs</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Advocacy</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Outreach</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Misc.</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Sports</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Buildings</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Events</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">South Campus</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Activism</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">North Campus</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Food</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Housing</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Professors</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Healthcare</span>
-                </button>
-                <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class="">Technology</span>
-                </button>
+
+                <% @tags.each do |tag| %>
+                    <%= link_to tag_path(tag.id) do %>
+                    <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class=""><%= tag.name %></span>
+                    </button>
+                    <% end %>
+                <% end %>
+                <% if @tags.count < 15 %>
+                    <% (15 - @tags.count).times do %>
+                        <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class=""></span>
+                        </button>
+                    <% end %>
+                <% end %>
+
+                 </div>
             </div>
         </div>
 
