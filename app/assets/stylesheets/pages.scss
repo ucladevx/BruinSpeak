@@ -246,7 +246,7 @@ ul {
 .circle {
     border-radius:50%;
     position:absolute;
-    z-index: -10;
+    z-index: -1;
 }
 
 .comments-header {
@@ -323,14 +323,27 @@ ul {
   bottom: 0;
 }
 
-.explore-button {
-    // margin: 5px;
+#explore-button {
+    width: 160px;
+    margin-bottom: 2%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    outline: none;
 }
 
-.explore-top{
+#explore-buttons-grid {
+    margin-top: 2%;
+}
+
+#explore-top{
     background-image: none;
     width: 80%;
     height: inherit;
+}
+
+#explore-top span {
+    font-size: 20px;
+    color: black;
 }
 
 .leftNav, .rightNav {
