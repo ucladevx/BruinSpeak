@@ -16,6 +16,14 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
+* {
+  box-sizing: border-box;
+}
+
  html, body {
    font-family: 'Open Sans', sans-serif;
+ }
+
+ body {
+   margin-bottom: 60px;
  }

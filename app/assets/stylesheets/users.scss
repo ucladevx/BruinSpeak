@@ -3,20 +3,19 @@
 $break-small: 375px;
 
 
+
+
 .wrapper-edit {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  position: absolute;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  min-height: 85%;
-  overflow-y: hidden;
-  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 .header-edit {
-  margin-bottom: 25px;
+  margin: 25px 0;
 }
 
 .image-edit-wrapper {
@@ -77,6 +76,10 @@ $break-small: 375px;
         border-radius: 3px;
         border: solid 1px $bruinspeak_gray;
         color: $bruinspeak_gray;
+      }
+
+      textarea {
+        min-height: 100px;
       }
     }
 
