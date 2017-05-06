@@ -1,7 +1,4 @@
-@import 'colors';
-
-$break-small: 375px;
-
+@import 'variables';
 
 
 
@@ -75,6 +72,9 @@ $break-small: 375px;
         border-radius: 3px;
         border: solid 1px $bruinspeak_gray;
         color: $bruinspeak_gray;
+      }
+      input:focus, textarea:focus {
+        border: solid 1px $bruinspeak_blue;
       }
 
       textarea {
