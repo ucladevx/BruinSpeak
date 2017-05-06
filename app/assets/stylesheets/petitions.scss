@@ -28,10 +28,26 @@ progress[value] {
   margin-left: 50px;
 }
 
-.form-control {
+.new_comment {
   margin-bottom: 10px;
-  margin-left: 50px;
   width: 890px;
+  margin-left: 15px;
+}
+
+.new_comment textarea {
+  margin-bottom: 10px;
+}
+
+.new_comment input {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.new_signature input {
+  margin-top: 5px;
+  margin-left: 20px;
+  width: 30%;
+  background-color: #328FD6;
 }
 
 .pet-container {
@@ -123,7 +139,7 @@ progress[value] {
 .share-facebook {
   width: 90%;
   margin-left: 20px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .share-icon {
@@ -157,4 +173,5 @@ progress[value] {
   width: 290px;
   height: 50%;
   margin-left: 20px;
+  padding: 5px;
 }
