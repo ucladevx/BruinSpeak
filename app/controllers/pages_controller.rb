@@ -5,7 +5,13 @@ class PagesController < ApplicationController
   end
 
   def explore
-      @petitions = Petition.all
+    @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc).limit(15)
+    @petitions = Petition.all
+  end
+
+  def tag
+    @tag = ActsAsTaggableOn::Tag.find(params[:id])
+    @petitions = Petition.tagged_with(@tag.name)
   end
 
   def search

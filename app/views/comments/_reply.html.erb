@@ -9,7 +9,9 @@
       <%= comment.body %>
     </div>
     <!-- TODO: use time_diff gem to show '2 seconds ago', '11 months ago' etc -->
-    <h6><%= comment.updated_at %></h6>
+    <h6>
+      <%= time_ago_in_words(comment.created_at) %> ago
+    </h6>
   
     <span class="comment-reply">reply</span>
 

@@ -1,6 +1,8 @@
-<div>
+<div style="margin-top:50px; margin-bottom:100px">
   <div class="container padded">
-    <h1>Create a new petition</h1>
+    <h2><b>1. Add Your Petition Title</b></h2>
+    <p>This is the first thing people will see about your petition.
+      Get their attention with a short title that focuses on the change you’d like them to support.</p>
     <%= form_for(@petition) do |f| %>
       <% if @petition.errors.any? %>
         <div id="error_explanation">
@@ -16,29 +18,36 @@
       <%= f.hidden_field :user_id, value: current_user.id %>
 
       <p>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
-      </p>
+        <%= f.text_field :title, placeholder: "Title" %>
+      </p><br>
 
+      <h2><b>2. Add a Description</b></h2>
+      <p>People are more likely to support your petition if it’s clear why you care.
+        Explain how this change will impact the UCLA community.</p>
       <p>
-        <%= f.label :description %><br>
-        <%= f.text_area :description %>
-      </p>
+        <%= f.text_area :description, placeholder: "Description" %>
+      </p><br>
 
+      <h2><b>3. Choose Categories</b></h2>
+      <p>These are the filters you want to add for your petition,
+         add as many relevant tags as you can. This will help other people search
+         for your petition using BruinSpeak’s search feature.</p>
       <p>
-        <%= f.label :image %><br>
+        <%= f.text_field :tag_list, placeholder: "Tags" %>
+      </p><br>
+
+      <h2><b>4. Add an Image/Video</b></h2>
+      <p>Petitions with a photo or video receive many times more
+        signatures than those without. Include one that captures the emotion of your petition.</p>
+      <p>
         <%= f.file_field :image %>
-      </p>
+      </p><br>
 
+      <h2><b>5. Set a Goal</b></h2>
+      <p>Choose how many signatures you need for your petition to be successful.</p>
       <p>
-        <%= f.label :tag_list %><br>
-        <%= f.text_field :tag_list %>
-      </p>
-
-      <p>
-        <%= f.label :goal %><br>
         <%= f.number_field :goal %>
-      </p>
+      </p><br>
 
       <p>
         <%= f.submit %>

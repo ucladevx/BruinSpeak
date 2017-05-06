@@ -81,9 +81,9 @@ GEM
     ffi (1.9.18)
     font-awesome-sass (4.6.2)
       sass (>= 3.2)
-    globalid (0.3.7)
-      activesupport (>= 4.1.0)
     hashie (3.5.5)
+    globalid (0.4.0)
+      activesupport (>= 4.2.0)
     i18n (0.8.1)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -210,7 +210,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 4.0)
-  acts_as_commentable_with_threading
+  acts_as_commentable_with_threading (~> 2.0.1)
   bootstrap-sass (~> 3.3, >= 3.3.7)
   byebug
   carrierwave (~> 1.0)
