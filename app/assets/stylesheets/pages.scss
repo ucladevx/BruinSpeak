@@ -23,10 +23,6 @@ li {
   float: left;
 }
 
-span {
-    color: #248DD9;
-}
-
 ul {
   list-style-type: none;
 }
@@ -335,9 +331,9 @@ ul {
 #explore-buttons-grid {
     margin-top: 2%;
 }
-
+//HEREEREE
 #explore-top{
-    background-image: none;
+    background-image: url("/assets/colorful_circles.png");
     width: 80%;
     height: inherit;
 }
@@ -500,11 +496,6 @@ ul {
   text-decoration: none;
 }
 
-.petition-ul {
-    bottom: 50px;
-    position: relative;
-}
-
 .navbar-brand-styling {
   display: inline-flex; /* make element size relative to content */
   align-items: center; /* vertical alignment of contents */
@@ -517,12 +508,6 @@ ul {
   padding-right: 0;
   padding-bottom: 20px;
   float: left;
-}
-
-.picture {
-  width: 50px;
-  height: 50px;
-  float: right;
 }
 
 .reply {
@@ -554,8 +539,8 @@ ul {
   font-weight: bold;
 }
 
-.stats-label {
-  color: black;
+#speak {
+  color: #328FD6;
 }
 
 .stats-value {
