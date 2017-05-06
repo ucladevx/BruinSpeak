@@ -52,7 +52,7 @@ gem 'font-awesome-sass', '~> 4.6.2'
 gem 'carrierwave', '~> 1.0'
 
 # Commenting
-gem 'acts_as_commentable_with_threading'
+gem 'acts_as_commentable_with_threading', '~> 2.0.1'
 
 # Petition/post tagging
 gem 'acts-as-taggable-on', '~> 4.0'
