@@ -42,6 +42,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.2'
 
+gem "omniauth-google-oauth2"
+
 #Bootstrap for navbar
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 

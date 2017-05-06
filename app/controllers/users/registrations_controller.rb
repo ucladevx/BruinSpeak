@@ -1,6 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 before_action :configure_sign_up_params, only: [:create]
-before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -18,9 +17,22 @@ before_action :configure_account_update_params, only: [:update]
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    @user = User.find(current_user.id)
+
+    if @user
+      updated = @user.update_attributes(updateParams)
+    end
+
+    if updated
+      set_flash_message :notice, :updated
+      sign_in @user, :bypass => true
+      redirect_to edit_user_registration_path
+    else
+      render 'edit'
+    end
+
+  end
 
   # DELETE /resource
   # def destroy
@@ -45,9 +57,8 @@ before_action :configure_account_update_params, only: [:update]
   end
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name,
-                                      :major, :organizations, :profile_pic])
+  def updateParams
+    params.require(:user).permit(:major, :organizations, :profile_pic)
   end
 
   # The path used after sign up.
