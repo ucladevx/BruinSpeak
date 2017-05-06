@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get 'search', to: "pages#search"
   get '/users/:id', to: 'users#show', as: 'user'
   post '/signatures', to: 'signatures#create', as: 'signatures'
+  get '/tag/:id', to: 'pages#tag', as: 'tag'
 end
