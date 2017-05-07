@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 before_action :configure_sign_up_params, only: [:create]
+before_action :authenticate_user!, only: [:remove_picture]
 
   # GET /resource/sign_up
   # def new
@@ -15,6 +16,21 @@ before_action :configure_sign_up_params, only: [:create]
   # def edit
   #   super
   # end
+  def remove_picture
+    @user = User.find(current_user.id)
+
+    if @user
+      @user.remove_profile_pic!
+      if @user.save
+        flash[:notice] = "Profile picture removed."
+      else
+        flash[:error] = "Unable to remove profile picture."
+      end
+
+      sign_in @user, :bypass => true
+      redirect_to edit_user_registration_path
+    end
+  end
 
   # PUT /resource
   def update

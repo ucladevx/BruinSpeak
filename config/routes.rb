@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  #devise_for :users, :controllers => { registrations: 'users/registrations' }
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",:registrations => "users/registrations" }
   resources :pages
   resources :petitions
@@ -11,4 +10,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
   post '/signatures', to: 'signatures#create', as: 'signatures'
   get '/tag/:id', to: 'pages#tag', as: 'tag'
+  devise_scope :user do
+    get '/user/remove_picture', to: 'users/registrations#remove_picture', as: 'remove_picture'
+  end
 end
