@@ -3,7 +3,7 @@
   <header class="header-edit">
     <h2>Edit Profile</h2>
   </header>
-  <section class="image-edit-wrapper">
+  <section id="profile-pic-edit" class="image-edit-wrapper">
     <% if current_user.profile_pic.url %>
       <img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle" width="150" alt="profile picture" />
     <% else %>
@@ -58,7 +58,8 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Save" %>
+        <%= f.submit "Save", :class => "edit-button" %>
+        <%= f.submit "clear", :type => "reset", :class => "edit-button", :style => "margin-left: 15px;" %>
       </div>
     <% end %>
   </section>
