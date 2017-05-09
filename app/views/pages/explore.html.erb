@@ -28,16 +28,61 @@
 
     </div>
     <% count = 0 %>
-    <ul>
-        <% @petitions.each do |petition| %>
-        <% if count % 4 == 0 && count != 0 %>
-    </ul>
-    <ul>
-        <% end %>
-        <li>
-            <%= render 'shared/post', petition: petition %>
-        </li>
-        <% count = count + 1 %>
-        <% end %>
-    </ul>
+
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+            <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num">13</span>)</a></li>
+            <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Favorites (<span class="favorite-num">9</span>)</a></li>
+            <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Started (<span class="started-num">2</span>)</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="signed-tab">
+                <ul>
+                    <% @petitions.each do |petition| %>
+                    <% if count % 4 == 0 && count != 0 %>
+                </ul>
+                <ul>
+                    <% end %>
+                    <li>
+                        <%= render 'shared/post', petition: petition %>
+                    </li>
+                    <% count = count + 1 %>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="tab-pane" id="favorites-tab">
+                <ul>
+                    <% @petitions.each do |petition| %>
+                    <% if count % 4 == 0 && count != 0 %>
+                </ul>
+                <ul>
+                    <% end %>
+                    <li>
+                        <%= render 'shared/post', petition: petition %>
+                    </li>
+                    <% count = count + 1 %>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="tab-pane" id="started-tab">
+                <ul>
+                    <% @petitions.each do |petition| %>
+                    <% if count % 4 == 0 && count != 0 %>
+                </ul>
+                <ul>
+                    <% end %>
+                    <li>
+                        <%= render 'shared/post', petition: petition %>
+                    </li>
+                    <% count = count + 1 %>
+                    <% end %>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
 </div>

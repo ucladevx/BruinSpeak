@@ -312,6 +312,15 @@ ul {
   bottom: 0;
 }
 
+#edit-profile-btn {
+    background-color: #138CD9;
+    color: #F3F9FD;
+    margin-left: 0px;
+    margin: 3%;
+    width: 170px;
+    height: 50px;
+}
+
 #explore-button {
     width: 160px;
     height: 89px;
@@ -349,6 +358,20 @@ ul {
 
 .midNav {
     font-size: 25px;
+}
+
+.nav-pills > li > a
+{
+    font-size: 18px;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus
+{
+    color: #2695dc;
+    background-color: white;
+}
+
+.nav-pills .active {
+    text-decoration: underline;
 }
 
 .navbar {
@@ -502,6 +525,12 @@ ul {
   padding-bottom: 20px;
   float: left;
 }
+
+.prof-name {
+    font-weight: bold;
+}
+
+
 
 .reply {
   cursor: pointer;
