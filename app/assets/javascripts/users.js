@@ -3,6 +3,12 @@ $(function() {
     let el = document.getElementById("profile_upload");
     let file = document.getElementById("user_profile_pic");
 
+    let clear = document.getElementById("button-clear");
+    clear.onclick = function(e) {
+      e.preventDefault();
+      location.reload();
+    }
+
     el.onclick = function(e) {
       e.preventDefault();
       file.click();
