@@ -52,15 +52,13 @@ progress[value] {
 
 .pet-container {
   margin-bottom: inherit;
-}
-
-.pet-container div {
   display: inline-block;
+  width: 100%;
 }
 
 .pet-content {
   margin-left: 50px;
-  margin-bottom: inherit;
+  margin-bottom: 30px;
   width: 50%;
   float: left;
 }
@@ -124,7 +122,7 @@ progress[value] {
 }
 
 .share-card {
-  margin-left: 10px;
+  margin-left: 100px;
   width: 325px;
   height: 550px;
   box-shadow: 0 4px 8px 3px rgba(0,0,0,0.2);
@@ -133,7 +131,7 @@ progress[value] {
 }
 
 .share-container {
-  width: 35%;
+  width: 46%;
 }
 
 .share-facebook {
@@ -174,4 +172,9 @@ progress[value] {
   height: 50%;
   margin-left: 20px;
   padding: 5px;
+}
+
+@media (max-width: 1248px) {
+   .share-container { float: left; }
+   .share-card { margin-left: 50px; margin-bottom: 20px; }
 }
