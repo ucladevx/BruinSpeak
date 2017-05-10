@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @petitions = Petition.all
+    @petitions = Petition.trending()
     @top_petitions = Petition.all.limit(3)
   end
 
