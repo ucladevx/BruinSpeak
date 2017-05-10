@@ -55,13 +55,6 @@ ul {
     }
 }
 
-// .brand-small-view {
-// display: none !important;
-// }
-//
-// .brand-large-view {
-// display: inline-flex !important;
-// }
 
 .button {
   background-color: #0099cc;
@@ -81,7 +74,10 @@ ul {
 .btn {
     width: 180px;
     height: 100px;
-    // object-fit: contain;
+}
+
+.btn-nav:hover {
+    background-color: white;
 }
 
 /*
@@ -596,9 +592,7 @@ html {
   position: relative;
   min-height: 100%;
 }
-body {
-  // margin-bottom: 60px;
-}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -648,7 +642,10 @@ input, textarea {
 .navbar-form {
     padding-left: 0px;
 }
-///LLOLOL
+
+#navbar-form {
+    padding-left: 2%;
+}
 
 .navbar-collapse form[role="search"] {
     position: absolute;
@@ -790,4 +787,11 @@ body {
 
 .nav-input-group {
     width: 100%;
+}
+
+@media (min-width: 768px)
+    {
+    .navbar-right {
+        margin-right: -30px;
+    }
 }
