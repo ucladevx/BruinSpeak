@@ -25,14 +25,10 @@
         <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Started (<span class="started-num">2</span>)</a></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane in active" id="signed-tab">
-            PETITIONS1
-        </div>
-        <div class="tab-pane" id="favorites-tab">
-            PETITIONS2
-        </div>
-        <div class="tab-pane" id="started-tab">
-            PETITIONS3
-        </div>
+        <% @petitions.each do |petition| %>
+            <div class="tab-pane in active" id="signed-tab">
+                <%= render 'shared/post', petition: petition %>
+            </div>
+        <% end %>
     </div>
 </div>
