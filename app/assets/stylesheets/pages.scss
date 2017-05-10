@@ -348,6 +348,11 @@ ul {
     text-align: center;
 }
 
+.pages-tabs
+{
+    width: 500px;
+}
+
 .pet-container {
   margin-bottom: inherit;
 }
@@ -478,14 +483,6 @@ ul {
   z-index: 1;
   border-radius: 5px;
 }
-
-@media (min-width: 902px) {
-    .container {
-        width: 460px;
-    }
-
-}
-
 
 //footer
 html {
