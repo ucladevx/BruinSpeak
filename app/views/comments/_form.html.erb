@@ -1,7 +1,11 @@
-<%= form_for @new_comment do |f| %>
-  <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
-  <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
-  <%= f.text_area :body, label: false, class: 'form-control' %>
+<% if current_user %>
+  <%= form_for @new_comment do |f| %>
+    <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
+    <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
+    <%= f.text_area :body, label: false, class: 'form-control' %>
 
-  <%= submit_tag 'Post comment', class: 'btn btn-primary' %>
+    <%= submit_tag 'Post comment', class: 'btn btn-primary' %>
+  <% end %>
+<% else %>
+  <p>You must be signed in to comment</p>
 <% end %>

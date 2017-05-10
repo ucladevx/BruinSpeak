@@ -1,6 +1,6 @@
 <% comments.each do |comment| %>
   <div class="comment">
-    <% if comment.user_id == current_user.id %>
+    <% if current_user and comment.user_id == current_user.id %>
       <%= link_to  "x", comment_path(comment), method: :delete, remote: false, confirm: "Are you sure you want to remove this comment?", disable_with: "x", class: 'close' %>
     <% end %>
 
@@ -16,14 +16,18 @@
     <span class="comment-reply">reply</span>
 
     <div class="reply-form">
-      <%= form_for @new_comment do |f| %>
-        <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
-        <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
-        <%= f.hidden_field :comment_id, value: comment.id %>
+      <% if current_user %>
+        <%= form_for @new_comment do |f| %>
+          <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
+          <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
+          <%= f.hidden_field :comment_id, value: comment.id %>
 
-        <%= f.text_area :body, class: 'form-control' %>
+          <%= f.text_area :body, class: 'form-control' %>
 
-        <%= submit_tag "Post Reply", class: 'btn btn-primary' %>
+          <%= submit_tag "Post Reply", class: 'btn btn-primary' %>
+        <% end %>
+      <% else %>
+        <p>You must be signed in to reply</p>
       <% end %>
     </div>
 
