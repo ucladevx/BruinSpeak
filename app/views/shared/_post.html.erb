@@ -12,7 +12,9 @@
   </div>
   <div class="con">
     <%= link_to petition.title, petition_path(petition.id), class: "petition-title" %>
-    <p class="petition-author"><%= petition.user.full_name %></p>
+    <%= link_to user_path(petition.user.id) do %>
+      <p class="petition-author"><%= petition.user.full_name %></p>
+    <% end %>
     <p class="petition-desc"><%= petition.description %></p>
   </div>
   <div class="con bottom">
@@ -25,10 +27,10 @@
         <div class="stats-value"><%= petition.goal %></div>
         <span>needed</span>
       </li>
-      <li>
+      <!--<li>
         <div class="stats-value">2</div>
         <span>days remaining</span>
-      </li>
+      </li>-->
       <li>
         <%= link_to petition_path(petition.id) do %>
           <img class="sign-icon" src=<%= image_path("pencil.png") %> alt="Sign">
