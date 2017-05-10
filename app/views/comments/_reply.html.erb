@@ -4,7 +4,15 @@
       <%= link_to  "x", comment_path(comment), method: :delete, remote: false, confirm: "Are you sure you want to remove this comment?", disable_with: "x", class: 'close' %>
     <% end %>
 
-    <h4><%= comment.user.first_name %></h4>
+    <%= link_to user_path(@petition.user.id) do %>
+    <h4><span>
+      <% if @petition.user.profile_pic.url %>
+        <img class="img-circle nav-prof" style="padding: 0;" src=<%= image_path(@petition.user.profile_pic.url) %> alt="Profile picture">
+      <% else %>
+        <img class="img-circle nav-prof" style="padding: 0;" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+      <% end %>
+      </span><%= comment.user.first_name %></h4>
+    <% end %>
     <div class="comment-body">
       <%= comment.body %>
     </div>
