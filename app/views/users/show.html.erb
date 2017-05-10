@@ -6,38 +6,33 @@
     <% end %>
 
     <h1 class="prof-name"><%= @user.first_name + " " + @user.last_name %></h1>
-    <!-- <br> -->
-    <h2><span class="petition-num">23 <span>Petitions | Joined <span class="join-date">April 2017</span></h2>
+    <h4 class="prof-sub"><span class="petition-num">23 <span>Petitions | Joined <span class="join-date">April 2017</span></h2>
 
     <button type="button" class="btn btn-default" id="edit-profile-btn" aria-label="Left Align">
         EDIT PROFILE
     </button>
 
     <div >
-    <p class="profile-info">Major: <span class="profile-values"><%= @user.major %></span></p>
-    <p class="profile-info">Organizations: <span class="profile-values"><%= @user.organizations %></span></p>
+        <p class="profile-info">Major: <span class="profile-values"><%= @user.major %></span></p>
+        <p class="profile-info">Organizations: <span class="profile-values"><%= @user.organizations %></span></p>
     </div>
-    <div class="container">
-        <ul class="nav nav-pills nav-justified">
-            <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num">13</span>)</a></li>
-            <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Favorites (<span class="favorite-num">9</span>)</a></li>
-            <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Started (<span class="started-num">2</span>)</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane" id="signed-tab">
-                <p>First para hi there</p>
-            </div>
-            <div class="tab-pane" id="favorites-tab">
-                <p>favorites para hi there</p>
-            </div>
-            <div class="tab-pane" id="started-tab">
-                <p>started para hi there</p>
-            </div>
+</div>
 
+<div class="container">
+    <ul class="nav nav-pills nav-justified">
+        <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num">13</span>)</a></li>
+        <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Favorites (<span class="favorite-num">9</span>)</a></li>
+        <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Started (<span class="started-num">2</span>)</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane in active" id="signed-tab">
+            PETITIONS1
         </div>
-
-
+        <div class="tab-pane" id="favorites-tab">
+            PETITIONS2
+        </div>
+        <div class="tab-pane" id="started-tab">
+            PETITIONS3
+        </div>
     </div>
-
-
 </div>

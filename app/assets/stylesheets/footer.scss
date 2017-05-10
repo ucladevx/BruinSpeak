@@ -1,0 +1,35 @@
+@media (max-width: 448px){
+    .footer-right-elements
+    {
+        display: none;
+    }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+    border-top: 1px solid #e7e7e7;
+    font-size: 16px;
+}
+
+.copyright {
+    padding-left: 10px;
+}
+
+.footer-right-elements a{
+    color: #19172A;
+}
+
+.footer-logo{
+    padding-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.footer-stack {
+    line-height: 20px;
+}

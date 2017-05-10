@@ -450,6 +450,12 @@ ul {
 
 .prof-name {
     font-weight: bold;
+    font-size: 40px;
+}
+
+.prof-sub {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 
@@ -510,37 +516,6 @@ ul {
 html {
   position: relative;
   min-height: 100%;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-    border-top: 1px solid #e7e7e7;
-    font-size: 16px;
-}
-
-.copyright {
-    padding-left: 10px;
-}
-
-.footer-right-elements a{
-    color: #19172A;
-}
-
-.footer-logo{
-    padding-top: 10px;
-}
-
-.footer-padding {
-}
-
-
-.footer-stack {
-    line-height: 20px;
 }
 
 .copyright a {
