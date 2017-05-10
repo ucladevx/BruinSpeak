@@ -1,2 +1,9 @@
 <h1>Searched for: <%= @search %></h1>
 <p>Found <%= @petitions.count %> petition(s)</p>
+<ul>
+  <% @petitions.each do |petition| %>
+    <li>
+      <%= render 'shared/post', petition: petition %>
+    </li>
+  <% end %>
+</ul>
