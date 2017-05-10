@@ -1,8 +1,8 @@
 <div class="profile-wrapper">
     <% if @user.profile_pic.url %>
-    <img class="prof-icon" src=<%= image_path(@user.profile_pic.url) %> alt="Profile picture">
+    <img class="picture img-circle prof-icon" src=<%= image_path(@user.profile_pic.url) %> alt="Profile picture">
     <% else %>
-    <img class="prof-icon" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+    <img class="picture img-circle prof-icon" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
     <% end %>
 
     <h1 class="prof-name"><%= @user.first_name + " " + @user.last_name %></h1>
