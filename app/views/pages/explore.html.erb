@@ -1,43 +1,86 @@
 <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" %>
-<div>
 
-    <div class="center-info" id="explore-top">
-        <%= javascript_include_tag "explore", "data-turbolinks-track" => true  %>
-        <h1>Explore Petitions</h1>
-        <h2>Diverse Proposals. Be the change you want to see.</h2>
+<div class="center-info" id="explore-top">
+    <%= javascript_include_tag "explore", "data-turbolinks-track" => true  %>
+    <h1>Explore Petitions</h1>
+    <h2>Diverse Proposals. Be the change you want to see.</h2>
 
-        <div class="container-fluid" id="explore-buttons-grid">
-            <div class="row show-grid">
+    <div class="container-fluid" id="explore-buttons-grid">
+        <div class="row show-grid">
 
-                <% @tags.each do |tag| %>
-                    <%= link_to tag_path(tag.id) do %>
-                    <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class=""><%= tag.name %></span>
-                    </button>
-                    <% end %>
+            <% @tags.each do |tag| %>
+            <%= link_to tag_path(tag.id) do %>
+            <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><div class=""><%= tag.name %></div>
+            </button>
+            <% end %>
+            <% end %>
+            <% if @tags.count < 15 %>
+            <% (15 - @tags.count).times do %>
+            <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><div class=""></div>
+            </button>
+            <% end %>
+            <% end %>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="container">
+    <ul class="nav nav-pills nav-justified">
+        <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num">13</span>)</a></li>
+        <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Favorites (<span class="favorite-num">9</span>)</a></li>
+        <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Started (<span class="started-num">2</span>)</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane in active" id="signed-tab">
+            <% count = 0 %>
+            <ul>
+                <% @petitions.each do |petition| %>
+                <% if count % 4 == 0 && count != 0 %>
+            </ul>
+            <ul>
                 <% end %>
-                <% if @tags.count < 15 %>
-                    <% (15 - @tags.count).times do %>
-                        <button  type="button" class="btn btn-default col-sm-6 col-md-1-5 col-lg-1-5" id="explore-button"><span class=""></span>
-                        </button>
-                    <% end %>
+                <li>
+                    <%= render 'shared/post', petition: petition %>
+                </li>
+                <% count = count + 1 %>
                 <% end %>
-
-                 </div>
-            </div>
+            </ul>
+        </div>
+        <div class="tab-pane" id="favorites-tab">
+            <% count = 0 %>
+            <ul>
+                <% @petitions.each do |petition| %>
+                <% if count % 4 == 0 && count != 0 %>
+            </ul>
+            <ul>
+                <% end %>
+                <li>
+                    <%= render 'shared/post', petition: petition %>
+                </li>
+                <% count = count + 1 %>
+                <% end %>
+            </ul>
+        </div>
+        <div class="tab-pane" id="started-tab">
+            <% count = 0 %>
+            <ul>
+                <% @petitions.each do |petition| %>
+                <% if count % 4 == 0 && count != 0 %>
+            </ul>
+            <ul>
+                <% end %>
+                <li>
+                    <%= render 'shared/post', petition: petition %>
+                </li>
+                <% count = count + 1 %>
+                <% end %>
+            </ul>
         </div>
 
     </div>
-    <% count = 0 %>
-    <ul class="petition-ul">
-        <% @petitions.each do |petition| %>
-        <% if count % 4 == 0 && count != 0 %>
-    </ul>
-    <ul>
-        <% end %>
-        <li>
-            <%= render 'shared/post', petition: petition %>
-        </li>
-        <% count = count + 1 %>
-        <% end %>
-    </ul>
+
+
 </div>

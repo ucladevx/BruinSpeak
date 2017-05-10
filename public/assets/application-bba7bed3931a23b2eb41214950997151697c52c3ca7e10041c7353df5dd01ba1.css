@@ -7,7 +7,6 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /* line 9, /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -1717,7 +1716,6 @@ html {
 
 /* line 27, /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_scaffolding.scss */
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;

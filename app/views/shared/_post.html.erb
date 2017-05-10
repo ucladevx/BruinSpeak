@@ -12,25 +12,27 @@
   </div>
   <div class="con">
     <%= link_to petition.title, petition_path(petition.id), class: "petition-title" %>
-    <p class="petition-author"><%= petition.user.first_name + " " + petition.user.last_name %></p>
+    <p class="petition-author"><%= petition.user.full_name %></p>
     <p class="petition-desc"><%= petition.description %></p>
   </div>
   <div class="con bottom">
     <ul class="petition-stats">
       <li>
-        <div class="stats-value">100</div>
-        <span class="stats-label">signed</span>
+        <div class="stats-value"><%= petition.signatures.count %></div>
+        <span>signed</span>
       </li>
       <li>
-        <div class="stats-value">50</div>
-        <span class="stats-label">needed</span>
+        <div class="stats-value"><%= petition.goal %></div>
+        <span>needed</span>
       </li>
       <li>
         <div class="stats-value">2</div>
-        <span class="stats-label">days remaining</span>
+        <span>days remaining</span>
       </li>
       <li>
-        <img class="sign-icon" src=<%= image_path("pencil.png") %> alt="Sign">
+        <%= link_to petition_path(petition.id) do %>
+          <img class="sign-icon" src=<%= image_path("pencil.png") %> alt="Sign">
+        <% end %>
       </li>
     </ul>
   </div>
