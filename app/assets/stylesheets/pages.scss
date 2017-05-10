@@ -644,7 +644,7 @@ input, textarea {
 }
 
 #navbar-form {
-    padding-left: 2%;
+    // padding-left: 2%;
 }
 
 .navbar-collapse form[role="search"] {
@@ -787,6 +787,7 @@ body {
 
 .nav-input-group {
     width: 100%;
+    margin-left: 10px;
 }
 
 @media (min-width: 768px)
