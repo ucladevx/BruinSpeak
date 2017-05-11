@@ -4,11 +4,13 @@
     <h2>Edit Profile</h2>
   </header>
   <section id="profile-pic-edit" class="image-edit-wrapper">
+    <!--<div id="profile-pic-wrapper"><-->
     <% if current_user.profile_pic.url %>
-      <img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle" width="150" alt="profile picture" />
+      <img src=<%= image_path(current_user.profile_pic.url) %> style="width:150px; height:150px" class="picture img-circle prof-icon" alt="profile picture" />
     <% else %>
-      <img src=<%= image_path("default_profile_picture.png") %> class="img-circle" width="150" alt="profile picture" />
+      <img src=<%= image_path("default_profile_picture.png") %> style="width:150px; height:150px" class="picture img-circle prof-icon" alt="profile picture" />
     <% end %>
+    <!--</div>-->
   </section>
   <div class="image-links-container">
     <a href="#" id="profile_upload">Upload Picture</a>
