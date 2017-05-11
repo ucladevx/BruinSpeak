@@ -59,6 +59,9 @@ gem 'acts_as_commentable_with_threading', '~> 2.0.1'
 # Petition/post tagging
 gem 'acts-as-taggable-on', '~> 4.0'
 
+# Infinite scrolling
+gem 'will_paginate', '~> 3.1.5'
+
 group :development do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

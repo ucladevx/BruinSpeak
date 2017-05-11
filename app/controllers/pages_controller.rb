@@ -1,7 +1,11 @@
 class PagesController < ApplicationController
   def home
-    @petitions = Petition.trending()
+    @petitions = Petition.trending().paginate(page: params[:page], per_page: 8)
     @top_petitions = Petition.all.limit(3)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def explore

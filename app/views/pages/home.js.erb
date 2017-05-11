@@ -1,0 +1,11 @@
+<% @petitions.each do |petition| %>
+  $('#petition-cards').append('<li><%= j render "shared/post", petition: petition %></li>')
+<% end %>
+<% if @petitions.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @petitions %>');
+  console.log("trying to replace with next page")
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+  console.log("removing scroll listener")
+<% end %>
