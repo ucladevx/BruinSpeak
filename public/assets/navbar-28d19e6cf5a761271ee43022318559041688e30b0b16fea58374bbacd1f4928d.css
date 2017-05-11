@@ -1,0 +1,348 @@
+/* line 1, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.btn-nav:hover {
+  background-color: white;
+}
+
+/* line 4, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.leftNav, .rightNav {
+  font-size: 18px;
+}
+
+/* line 9, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.midNav {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+/* line 14, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.nav-pills > li > a {
+  font-size: 18px;
+}
+
+/* line 18, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #2695dc;
+  background-color: white;
+}
+
+/* line 24, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.nav-pills .active {
+  text-decoration: underline;
+}
+
+/* line 28, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+#nav-x-btn {
+  margin-left: 0px;
+}
+
+/* line 38, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar {
+  margin-bottom: 0px;
+}
+
+/* line 42, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-custom {
+  background-color: white;
+  color: #19172A;
+  border-radius: 0;
+}
+
+/* line 48, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-custom .navbar-nav > li > a {
+  color: #19172A;
+}
+
+/* line 52, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-custom .navbar-nav > .active > a {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+/* line 57, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open > a {
+  text-decoration: none;
+}
+
+/* line 65, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-custom .navbar-brand {
+  color: #19172A;
+}
+
+/* line 69, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-dynam-content {
+  padding-top: 13px;
+}
+
+/* line 73, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.nav-regularbar {
+  display: block;
+}
+
+/* line 77, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.nav-searchbar {
+  display: none;
+}
+
+/* line 81, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-brand-styling {
+  display: inline-flex;
+  /* make element size relative to content */
+  align-items: center;
+  /* vertical alignment of contents */
+  line-height: 40px;
+  /* control height with line-height or padding */
+  padding: 0px 10px;
+  /* horizontal with padding-l/r */
+}
+
+@media (min-width: 902px) {
+  /* line 89, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
+/* line 96, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-form {
+  padding-left: 0px;
+}
+
+/* line 101, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-collapse form[role="search"] {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  z-index: 0;
+}
+
+/* line 110, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-collapse form[role="search"] button,
+.navbar-collapse form[role="search"] input {
+  padding: 8px 12px;
+  border-radius: 0px;
+  border-width: 0px;
+  box-shadow: none;
+  outline: none;
+}
+
+/* line 120, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-collapse form[role="search"] input {
+  padding: 16px 12px;
+  font-size: 14pt;
+  font-style: italic;
+  box-shadow: none;
+}
+
+/* line 126, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-collapse form[role="search"] button[type="reset"] {
+  display: none;
+}
+
+@media (min-width: 902px) {
+  /* line 131, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse {
+    padding-top: 0px !important;
+    padding-right: 38px !important;
+  }
+
+  /* line 135, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"] button,
+  .navbar-collapse form[role="search"] input {
+    padding: 15px 12px;
+  }
+
+  /* line 139, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"] input {
+    font-size: 18pt;
+    opacity: 0;
+    display: none;
+    height: 50px;
+  }
+
+  /* line 145, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"].active {
+    width: 100%;
+  }
+
+  /* line 148, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"].active button,
+  .navbar-collapse form[role="search"].active input {
+    display: table-cell;
+    opacity: 1;
+  }
+
+  /* line 153, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"].active input {
+    width: 100%;
+  }
+}
+/* line 158, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+#search-form {
+  display: none;
+}
+
+/* line 162, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-collapse {
+  position: relative;
+  padding-top: 30px !important;
+  max-height: 270px;
+}
+
+/* line 167, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-collapse form[role="search"] {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  z-index: 0;
+}
+
+/* line 176, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-collapse form[role="search"] button,
+.navbar-collapse form[role="search"] input {
+  padding: 8px 12px;
+  border-radius: 0px;
+  border-width: 0px;
+  box-shadow: none;
+  outline: none;
+}
+
+/* line 184, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.navbar-collapse form[role="search"] input {
+  padding: 16px 12px;
+  font-size: 14pt;
+  font-style: italic;
+  box-shadow: none;
+}
+
+@media (min-width: 902px) {
+  /* line 192, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse {
+    padding-top: 0px !important;
+    padding-right: 38px !important;
+  }
+
+  /* line 196, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"] {
+    width: 38px;
+  }
+
+  /* line 199, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"] button,
+  .navbar-collapse form[role="search"] input {
+    padding: 15px 12px;
+  }
+
+  /* line 203, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"] input {
+    padding: 25px 12px;
+    font-size: 18pt;
+    opacity: 0;
+    display: none;
+  }
+
+  /* line 209, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"].active {
+    width: 100%;
+  }
+
+  /* line 212, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"].active button,
+  .navbar-collapse form[role="search"].active input {
+    display: table-cell;
+    opacity: 1;
+  }
+
+  /* line 217, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse form[role="search"].active input {
+    width: 100%;
+    text-align: right;
+  }
+}
+/* line 226, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+#nav-search-span {
+  width: 1%;
+}
+
+/* line 230, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.nav-input-group {
+  width: 100%;
+  margin-left: 10px;
+}
+
+@media (min-width: 902px) {
+  /* line 237, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-right {
+    margin-right: -30px;
+  }
+}
+@media (max-width: 902px) {
+  /* line 244, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-header {
+    float: none;
+  }
+
+  /* line 247, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-left, .navbar-right {
+    float: none !important;
+  }
+
+  /* line 250, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* line 253, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  /* line 257, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+
+  /* line 261, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  /* line 264, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+  }
+
+  /* line 268, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-nav > li {
+    float: none;
+  }
+
+  /* line 271, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* line 275, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+  .collapse.in {
+    display: block !important;
+  }
+}
+/* line 280, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/navbar.scss */
+.nav-prof {
+  width: 40px;
+  padding-top: 11%;
+}

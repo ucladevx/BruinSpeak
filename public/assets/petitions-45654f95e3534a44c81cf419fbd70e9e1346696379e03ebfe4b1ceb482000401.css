@@ -1,0 +1,213 @@
+/* line 5, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+progress[value] {
+  width: 250px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* line 11, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.board-members {
+  margin: 0;
+}
+
+/* line 15, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.board-members a {
+  color: #328FD6;
+}
+
+/* line 19, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.bottom-petition-text {
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+/* line 25, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.btn {
+  height: auto;
+  width: auto;
+  margin-left: 50px;
+}
+
+/* line 31, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.new_comment {
+  margin-bottom: 10px;
+  width: 890px;
+  margin-left: 15px;
+}
+
+/* line 37, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.new_comment textarea {
+  margin-bottom: 10px;
+}
+
+/* line 41, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.new_comment input {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+/* line 46, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.new_signature input {
+  margin-top: 5px;
+  margin-left: 20px;
+  width: 30%;
+  background-color: #328FD6;
+}
+
+/* line 53, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.pet-container {
+  margin-bottom: inherit;
+  display: inline-block;
+  width: 100%;
+}
+
+/* line 59, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.pet-content {
+  margin-left: 50px;
+  margin-bottom: 30px;
+  width: 50%;
+  float: left;
+}
+
+/* line 66, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.pet-img-container {
+  border: 1px solid #DDDDDD;
+  width: 700px;
+  height: 450px;
+}
+
+/* line 72, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.petition-page-author {
+  font-size: 30px;
+  letter-spacing: 1.6px;
+  color: #000120;
+  margin-top: 0;
+  width: 320px;
+  float: left;
+}
+
+/* line 81, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.petition-page-author p {
+  margin-top: 0;
+}
+
+/* line 85, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.petition-page-header {
+  text-align: center;
+  width: 766px;
+  overflow: auto;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+/* line 93, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.petition-page-header h1 {
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+/* line 98, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.petition-page-header div {
+  display: inline-block;
+}
+
+/* line 102, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.petition-page-title {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 1.6px;
+  color: #000120;
+  margin-bottom: 15px;
+}
+
+/* line 110, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.profile-icon {
+  width: 200px;
+  padding-right: 0;
+  padding-bottom: 20px;
+  float: left;
+  margin-left: 65px;
+}
+
+/* line 118, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.picture {
+  width: 50px;
+  height: 50px;
+  float: right;
+  object-fit: cover;
+}
+
+/* line 125, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.share-card {
+  margin-left: 100px;
+  width: 325px;
+  height: 550px;
+  box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: relative;
+}
+
+/* line 134, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.share-container {
+  width: 46%;
+}
+
+/* line 138, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.share-facebook {
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* line 144, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.share-icon {
+  width: 25px;
+  height: 25px;
+}
+
+/* line 149, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.share-title {
+  padding-top: 20px;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+/* line 157, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.sign-icon {
+  float: right;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+/* line 164, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.tag {
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  border-radius: 5px;
+}
+
+/* line 171, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+.write-box {
+  width: 290px;
+  height: 50%;
+  margin-left: 20px;
+  padding: 5px;
+}
+
+@media (max-width: 1248px) {
+  /* line 179, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+  .share-container {
+    float: left;
+  }
+
+  /* line 180, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/petitions.scss */
+  .share-card {
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
+}

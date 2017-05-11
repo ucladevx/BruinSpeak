@@ -1,0 +1,181 @@
+/*
+  Color Variables
+*/
+/*
+  Breakpoint Variables
+*/
+/* line 4, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+#clear-picture {
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  color: white;
+  letter-spacing: 1.5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: 0;
+  margin-top: 25px;
+  background-color: #328fd6;
+  display: block;
+}
+@media (max-width: 375px) {
+  /* line 4, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+  #clear-picture {
+    margin: 15px auto;
+  }
+}
+
+/* line 23, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.wrapper-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+/* line 32, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.header-edit {
+  margin: 25px 0;
+}
+
+/* line 37, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.image-edit-wrapper .img-circle {
+  margin: auto;
+  border: 2px solid #328fd6;
+}
+
+/* line 43, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+#file-upload-edit {
+  display: none;
+}
+
+/* line 47, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+#profile-pic-preview {
+  border: 1px solid #c8c8c8;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+/* line 53, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.profile-preview {
+  margin: auto;
+  display: block;
+  height: 150px;
+}
+
+/* line 59, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.image-links-container {
+  margin-top: 25px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+/* line 66, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.image-links-container span {
+  color: #000120;
+  font-weight: bolder;
+}
+/* line 71, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.image-links-container a {
+  border-bottom: 2px solid #328fd6;
+  color: #328fd6;
+}
+/* line 76, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.image-links-container a:hover {
+  text-decoration: none;
+}
+
+/* line 81, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.hide {
+  display: none;
+}
+
+/* line 86, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.form-edit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 94, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.form-edit form {
+  width: 70%;
+}
+@media (max-width: 375px) {
+  /* line 94, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+  .form-edit form {
+    width: 90%;
+  }
+}
+/* line 101, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.form-edit form .field {
+  width: 100%;
+}
+/* line 104, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.form-edit form .field input, .form-edit form .field textarea {
+  padding: 10px;
+  width: 100%;
+  border-radius: 3px;
+  border: solid 1px #c8c8c8;
+  color: #c8c8c8;
+}
+/* line 111, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.form-edit form .field input:focus, .form-edit form .field textarea:focus {
+  border: solid 1px #328fd6;
+}
+/* line 115, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.form-edit form .field textarea {
+  min-height: 100px;
+}
+/* line 120, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.form-edit form .actions {
+  margin-top: 25px;
+}
+
+/* line 126, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.edit-button {
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  letter-spacing: 1.5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: 0;
+  margin: 5px;
+  background-color: #328fd6;
+}
+
+/* line 142, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.prof-icon {
+  width: 100px;
+  height: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* line 149, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.profile-info {
+  text-align: left;
+  font-size: 22px;
+}
+
+/* line 154, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.profile-values {
+  font-size: 18px;
+}
+
+/* line 158, /Users/oozgur/Desktop/bruinspeak/app/assets/stylesheets/users.scss */
+.profile-wrapper {
+  margin: 10px auto;
+  width: 300px;
+  text-align: center;
+}
