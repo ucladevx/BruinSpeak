@@ -11,4 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( explore.js )
 Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += [/^[-_a-zA-Z0-9]*\..*/]
+Rails.application.config.assets.precompile += %w( *.js ^[^_]*.css *.css.erb )
