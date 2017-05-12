@@ -2,13 +2,14 @@
     background-color: white;
 }
 .leftNav, .rightNav {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 
 .midNav {
     font-size: 23px;
     font-weight: bold;
+    margin-left: 25px;
 }
 
 .nav-pills > li > a
@@ -275,10 +276,19 @@
     .collapse.in{
         display:block !important;
     }
+    .midNav {
+        margin-left: 0px;
+    }
+    #nav-user {
+        padding-left: 14px;
+    }
 }
 
-.nav-prof
-{
+.nav-prof{
     width: 40px;
     padding-top: 11%
+}
+
+.navbar-brand{
+    font-size: 16px;
 }

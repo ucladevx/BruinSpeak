@@ -16,7 +16,7 @@
             <div>Start Petition</div>
             <% end %>
 
-            <ul class="nav navbar-nav navbar-center midNav" style="margin-left: 25px;">
+            <ul class="nav navbar-nav navbar-center midNav">
                  <li>
                     <%= link_to root_path do %>
                     BRUIN<span id="speak">SPEAK<span>
@@ -28,7 +28,8 @@
 
                 <li><%= link_to "Explore", explore_path %></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right rightNav">
+
+            <ul class="nav navbar-nav navbar-right rightNav" id="nav-user">
                 <% if current_user %>
                 <%= link_to user_path(current_user.id) do %>
                     <li class="navbar-dynam-content" ><%= current_user.first_name + " " + current_user.last_name %></li>
