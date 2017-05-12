@@ -1,3 +1,28 @@
+@import "_variables";
+@import "bootstraply";
+@import "footer";
+@import "forms";
+@import "navbar";
+@import "petitions";
+@import "signatures";
+@import "users";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+* {
+  box-sizing: border-box;
+}
+
+ html, body {
+   font-family: 'Open Sans', sans-serif;
+ }
+
+html {
+  padding-bottom: 60px;
+ }
+
+
+
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
