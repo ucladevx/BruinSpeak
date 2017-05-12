@@ -78,6 +78,9 @@ ul {
     .brand-large-view {
     display: none !important;
     }
+    .carousel {
+        display: none;
+    }
 }
 
 
@@ -238,8 +241,8 @@ ul {
   margin: auto;
   margin-bottom: 60px;
   display: block;
-  height: 700px;
-  width: 1200px;
+  max-height: 700px;
+  max-width: 1200px;
   padding-top: 50px;
   background-size: 100% 350px;
   background-position: top;
@@ -354,6 +357,7 @@ ul {
 #explore-top{
     background-image: url("/assets/colorful_circles.png");
     height: inherit;
+    width: 80%;
 }
 
 #explore-top span {
