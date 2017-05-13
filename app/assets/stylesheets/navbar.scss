@@ -1,12 +1,12 @@
 .btn-nav:hover {
     background-color: white;
 }
-.leftNav, .rightNav {
+.navbar-right {
     font-size: 16px;
 }
 
 
-.midNav {
+.navbar-center {
     font-size: 23px;
     font-weight: bold;
     margin-left: 25px;
@@ -270,7 +270,7 @@
     .collapse.in{
         display:block !important;
     }
-    .midNav {
+    .navbar-center {
         margin-left: 0px;
     }
     #nav-user {
