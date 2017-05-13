@@ -47,8 +47,11 @@
     <p><%= @petition.description %></p>
 
     <p class="bottom-petition-text">This petition will be delivered to:</p>
-    <% get_recievers(@petition).each do |reciever| %>
-      <p class="board-members"><%= reciever %></p>
+    <% recievers = get_recievers(@petition) %>
+    <% if recievers %>
+      <% get_recievers(@petition).each do |reciever| %>
+        <p class="board-members"><%= reciever %></p>
+      <% end %>
     <% end %>
   </div>
   <div class="share-container">
