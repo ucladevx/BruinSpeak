@@ -41,13 +41,13 @@
 </div>
 <% count = 0 %>
 <h1 style="padding-left:50px; margin-bottom:40px">What's Popular</h1>
-<ul>
+<div class="home-petition-wrapper">
   <div id="petition-cards">
     <% @petitions.each do |petition| %>
-      <li><%= render 'shared/post', petition: petition %></li>
+      <%= render 'shared/post', petition: petition %>
     <% end %>
   </div>
   <div id="infinite-scrolling">
     <%= will_paginate @petitions %>
   </div>
-</ul>
+</div>
