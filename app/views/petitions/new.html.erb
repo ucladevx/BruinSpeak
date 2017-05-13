@@ -51,7 +51,13 @@
         <%= f.number_field :goal, min: 10, value: 10 %>
       </p><br>
 
-      <h2><b>6. Make it Public</b></h2>
+      <h2><b>5. Requesting Money</b></h2>
+      <p>Ask the student government for money for your cause.</p>
+      <p>
+        <%= f.number_field :money_request, min: 0, value: 0 %>
+      </p><br>
+
+      <h2><b>7. Make it Public</b></h2>
       <p>Do you want to launch it right now or wait until later?</p>
       <p>
         <%= f.check_box :public %>

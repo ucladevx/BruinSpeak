@@ -6,7 +6,7 @@
       <% end %>
     <% else %>
       <%= link_to petition_path(petition.id) do %>
-        <img class="petition-img" src=http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg alt="Avatar">
+        <img class="petition-img" src="/assets/card_default" alt="petition image">
       <% end %>
     <% end %>
   </div>
@@ -17,24 +17,6 @@
     <% end %>
     <p class="petition-desc"><%= petition.description[0..100] %>...</p>
   </div>
-  <!-- <div class="con bottom">
-    <ul class="petition-stats">
-      <li>
-        <div class="stats-value"><%= petition.signatures.count + 1 %></div>
-        <span>signed</span>
-      </li>
-      <li>
-        <div class="stats-value"><%= petition.goal %></div>
-        <span>needed</span>
-      </li>
-      <li>
-        <%= link_to petition_path(petition.id) do %>
-          <img class="sign-icon" src=<%= image_path("pencil.png") %> alt="Sign">
-        <% end %>
-      </li>
-    </ul>
-  </div> -->
-
   <div class="petition-stats-wrapper">
     <div class="petition-stats-col">
       <img width="50px" height="50px" class="petiton-stat-img" src="/assets/supporters_icon.png">
@@ -46,7 +28,7 @@
     <div class="petition-stats-col">
       <img width="50px" height="50px" class="petiton-stat-img" src="/assets/money_icon.png">
       <div class="petition-stat-stack">
-        <div>$1000</div>
+        <div>$<%= petition.money_request %></div>
         <div>Requested</div>
       </div>
     </div>
