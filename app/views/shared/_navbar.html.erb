@@ -16,7 +16,7 @@
             <div>Start Petition</div>
             <% end %>
 
-            <ul class="nav navbar-nav navbar-center midNav">
+            <ul class="nav navbar-nav navbar-center">
                  <li>
                     <%= link_to root_path do %>
                     BRUIN<span id="speak">SPEAK<span>
@@ -24,17 +24,17 @@
                 </li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right rightNav">
+            <ul class="nav navbar-nav navbar-right">
 
                 <li><%= link_to "Explore", explore_path %></li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right rightNav" id="nav-user">
+            <ul class="nav navbar-nav navbar-right" id="nav-user">
                 <% if current_user %>
                 <%= link_to user_path(current_user.id) do %>
                     <li class="navbar-dynam-content" ><%= current_user.first_name + " " + current_user.last_name %></li>
                     <% if current_user.profile_pic.url %>
-                    <li><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle nav-prof" alt="edit" /></li>
+                    <li><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle nav-prof" style="object-fit: cover;" alt="edit" /></li>
                     <% else %>
                     <li><img src=<%= image_path("default_profile_picture.png") %> class="img-circle nav-prof" alt="edit" /></li>
                     <% end %>
@@ -42,14 +42,14 @@
             </ul>
 
 
-            <ul class="nav navbar-nav navbar-right rightNav">
+            <ul class="nav navbar-nav navbar-right">
                 <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
                 <% else %>
                 <li><%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></li>
                 <% end %>
             </ul>
 
-            <%= form_tag(search_path, method: 'get', class: 'navbar-form', role: 'search', id: 'navbar-form') do %>
+            <%= form_tag(search_path, method: 'get', class: 'navbar-form nav navbar-nav navbar-right', role: 'search', id: 'navbar-form') do %>
                 <div class="input-group nav-input-group">
 
                     <span class="input-group-btn" id="nav-search-span">

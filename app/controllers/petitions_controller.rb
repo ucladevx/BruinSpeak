@@ -24,6 +24,21 @@ class PetitionsController < ApplicationController
     end
   end
 
+  def destroy
+    @petition = Petition.find(params[:id])
+    @petition.signatures.each do |signature|
+      signature.destroy
+    end
+    @petition.tags.each do |tag|
+      tag.destroy
+    end
+    @petition.comment_threads.each do |comment|
+      comment.destroy
+    end
+    @petition.destroy
+    redirect_to root_path
+  end
+
   private
 
   def petitionParams

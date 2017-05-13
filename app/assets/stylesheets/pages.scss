@@ -384,6 +384,9 @@ ul {
     padding-top: 20px;
     padding-bottom: 20px;
     outline: none;
+    border-radius: 0;
+    // box-shadow: 2px 2px 2px  grey;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
 
 #explore-buttons-grid {
@@ -416,6 +419,7 @@ ul {
 .pages-tabs
 {
     width: 500px;
+    margin-left: 2%;
 }
 
 .pet-container {

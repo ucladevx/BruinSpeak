@@ -16,6 +16,12 @@
   <% end %>
 </div>
 
+<% if current_user and @petition.user.id == current_user.id %>
+  <div class="container" style="margin-bottom: 50px;">
+    <%= link_to "Delete Post", petition_path(@petition.id), method: :delete %>
+  </div>
+<% end %>
+
 <div class="pet-container">
   <div class="pet-content">
     <div class="pet-img-container">

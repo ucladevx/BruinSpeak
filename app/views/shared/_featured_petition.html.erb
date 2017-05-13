@@ -14,11 +14,11 @@
   <div class="carousel-bottom">
     <ul class="petition-stats-carousel">
       <li>
-        <div class="stats-value"><%= petition.goal %></div>
+        <div class="stats-value"><%= petition.signatures.count + 1 %></div>
         <span>signed</span>
       </li>
       <li>
-        <div class="stats-value"><%= petition.signatures.count %></div>
+        <div class="stats-value"><%=  petition.goal %></div>
         <span>needed</span>
       </li>
       <!--<li>

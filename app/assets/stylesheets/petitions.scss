@@ -87,7 +87,7 @@ progress[value] {
   width: 766px;
   overflow: auto;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .petition-page-header h1 {
@@ -100,6 +100,7 @@ progress[value] {
 }
 
 .petition-page-title {
+  margin-top: 20px;
   font-size: 60px;
   font-weight: bold;
   letter-spacing: 1.6px;
