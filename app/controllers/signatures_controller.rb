@@ -11,6 +11,6 @@ class SignaturesController < ApplicationController
   private
 
   def signatureParams
-    params.require(:signature).permit(:user_id, :petition_id, :reason)
+    params.require(:signature).permit(:id, :user_id, :petition_id, :reason)
   end
 end
