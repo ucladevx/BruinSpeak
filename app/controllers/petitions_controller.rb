@@ -59,9 +59,9 @@ class PetitionsController < ApplicationController
   end
 
   private
-
   def petitionParams
-    params.require(:petition).permit(:title, :description, :image, :tag_list, :goal, :user_id, :money_request, :public)
+    params[:petition][:recievers] = params[:petition][:recievers].join(",")
+    params.require(:petition).permit(:title, :description, :image, :tag_list, :goal, :user_id, :money_request, :public, :recievers)
   end
 
   def signatureParams

@@ -25,4 +25,16 @@
       });
     }
   }
+
+  let btn = document.getElementById("petition-recievers-button");
+  if(btn != null) {
+    btn.onclick = function(e) {
+      e.preventDefault();
+      let newInput = document.createElement("input");
+      newInput.name = "petition[recievers][]";
+      newInput.placeholder = "Who?";
+      newInput.type = "text";
+      btn.parentElement.append(newInput);
+    }
+  }
 })()
