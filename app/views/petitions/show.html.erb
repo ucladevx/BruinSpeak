@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" />
-
+<% if current_user && current_user.id == @petition.user_id && !@petition.public %>
+  <div class="notice alert alert-info petition-notice-hidden" id="petition-notice">
+    <p>This is petition is currently private.  Click here to make this public.</p>
+  </div>
+<% end %>
 <div class="petition-page-header">
   <h1 class="petition-page-title"><%= @petition.title %></h1>
   <%= link_to user_path(@petition.user) do %>
@@ -95,4 +99,4 @@
 </div>
 
 <%= render "comments/template", commentable: @petition, new_comment: @comment %>
-<script>initComments();</script>
+<%= javascript_include_tag 'petitions', 'data-turbolinks-track': 'reload' %>

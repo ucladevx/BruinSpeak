@@ -28,3 +28,5 @@ function initComments() {
   });
   console.log("Initializing comments.");
 }
+
+initComments();

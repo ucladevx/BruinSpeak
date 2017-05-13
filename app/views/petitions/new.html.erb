@@ -2,9 +2,6 @@
   <div class="container padded">
     <h1 class="new-petition-title"><b>Create Petition</b></h1>
     <br>
-    <h2><b>1. Add Your Petition Title</b></h2>
-    <p>This is the first thing people will see about your petition.
-      Get their attention with a short title that focuses on the change you’d like them to support.</p>
     <%= form_for(@petition) do |f| %>
       <% if @petition.errors.any? %>
         <div id="error_explanation">
@@ -17,8 +14,11 @@
           </ul>
         </div>
       <% end %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
 
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <h2><b>1. Add Your Petition Title</b></h2>
+      <p>This is the first thing people will see about your petition.
+        Get their attention with a short title that focuses on the change you’d like them to support.</p>
       <p>
         <%= f.text_field :title, placeholder: "Title" %>
       </p><br>
@@ -49,6 +49,12 @@
       <p>Choose how many signatures you need for your petition to be successful.</p>
       <p>
         <%= f.number_field :goal, min: 10, value: 10 %>
+      </p><br>
+
+      <h2><b>6. Make it Public</b></h2>
+      <p>Do you want to launch it right now or wait until later?</p>
+      <p>
+        <%= f.check_box :public %>
       </p><br>
 
       <p>

@@ -1,5 +1,5 @@
 class PetitionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :set_public]
 
   def new
     @petition = Petition.new
@@ -21,6 +21,25 @@ class PetitionsController < ApplicationController
 
     if user_signed_in?
       @new_comment = Comment.build_from(@petition, current_user.id, "")
+    end
+  end
+
+  def set_public
+    @petition = Petition.find(params[:id])
+    respond_to do |format|
+      if current_user.id == @petition.user_id
+        @petition.public = !@petition.public
+        if @petition.save
+          message = { message: "Petition is now #{@petition.public}" }
+          format.json { render json: message }
+        else
+          message = { error: "There was a problem" }
+          format.json { render json: message, status: 500 }
+        end
+      else
+        message = { error: 'You are not allowed' }
+        format.json { render json: message, status: 400 }
+      end
     end
   end
 

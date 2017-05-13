@@ -4,18 +4,24 @@ $(function() {
     var file = document.getElementById("user_profile_pic");
 
     var clear = document.getElementById("button-clear");
-    clear.onclick = function(e) {
-      e.preventDefault();
-      location.reload();
+    if(!!clear) {
+      clear.onclick = function(e) {
+        e.preventDefault();
+        location.reload();
+      }
     }
 
-    el.onclick = function(e) {
-      e.preventDefault();
-      file.click();
+    if(!!el) {
+      el.onclick = function(e) {
+        e.preventDefault();
+        file.click();
+      }
     }
 
     var fileSelect = document.getElementById("user_profile_pic");
-    fileSelect.addEventListener("change", handleProfileUpload, false);
+    if(fileSelect) {
+      fileSelect.addEventListener("change", handleProfileUpload, false);
+    }
   })()
 })
 
