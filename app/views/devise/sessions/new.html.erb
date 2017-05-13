@@ -2,7 +2,8 @@
   <div class="text-center">
   <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary btn-lg" %>
   </div>
-  <!--<div class="container padded">
+  <br/><br/>
+  <div class="container padded text-center">
     <h1 class="new-petition-title"><b>Log in</b></h1><br>
     <div style="width:50%; margin:auto">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -33,5 +34,5 @@
         <%= render "devise/shared/links" %>
       </div>
     </div>
-  </div>-->
+  </div>
 </div>
