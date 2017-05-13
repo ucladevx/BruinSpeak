@@ -48,7 +48,7 @@
       <h2><b>5. Set a Goal</b></h2>
       <p>Choose how many signatures you need for your petition to be successful.</p>
       <p>
-        <%= f.number_field :goal %>
+        <%= f.number_field :goal, min: 10, value: 10 %>
       </p><br>
 
       <p>

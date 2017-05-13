@@ -15,7 +15,7 @@
     <%= link_to user_path(petition.user.id) do %>
       <p class="petition-author"><%= petition.user.full_name %></p>
     <% end %>
-    <p class="petition-desc"><%= petition.description %></p>
+    <p class="petition-desc"><%= petition.description[0..100] %>...</p>
   </div>
   <!-- <div class="con bottom">
     <ul class="petition-stats">
@@ -37,14 +37,14 @@
 
   <div class="petition-stats-wrapper">
     <div class="petition-stats-col">
-      <img class="petiton-stat-img" src="/assets/supporters_icon.png">
+      <img width="50px" height="50px" class="petiton-stat-img" src="/assets/supporters_icon.png">
       <div class="petition-stat-stack">
         <div><%= petition.signatures.count %></div>
         <div>Supporters</div>
       </div>
     </div>
     <div class="petition-stats-col">
-      <img class="petiton-stat-img" src="/assets/money_icon.png">
+      <img width="50px" height="50px" class="petiton-stat-img" src="/assets/money_icon.png">
       <div class="petition-stat-stack">
         <div>$1000</div>
         <div>Requested</div>

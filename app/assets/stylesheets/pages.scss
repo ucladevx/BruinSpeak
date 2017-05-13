@@ -151,23 +151,23 @@ ul {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 350px;
-  height: 400px;
+  height: 500px;
   border-radius: 5px;
   position: relative;
-  margin-bottom: 40px;
-  margin-right: 10px;
+  margin: 15px auto;
 
-  @media all and (max-width: $break-med) {
+  @media all and (max-width: $break-small) {
     width: 90%;
-    height: 500px;
   }
 
   .petition-stats-wrapper {
     display: inline-flex;
     width: 100%;
+    position: absolute;
+    bottom: 10px;
 
     @media all and (max-width: $break-med) {
       display: flex;
@@ -175,8 +175,9 @@ ul {
     }
   }
 
-  .petition-stat-img {
+  .petiton-stat-img {
     display: inline;
+    margin: auto;
   }
 
   .petition-stats-col {
@@ -186,6 +187,12 @@ ul {
 
   .petition-stat-stack {
     margin: auto;
+
+    div {
+      color: $bruinspeak_black;
+      font-size: 16px;
+      font-weight: 500;
+    }
   }
 }
 
@@ -193,6 +200,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   @media all and (max-width: $break-med) {
     flex-direction: column;
   }
@@ -360,7 +368,7 @@ ul {
 .con {
   padding: 10px;
   position: relative;
-  height: 130px;
+  height: 175px;
 }
 
 .con.bottom {
@@ -447,16 +455,19 @@ ul {
 .petition-author {
   margin: 0;
   font-size: 16px;
+  color: $bruinspeak_black;
+  letter-spacing: 1.7px;
 }
 
 .petition-img {
-  height: 176px;
+  height: 225px;
   width: 100%;
   border-radius: 5px 5px 0 0;
 }
 
 .petition-desc {
-  font-size: 13px;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .petition-page-author {
@@ -509,8 +520,9 @@ ul {
 .petition-title {
   margin: 0;
   font-weight: bold;
+  letter-spacing: 1.7px;
   font-size: 22px;
-  color: inherit;
+  color: $bruinspeak_black;
   text-decoration: none;
 }
 
