@@ -17,7 +17,7 @@
     <% end %>
     <p class="petition-desc"><%= petition.description %></p>
   </div>
-  <div class="con bottom">
+  <!-- <div class="con bottom">
     <ul class="petition-stats">
       <li>
         <div class="stats-value"><%= petition.signatures.count %></div>
@@ -27,15 +27,28 @@
         <div class="stats-value"><%= petition.goal %></div>
         <span>needed</span>
       </li>
-      <!--<li>
-        <div class="stats-value">2</div>
-        <span>days remaining</span>
-      </li>-->
       <li>
         <%= link_to petition_path(petition.id) do %>
           <img class="sign-icon" src=<%= image_path("pencil.png") %> alt="Sign">
         <% end %>
       </li>
     </ul>
+  </div> -->
+
+  <div class="petition-stats-wrapper">
+    <div class="petition-stats-col">
+      <img class="petiton-stat-img" src="/assets/supporters_icon.png">
+      <div class="petition-stat-stack">
+        <div><%= petition.signatures.count %></div>
+        <div>Supporters</div>
+      </div>
+    </div>
+    <div class="petition-stats-col">
+      <img class="petiton-stat-img" src="/assets/money_icon.png">
+      <div class="petition-stat-stack">
+        <div>$1000</div>
+        <div>Requested</div>
+      </div>
+    </div>
   </div>
 </div>
