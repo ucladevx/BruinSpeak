@@ -30,11 +30,8 @@
   if(btn != null) {
     btn.onclick = function(e) {
       e.preventDefault();
-      let newInput = document.createElement("input");
-      newInput.name = "petition[recievers][]";
-      newInput.placeholder = "Who?";
-      newInput.type = "text";
-      btn.parentElement.append(newInput);
+      var newInput = "<input placeholder='Who?' type='text' name='petition[recievers][]'>";
+      document.getElementById("petition-recievers").innerHTML += newInput;
     }
   }
 })()

@@ -9,9 +9,9 @@
     <h4 class="prof-sub"><span class="petition-num">23 <span>Petitions | Joined <span class="join-date">April 2017</span></h2>
 
     <% if current_user and @user.id == current_user.id %>
-    <button type="button" class="btn btn-default" id="edit-profile-btn" aria-label="Left Align">
+    <a href="/users/edit"><button type="button" class="btn btn-default" id="edit-profile-btn" aria-label="Left Align">
         EDIT PROFILE
-    </button>
+    </button></a>
     <% end %>
 
     <div >

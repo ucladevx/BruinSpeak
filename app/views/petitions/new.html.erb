@@ -1,5 +1,5 @@
 <div style="margin-top:10px; margin-bottom:100px">
-  <div class="container padded">
+  <div class="container padded" style="width:500px">
     <h1 class="new-petition-title"><b>Create Petition</b></h1>
     <br>
     <%= form_for(@petition) do |f| %>
@@ -61,8 +61,8 @@
       <p>Who do you want to answer to this petiton?</p>
       <div id="petition-recievers">
         <input placeholder="Who?" type="text" name="petition[recievers][]">
-        <button class="btn btn-info" id="petition-recievers-button">Add More</button>
       </div>
+      <button class="btn btn-info" id="petition-recievers-button" style="margin-left:0; margin-bottom:30px; margin-top:10px">Add More</button>
       <br>
 
       <h2><b>8. Make it Public</b></h2>
