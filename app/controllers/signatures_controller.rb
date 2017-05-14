@@ -8,6 +8,20 @@ class SignaturesController < ApplicationController
     end
   end
 
+  def destroy
+    @signature = Signature.find_by(user_id: params[:user_id])
+
+    respond_to do |format|
+      if @signature.destroy
+        # TODO: make AJAX request instead of reloading page
+        format.html { redirect_to(:back, notice: 'Signature was successfully removed') }
+      else
+        # TODO: If the comment fails to delete, pop up a notification
+        format.html { redirect_to(:back) }
+      end
+    end
+  end
+
   private
 
   def signatureParams
