@@ -11,12 +11,13 @@ class User < ApplicationRecord
   validates :last_name, format: { with: /\A([A-Za-z-]){2,}\z/ }, presence: true,
                         length: { minimum: 2 }
 
+  validates_inclusion_of :role, in: ["default", "government", "admin"]
+
   mount_uploader :profile_pic, ProfilePicUploader
 
   has_many :petitions, dependent: :destroy
   has_many :signatures
   has_many :petitions, through: :signatures
-
 
   def self.from_omniauth(access_token)
     data = access_token.info

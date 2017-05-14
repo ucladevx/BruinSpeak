@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'explore', to: "pages#explore"
   get 'search', to: "pages#search"
   get '/users/:id', to: 'users#show', as: 'user'
+  patch '/users/:id', to: 'users#update_role'
   post '/petitions/:id/public', to: 'petitions#set_public', :constraints => { :only_ajax => true }
   post '/signatures', to: 'signatures#create'
   delete '/signatures.:user_id', to: 'signatures#destroy'

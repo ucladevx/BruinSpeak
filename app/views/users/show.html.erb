@@ -7,6 +7,22 @@
 
     <h1 class="prof-name"><%= @user.first_name + " " + @user.last_name %></h1>
     <h4 class="prof-sub"><span class="petition-num">23 <span>Petitions | Joined <span class="join-date">April 2017</span></h2>
+    <% if current_user and current_user.role.downcase != "default" %>
+        <h4 class="prof-sub">Role: <%= @user.role.capitalize %></h4>
+    <% end %>
+    <% if current_user and current_user.id != @user.id and current_user.role.downcase == "admin" %>
+        <%= form_for @user do |f| %>
+            <%= f.hidden_field :id, value: @user.id %>
+            <%= f.select :role, [['Admin','admin'], ['Government','government'], ['Default','default']] %>
+            <%= f.submit "Change Role" %>
+        <% end %>
+    <% elsif current_user and current_user.id != @user.id and current_user.role.downcase == "government" %>
+        <%= form_for @user do |f| %>
+            <%= f.hidden_field :id, value: @user.id %>
+            <%= f.select :role, [['Government','government'], ['Default','default']] %>
+            <%= f.submit "Change Role" %>
+        <% end %>
+    <% end %>
 
     <% if current_user and @user.id == current_user.id %>
     <a href="/users/edit"><button type="button" class="btn btn-default" id="edit-profile-btn" aria-label="Left Align">
