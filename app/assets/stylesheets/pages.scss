@@ -546,9 +546,89 @@ ul {
 }
 
 
-
 .reply {
   cursor: pointer;
+}
+
+.search-title {
+  width: 100%;
+  margin-bottom: 10px;
+
+  h1 {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.search-results {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.search-users {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+  p {
+    margin-bottom: 17px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+  }
+
+  li {
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.search-user-card {
+  height: 70px;
+  width: 200px;
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.15);
+  border-radius: 5px;
+}
+
+.search-user-icon {
+  position: relative;
+  float: left;
+  margin-top: 15px;
+  margin-left: 15px;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+
+.search-user-name {
+  position: relative;
+  float: left;
+  margin-top: 25px;
+  margin-left: 15px;
+  height: 100%;
+}
+
+.search-petitions {
+  position: relative;
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-between;
+  }
 }
 
 #speak {

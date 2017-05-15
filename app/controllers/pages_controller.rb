@@ -22,7 +22,9 @@ class PagesController < ApplicationController
     @search = params[:search]
     @petitions = Petition.where("lower(title) LIKE ?", "%" + @search.downcase + "%")
                          .or(Petition.where("lower(description) LIKE ?", "%" + @search.downcase + "%"))
+                 .paginate(page: params[:page], per_page: 12)
     @users = User.where("lower(first_name) LIKE ?", "%" + @search.downcase + "%")
                  .or(User.where("lower(last_name) LIKE?", "%" + @search.downcase + "%"))
+                 .paginate(page: params[:page], per_page: 12)
   end
 end

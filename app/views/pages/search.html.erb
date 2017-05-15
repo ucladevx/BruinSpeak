@@ -21,10 +21,11 @@
         </li>
       <% end %>
     </ul>
+    <%= will_paginate @users %>
   </div>
 
+  <p>Found <%= @petitions.count %> petition(s)</p>
   <div class="search-petitions">
-    <p>Found <%= @petitions.count %> petition(s)</p>
     <ul>
       <% @petitions.each do |petition| %>
         <li>
@@ -32,5 +33,6 @@
         </li>
       <% end %>
     </ul>
+    <%= will_paginate @petitions %>
 </div>
 </div>
