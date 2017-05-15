@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @petitions = Petition.where(user_id: @user.id)
+    @public_petitions = Petition.where(user_id: @user.id).where.not(public: "FALSE")
+    @private_petitions = Petition.where(user_id: @user.id).where(public: "FALSE")
+    @signatures = Signature.where(user_id: @user.id)
   end
 
   def update_role

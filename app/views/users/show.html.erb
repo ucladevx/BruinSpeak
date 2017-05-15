@@ -6,7 +6,7 @@
     <% end %>
 
     <h1 class="prof-name"><%= @user.first_name + " " + @user.last_name %></h1>
-    <h4 class="prof-sub"><span class="petition-num">23 <span>Petitions | Joined <span class="join-date">April 2017</span></h2>
+    <h4 class="prof-sub"><span class="petition-num"><%= @public_petitions.count %> <span>Petitions | Joined <span class="join-date"><%= @user.created_at.strftime("%b %Y") %></span></h2>
     <% if current_user and current_user.role.downcase != "default" %>
         <h4 class="prof-sub">Role: <%= @user.role.capitalize %></h4>
     <% end %>
@@ -38,15 +38,16 @@
 
 <div class="container">
     <ul class="nav nav-pills nav-justified pages-tabs">
-        <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num">13</span>)</a></li>
-        <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Favorites (<span class="favorite-num">9</span>)</a></li>
-        <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Started (<span class="started-num">2</span>)</a></li>
+        <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num"><%= @signatures.count %></span>)</a></li>
+        <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Created (<span class="favorite-num"><%= @public_petitions.count %></span>)</a></li>
+        <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Unpublished (<span class="started-num"><%= @private_petitions.count %></span>)</a></li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane in active" id="signed-tab">
             <% count = 0 %>
             <ul>
-                <% @petitions.each do |petition| %>
+                <% @signatures.each do |signature| %>
+                <% petition = Petition.find(signature.petition_id) %>
                 <% if count % 4 == 0 && count != 0 %>
             </ul>
             <ul>
@@ -61,7 +62,7 @@
         <div class="tab-pane" id="favorites-tab">
             <% count = 0 %>
             <ul>
-                <% @petitions.each do |petition| %>
+                <% @public_petitions.each do |petition| %>
                 <% if count % 4 == 0 && count != 0 %>
             </ul>
             <ul>
@@ -76,7 +77,7 @@
         <div class="tab-pane" id="started-tab">
             <% count = 0 %>
             <ul>
-                <% @petitions.each do |petition| %>
+                <% @private_petitions.each do |petition| %>
                 <% if count % 4 == 0 && count != 0 %>
             </ul>
             <ul>
