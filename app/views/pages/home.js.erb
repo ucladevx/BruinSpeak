@@ -1,5 +1,5 @@
 <% @petitions.each do |petition| %>
-  $('#petition-cards').append('<li><%= j render "shared/post", petition: petition %></li>')
+  $('#petition-cards').append('<%= j render "shared/post", petition: petition %>')
 <% end %>
 <% if @petitions.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @petitions %>');
