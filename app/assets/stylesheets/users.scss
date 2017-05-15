@@ -139,10 +139,16 @@
 }
 
 .prof-icon {
+  position: relative;
   width: 100px;
   height: 100px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: 0 auto;
+}
+
+.profile-description {
+  width: 100%;
+  position: relative;
+  clear: both;
 }
 
 .profile-info {
@@ -155,7 +161,9 @@
 }
 
 .profile-wrapper {
+  padding-top: 35px;
   margin: 10px auto;
-  width: 300px;
+  width: 50%;
+  height: 500px;
   text-align: center;
 }

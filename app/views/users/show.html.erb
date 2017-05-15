@@ -1,47 +1,50 @@
 <div class="profile-wrapper">
     <% if @user.profile_pic.url %>
-    <img id="profile-pic" class="picture img-circle prof-icon" src=<%= image_path(@user.profile_pic.url) %> alt="Profile picture">
+    <img id="profile-pic" class="prof-icon" src=<%= image_path(@user.profile_pic.url) %> alt="Profile picture">
     <% else %>
-    <img id="profile-pic" class="picture img-circle prof-icon" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+    <img id="profile-pic" class="prof-icon" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
     <% end %>
 
-    <h1 class="prof-name"><%= @user.first_name + " " + @user.last_name %></h1>
-    <h4 class="prof-sub"><span class="petition-num"><%= @public_petitions.count %> <span>Petitions | Joined <span class="join-date"><%= @user.created_at.strftime("%b %Y") %></span></h2>
-    <% if current_user and current_user.role.downcase != "default" %>
-        <h4 class="prof-sub">Role: <%= @user.role.capitalize %></h4>
-    <% end %>
-    <% if current_user and current_user.id != @user.id and current_user.role.downcase == "admin" %>
-        <%= form_for @user do |f| %>
-            <%= f.hidden_field :id, value: @user.id %>
-            <%= f.select :role, [['Admin','admin'], ['Government','government'], ['Default','default']] %>
-            <%= f.submit "Change Role" %>
+    <div class="profile-description">
+        <h1 class="prof-name"><%= @user.first_name + " " + @user.last_name %></h1>
+        <h4 class="prof-sub"><span class="petition-num"><%= @public_petitions.count %> <span>Petitions | Joined <span class="join-date"><%= @user.created_at.strftime("%b %Y") %></span></h2>
+        <% if current_user and current_user.role.downcase != "default" %>
+            <h4 class="prof-sub">Role: <%= @user.role.capitalize %></h4>
         <% end %>
-    <% elsif current_user and current_user.id != @user.id and current_user.role.downcase == "government" %>
-        <%= form_for @user do |f| %>
-            <%= f.hidden_field :id, value: @user.id %>
-            <%= f.select :role, [['Government','government'], ['Default','default']] %>
-            <%= f.submit "Change Role" %>
+        <% if current_user and current_user.id != @user.id and current_user.role.downcase == "admin" %>
+            <%= form_for @user do |f| %>
+                <%= f.hidden_field :id, value: @user.id %>
+                <%= f.select :role, [['Admin','admin'], ['Government','government'], ['Default','default']] %>
+                <%= f.submit "Change Role" %>
+            <% end %>
+        <% elsif current_user and current_user.id != @user.id and current_user.role.downcase == "government" %>
+            <%= form_for @user do |f| %>
+                <%= f.hidden_field :id, value: @user.id %>
+                <%= f.select :role, [['Government','government'], ['Default','default']] %>
+                <%= f.submit "Change Role" %>
+            <% end %>
         <% end %>
-    <% end %>
 
-    <% if current_user and @user.id == current_user.id %>
-    <a href="/users/edit"><button type="button" class="btn btn-default" id="edit-profile-btn" aria-label="Left Align">
-        EDIT PROFILE
-    </button></a>
-    <% end %>
+        <% if current_user and @user.id == current_user.id %>
+        <a href="/users/edit"><button type="button" class="btn btn-default" id="edit-profile-btn" aria-label="Left Align">
+            EDIT PROFILE
+        </button></a>
+        <% end %>
 
-    <div >
-        <p class="profile-info">Major: <span class="profile-values"><%= @user.major %></span></p>
-        <p class="profile-info">Organizations: <span class="profile-values"><%= @user.organizations %></span></p>
+        <div>
+            <p class="profile-info">Major: <span class="profile-values"><%= @user.major %></span></p>
+            <p class="profile-info">Organizations: <span class="profile-values"><%= @user.organizations %></span></p>
+        </div>
+
+        <ul class="nav nav-pills nav-justified pages-tabs">
+            <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num"><%= @signatures.count %></span>)</a></li>
+            <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Created (<span class="favorite-num"><%= @public_petitions.count %></span>)</a></li>
+            <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Unpublished (<span class="started-num"><%= @private_petitions.count %></span>)</a></li>
+        </ul>
     </div>
 </div>
 
 <div class="container">
-    <ul class="nav nav-pills nav-justified pages-tabs">
-        <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num"><%= @signatures.count %></span>)</a></li>
-        <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Created (<span class="favorite-num"><%= @public_petitions.count %></span>)</a></li>
-        <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Unpublished (<span class="started-num"><%= @private_petitions.count %></span>)</a></li>
-    </ul>
     <div class="tab-content">
         <div class="tab-pane in active" id="signed-tab">
             <% count = 0 %>
