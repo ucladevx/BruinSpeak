@@ -20,11 +20,14 @@ class PagesController < ApplicationController
 
   def search
     @search = params[:search]
-    @petitions = Petition.where("lower(title) LIKE ?", "%" + @search.downcase + "%")
-                         .or(Petition.where("lower(description) LIKE ?", "%" + @search.downcase + "%"))
-                 .paginate(page: params[:page], per_page: 12)
-    @users = User.where("lower(first_name) LIKE ?", "%" + @search.downcase + "%")
-                 .or(User.where("lower(last_name) LIKE?", "%" + @search.downcase + "%"))
+    @search = @search.downcase
+    @tags = ActsAsTaggableOn::Tag.where("lower(name) LIKE ?", "%" + @search + "%")
+    @petitions = Petition.where("lower(title) LIKE ?", "%" + @search + "%")
+                         .or(Petition.where("lower(description) LIKE ?", "%" + @search + "%"))
+                         .paginate(page: params[:page], per_page: 12)
+    @users = User.where("lower(first_name) LIKE ?", "%" + @search + "%")
+                 .or(User.where("lower(last_name) LIKE ?", "%" + @search + "%"))
+                 .or(User.where("CONCAT(LOWER(first_name), ' ', LOWER(last_name)) LIKE ?", "%" + @search + "%"))
                  .paginate(page: params[:page], per_page: 12)
   end
 end
