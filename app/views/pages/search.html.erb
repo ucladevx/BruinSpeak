@@ -1,9 +1,36 @@
-<h1>Searched for: <%= @search %></h1>
-<p>Found <%= @petitions.count %> petition(s)</p>
-<ul>
-  <% @petitions.each do |petition| %>
-    <li>
-      <%= render 'shared/post', petition: petition %>
-    </li>
-  <% end %>
-</ul>
+<div class="search-title">
+  <h1>Searched for: <%= @search %></h1>
+</div>
+
+<div class="search-results">
+  <div class="search-users">
+    <p> Found <%= @users.count %> user(s)</p>
+    <ul>
+      <% @users.each do |user| %>
+        <li class="search-user-card">
+          <%= link_to user_path(user) do %>
+            <% if user.profile_pic.url %>
+              <img class="search-user-icon" src=<%= image_path(user.profile_pic.url) %> alt="Profile picture">
+            <% else %>
+              <img class="search-user-icon" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+            <% end %>
+            <div class="search-user-name">
+              <p><%= user.first_name.capitalize + " " + user.last_name.capitalize %></p>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="search-petitions">
+    <p>Found <%= @petitions.count %> petition(s)</p>
+    <ul>
+      <% @petitions.each do |petition| %>
+        <li>
+          <%= render 'shared/post', petition: petition %>
+        </li>
+      <% end %>
+    </ul>
+</div>
+</div>
