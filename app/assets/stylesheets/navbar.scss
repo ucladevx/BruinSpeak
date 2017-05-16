@@ -94,7 +94,7 @@
 
 
 .navbar-collapse form[role="search"] {
-    position: absolute;
+    // position: absolute;
     top: 0px;
     right: 0px;
     width: 100%;
@@ -160,7 +160,7 @@
     max-height: 270px;
 }
 .navbar-collapse form[role="search"] {
-    position: absolute;
+    // position: absolute;
     top: 0px;
     right: 0px;
     width: 100%;
@@ -286,6 +286,10 @@
 
 .navbar-brand{
     font-size: 16px;
+}
+
+.nav-rem {
+    // display: none;
 }
 
 #topbar {
