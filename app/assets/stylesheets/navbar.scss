@@ -186,10 +186,10 @@
 @media (min-width: 902px) {
     .navbar-collapse {
         padding-top: 0px !important;
-        padding-right: 38px !important;
+        // padding-right: 11% !important;
     }
     .navbar-collapse form[role="search"] {
-        width: 38px;
+        width: 11%;
     }
     .navbar-collapse form[role="search"] button,
     .navbar-collapse form[role="search"] input {
@@ -211,9 +211,6 @@
     }
     .navbar-collapse form[role="search"].active input {
         width: 100%;
-        text-align: right;
-    }
-    .navbar-collapse form[role="search"].active button[type="submit"] {
     }
 }
 
