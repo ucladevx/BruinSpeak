@@ -62,6 +62,9 @@ gem 'acts-as-taggable-on', '~> 4.0'
 # Infinite scrolling
 gem 'will_paginate', '~> 3.1.5'
 
+#jquery on mediaquerys
+gem 'modernizr-rails', '~> 2.7', '>= 2.7.1'
+
 group :development do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

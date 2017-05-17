@@ -13,7 +13,9 @@ $(function () {
         var $remElem = $('.nav-rem');
         $form.find('input').val('');
         $form.removeClass('active');
-        $remElem.show();
+        // $remElem.css({"display":"block"});
+        $remElem.removeClass("nav-dis");
+        // $remElem.show();
     }
 
     // Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
@@ -23,10 +25,23 @@ $(function () {
         console.log($remElem);
         var $form = $(this).closest('form'),
             $input = $form.find('input');
-        $remElem.hide();
+        // $remElem.css({"display":"none"});
+        $remElem.addClass("nav-dis");
+        // $remElem.hide();
         $form.addClass('active');
         $input.focus();
 
     });
+
+    var $speak = $('#nav-speak-reg');
+    console.log($speak);
+
+    // if (Modernizr.mq('(max-width: 902px)')) {
+    //     $speak.css({"display":"block !important"});
+    //     // $speak.hide();
+    // } else {
+    //     $speak.css({"display":"none !important"});
+    //     // $speak.show();
+    // }
 
 });
