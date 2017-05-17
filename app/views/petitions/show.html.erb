@@ -1,9 +1,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" />
-<% if current_user && current_user.id == @petition.user_id && !@petition.public %>
+
+<!-- If user is logged in, show alert to let them make it public or private -->
+<% if current_user && current_user.id == @petition.user_id %>
   <div class="notice alert alert-info petition-notice-hidden" id="petition-notice">
-    <p>This is petition is currently private.  Click here to make this public.</p>
+  <% if !@petition.public %>
+      <p>Click here to make this petition public.</p>
+  <% else %>
+      <p>Click here to make this petition private.</p>
+  <% end %>
   </div>
 <% end %>
+
 <div class="petition-page-header">
   <h1 class="petition-page-title"><%= @petition.title %></h1>
   <%= link_to user_path(@petition.user) do %>
@@ -20,6 +27,7 @@
   <% end %>
 </div>
 
+<!-- Button to delete this pettition -->
 <% if current_user and @petition.user.id == current_user.id %>
   <div class="container" style="margin-bottom: 50px;">
     <%= link_to "Delete Post", petition_path(@petition.id), method: :delete %>

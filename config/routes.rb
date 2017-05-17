@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'privacy', to: "pages#privacy"
   get '/users/:id', to: 'users#show', as: 'user'
   patch '/users/:id', to: 'users#update_role'
-  post '/petitions/:id/public', to: 'petitions#set_public', :constraints => { :only_ajax => true }
+  post '/petitions/:id/public', to: 'petitions#toggle_public', :constraints => { :only_ajax => true }
   post '/signatures', to: 'signatures#create'
   delete '/signatures.:user_id', to: 'signatures#destroy'
   get '/tag/:id', to: 'pages#tag', as: 'tag'

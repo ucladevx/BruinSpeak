@@ -1,5 +1,5 @@
 class PetitionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :set_public]
+  before_action :authenticate_user!, only: [:new, :create, :toggle_public]
 
   def new
     @petition = Petition.new
@@ -24,7 +24,7 @@ class PetitionsController < ApplicationController
     end
   end
 
-  def set_public
+  def toggle_public
     @petition = Petition.find(params[:id])
     respond_to do |format|
       if current_user.id == @petition.user_id
