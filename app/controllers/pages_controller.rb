@@ -30,4 +30,16 @@ class PagesController < ApplicationController
                  .or(User.where("CONCAT(LOWER(first_name), ' ', LOWER(last_name)) LIKE ?", "%" + @search + "%"))
                  .paginate(page: params[:page], per_page: 12)
   end
+
+  def about
+  end
+
+  def contact
+  end
+
+  def terms
+  end
+
+  def privacy
+  end
 end
