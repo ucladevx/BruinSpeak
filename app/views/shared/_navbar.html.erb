@@ -44,9 +44,9 @@
                     <% end %>-->
                     <div class="dropdown" onclick="$('.dropdown-content').toggleClass('selected')">
                         <span><% if current_user.profile_pic.url %>
-                            <li><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle nav-prof" style="object-fit: cover;" alt="edit" /></li>
+                            <li><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle nav-prof dropdown" style="object-fit: cover;" alt="edit" /></li>
                         <% else %>
-                             <li><img src=<%= image_path("default_profile_picture.png") %> class="img-circle nav-prof" alt="edit" /></li>
+                             <li><img src=<%= image_path("default_profile_picture.png") %> class="img-circle nav-prof dropdown" alt="edit" /></li>
                         <% end %></span>
                         <div class="dropdown-content">
                           <%= link_to "Profile", user_path(current_user.id) %>
