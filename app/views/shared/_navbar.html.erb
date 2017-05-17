@@ -26,21 +26,21 @@
 
             <ul class="nav navbar-nav navbar-right nav-rem">
                 <% if current_user %>
-                <%= link_to user_path(current_user.id) do %>
+                <!-- <%= link_to user_path(current_user.id) do %>
                     <li class="navbar-dynam-content" ><%= current_user.first_name + " " + current_user.last_name %></li>
                     <% if current_user.profile_pic.url %>
                     <li><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle nav-prof" style="object-fit: cover;" alt="edit" /></li>
                     <% else %>
                     <li><img src=<%= image_path("default_profile_picture.png") %> class="img-circle nav-prof" alt="edit" /></li>
                     <% end %>
-                <% end %>
+                <% end %> -->
             </ul>
 
 
             <ul class="nav navbar-nav navbar-right nav-rem">
                 <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
                 <% else %>
-                <li><%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></li>
+                <li><%= link_to "Sign in", user_google_oauth2_omniauth_authorize_path %></li>
                 <% end %>
             </ul>
 
