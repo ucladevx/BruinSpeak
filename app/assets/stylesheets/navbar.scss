@@ -156,7 +156,6 @@
 
 .navbar-collapse {
     position: relative;
-    padding-top: 30px !important;
     max-height: 270px;
 }
 .navbar-collapse form[role="search"] {
@@ -224,8 +223,26 @@
     margin-left: 10px;
 }
 
-@media (min-width: 902px)
-    {
+#nav-speak-reg{
+    display: block;
+}
+
+#nav-speak-mobile{
+    display: none;
+}
+
+@media(max-width: 902px){
+    #nav-speak-reg{
+        display: none;
+    }
+
+    #nav-speak-mobile{
+        display: block;
+    }
+}
+
+
+@media (min-width: 902px){
     .navbar-right {
         margin-right: -30px;
     }
@@ -288,4 +305,8 @@
 
 #topbar {
     font-family: 'Open Sans', sans-serif;
+}
+
+.nav li a {
+    color: #19172A;
 }
