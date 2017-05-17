@@ -21,11 +21,6 @@ html {
   padding-bottom: 60px;
  }
 
-
-
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 a {
   text-decoration: none;
 }
@@ -68,25 +63,6 @@ ul {
   font-weight: bold;
   margin-bottom: 0;
   font-size: 18px
-}
-
-@media (max-width: 902px){
-    .brand-small-view {
-    display: inline-flex !important;
-    }
-
-    .brand-large-view {
-    display: none !important;
-    }
-    .carousel {
-        display: none;
-    }
-}
-
-@media(max-width: 787px){
-    #explore-buttons-grid{
-        display: none;
-    }
 }
 
 
@@ -680,4 +656,24 @@ input, textarea {
 
 #start-pet-btn{
      box-shadow: 2px 2px 5px #888888;
+}
+
+@media (max-width: 902px){
+    .brand-small-view {
+    display: inline-flex !important;
+    }
+
+    .brand-large-view {
+    display: none !important;
+    }
+    .carousel {
+        display: none;
+    }
+}
+
+
+@media(max-width: 787px){
+    #explore-buttons-grid{
+        display: none;
+    }
 }
