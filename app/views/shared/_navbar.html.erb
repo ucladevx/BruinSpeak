@@ -57,7 +57,6 @@
 
 
             <ul class="nav navbar-nav navbar-right nav-rem">
-                    <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
                 <% else %>
                     <li><%= link_to "Sign in", user_google_oauth2_omniauth_authorize_path %></li>
                 <% end %>
