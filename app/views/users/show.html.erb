@@ -1,8 +1,8 @@
 <div class="profile-wrapper">
     <% if @user.profile_pic.url %>
-    <img id="profile-pic" class="prof-icon" src=<%= image_path(@user.profile_pic.url) %> alt="Profile picture">
+    <img id="profile-pic" class="prof-icon img-circle" src=<%= image_path(@user.profile_pic.url) %> alt="Profile picture">
     <% else %>
-    <img id="profile-pic" class="prof-icon" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+    <img id="profile-pic" class="prof-icon img-circle" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
     <% end %>
 
     <div class="profile-description">
@@ -55,7 +55,7 @@
             </ul>
             <ul>
                 <% end %>
-                <li>
+                <li class="card-list">
                     <%= render 'shared/post', petition: petition %>
                 </li>
                 <% count = count + 1 %>
@@ -70,7 +70,7 @@
             </ul>
             <ul>
                 <% end %>
-                <li>
+                <li class="card-list">
                     <%= render 'shared/post', petition: petition %>
                 </li>
                 <% count = count + 1 %>
@@ -85,7 +85,7 @@
             </ul>
             <ul>
                 <% end %>
-                <li>
+                <li class="card-list">
                     <%= render 'shared/post', petition: petition %>
                 </li>
                 <% count = count + 1 %>

@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'explore', to: "pages#explore"
   get 'search', to: "pages#search"
+  get 'about', to: "pages#about"
+  get 'contact', to: "pages#contact"
+  get 'terms', to: "pages#terms"
+  get 'privacy', to: "pages#privacy"
   get '/users/:id', to: 'users#show', as: 'user'
   patch '/users/:id', to: 'users#update_role'
   post '/petitions/:id/public', to: 'petitions#set_public', :constraints => { :only_ajax => true }
