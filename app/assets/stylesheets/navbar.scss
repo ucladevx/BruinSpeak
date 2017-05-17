@@ -190,41 +190,7 @@
 }
 
 
-@media (min-width: 902px) {
-    .navbar-collapse {
-        padding-top: 0px !important;
-        // padding-right: 11% !important;
-    }
-    .navbar-collapse form[role="search"] {
-        width: 110px;
-    }
-    .navbar-collapse form[role="search"] button,
-    .navbar-collapse form[role="search"] input {
-        padding: 15px 12px;
-    }
-    .navbar-collapse form[role="search"] input {
-        padding: 25px 12px;
-        font-size: 18pt;
-        opacity: 0;
-        display: none;
-    }
-    .navbar-collapse form[role="search"].active {
-        width: 100%;
-    }
-    .navbar-collapse form[role="search"].active button,
-    .navbar-collapse form[role="search"].active input {
-        display: table-cell;
-        opacity: 1;
-    }
-    .navbar-collapse form[role="search"].active input {
-        width: 100%;
-    }
-    #nav-speak-mobile{
-        display: none;
-    }
-}
-
-@media (max-width: 902px) {
+@media (max-width: 768px) {
     .navbar-header {
         float: none;
     }
@@ -262,32 +228,58 @@
     .navbar-center {
         margin-left: 0px;
     }
+}
+
+@media (min-width: 768px) {
+    .navbar-collapse {
+        padding-top: 0px !important;
+        // padding-right: 11% !important;
+    }
+    .navbar-collapse form[role="search"] {
+        width: 110px;
+    }
+    .navbar-collapse form[role="search"] button,
+    .navbar-collapse form[role="search"] input {
+        padding: 15px 12px;
+    }
+    .navbar-collapse form[role="search"] input {
+        padding: 25px 12px;
+        font-size: 18pt;
+        opacity: 0;
+        display: none;
+    }
+    .navbar-collapse form[role="search"].active {
+        width: 100%;
+    }
+    .navbar-collapse form[role="search"].active button,
+    .navbar-collapse form[role="search"].active input {
+        display: table-cell;
+        opacity: 1;
+    }
+    .navbar-collapse form[role="search"].active input {
+        width: 100%;
+    }
+}
+
+@media(max-width: 768px){
+    #nav-speak-reg{
+        display: none;
+    }
+    #nav-speak-mobile{
+        display: block;
+    }
     #nav-user {
         padding-left: 14px;
     }
 }
 
-@media (min-width: 902px) {
+@media (min-width: 768px) {
   .navbar-nav.navbar-center {
     position: absolute;
     left: 50%;
     transform: translatex(-50%);
   }
-}
-
-@media(max-width: 902px){
-    #nav-speak-reg{
-        display: none;
-    }
-
-    #nav-speak-mobile{
-        display: block;
-    }
-}
-
-
-@media (min-width: 902px){
-    .navbar-right {
-        margin-right: -30px;
-    }
+  .navbar-right {
+      margin-right: -30px;
+  }
 }
