@@ -148,6 +148,9 @@
     .navbar-collapse form[role="search"].active input {
         width: 100%;
     }
+    #nav-speak-mobile{
+        display: none;
+    }
 }
 
 #search-form {
@@ -210,6 +213,9 @@
     }
     .navbar-collapse form[role="search"].active input {
         width: 100%;
+    }
+    #nav-speak-mobile{
+        display: none;
     }
 }
 

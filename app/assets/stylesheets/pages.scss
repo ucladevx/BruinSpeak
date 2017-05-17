@@ -83,6 +83,12 @@ ul {
     }
 }
 
+@media(max-width: 787px){
+    #explore-buttons-grid{
+        display: none;
+    }
+}
+
 
 .button {
   background-color: #0099cc;
