@@ -20,7 +20,7 @@ class Petition < ApplicationRecord
 
   def self.get_trending
     puts("TRENDING")
-    petitions = Petition.all
+    petitions = Petition.where(public: true)
     now = Time.new
     petitions.each do |petition|
       date_month = petition.created_at + 1.month
