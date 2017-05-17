@@ -111,16 +111,6 @@ ul {
     height: 100px;
 }
 
-/*
-
-
-   5 columns grid for 'md' and 'lg' screens
-
-   @tatygrassini
-
-
-*/
-
 @media (min-width: 992px) {
   .col-md-1-5 { width: 20%; }
   .col-md-2-5 { width: 40%; }
@@ -136,9 +126,6 @@ ul {
   .col-lg-4-5 { width: 80%; }
   .col-lg-5-5 { width: 100%; }
 }
-
-/* Demo only, no need for this */
-
 
 
 .show-grid [class^=col-] span,
@@ -414,14 +401,13 @@ ul {
     padding-bottom: 20px;
     outline: none;
     border-radius: 0;
-    // box-shadow: 2px 2px 2px  grey;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
 
 #explore-buttons-grid {
     margin-top: 2%;
 }
-//HEREEREE
+
 #explore-top{
     background-image: url("/assets/colorful_circles.png");
     background-size: contain;
@@ -667,7 +653,6 @@ ul {
   border-radius: 5px;
 }
 
-//footer
 html {
   position: relative;
   min-height: 100%;
@@ -676,7 +661,6 @@ html {
 .copyright a {
     color: #19172A;
 }
-
 
 input, textarea {
   -webkit-font-smoothing: antialiased;
