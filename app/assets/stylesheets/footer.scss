@@ -12,8 +12,8 @@
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
-    border-top: 1px solid #e7e7e7;
-    font-size: 16px;
+  font-size: 16px;
+  padding-top: 1%;
 }
 
 .copyright {
@@ -32,4 +32,12 @@
 
 .footer-stack {
     line-height: 20px;
+}
+
+.pull-left {
+    margin-left: 1%;
+}
+
+.pull-right {
+    margin-right: 1%;
 }

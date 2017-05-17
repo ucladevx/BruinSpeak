@@ -413,6 +413,7 @@ ul {
 //HEREEREE
 #explore-top{
     background-image: url("/assets/colorful_circles.png");
+    background-size: contain;
     height: inherit;
     width: 80%;
 }
@@ -684,12 +685,4 @@ input, textarea {
 
 #start-pet-btn{
      box-shadow: 2px 2px 5px #888888;
-}
-
-.pull-left {
-    margin-left: 1%;
-}
-
-.pull-right {
-    margin-right: 1%;
 }
