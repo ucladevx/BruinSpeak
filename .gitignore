@@ -27,3 +27,6 @@ tags
 
 # Ignore schema
 *schema.rb
+
+# Ignore application configuration
+/config/application.yml
