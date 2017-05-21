@@ -27,13 +27,6 @@
   <% end %>
 </div>
 
-<!-- Button to delete this pettition -->
-<% if current_user and @petition.user.id == current_user.id %>
-  <div class="container" style="margin-bottom: 50px;">
-    <%= link_to "Delete Post", petition_path(@petition.id), method: :delete %>
-  </div>
-<% end %>
-
 <div class="pet-container">
   <div class="pet-content">
     <div class="pet-img-container">
@@ -50,14 +43,16 @@
             <% if current_user and (@petition.user.id == current_user.id or current_user.admin?) %>
               <%= link_to "Delete Post", petition_path(@petition.id), method: :delete %>
             <% end %>
-            <% if @petition.status != "closed" %>
-              <a>Change to 'Closed'</a>
-            <% end %>
-            <% if @petition.status != "victory" %>
-              <a>Change to 'Victory'</a>
-            <% end %>
-            <% if @petition.status == "closed" or @petition.status == "victory" %>
-              <a>Change to 'Active'</a>
+            <% if current_user and (current_user.government? or current_user.admin?) %>
+              <% if @petition.status != "closed" %>
+                <a>Change to 'Closed'</a>
+              <% end %>
+              <% if @petition.status != "victory" %>
+                <a>Change to 'Victory'</a>
+              <% end %>
+              <% if @petition.status == "closed" or @petition.status == "victory" %>
+                <a>Change to 'Active'</a>
+              <% end %>
             <% end %>
           </div>
       </div>
