@@ -10,14 +10,39 @@ class User < ApplicationRecord
 
   validates :last_name, format: { with: /\A([A-Za-z-]){2,}\z/ }, presence: true,
                         length: { minimum: 2 }
-
-  validates_inclusion_of :role, in: ["default", "government", "admin"]
+  validates :role, numericality: { greater_than_or_equal_to: 0, less_than: 3 }
 
   mount_uploader :profile_pic, ProfilePicUploader
 
   has_many :petitions, dependent: :destroy
   has_many :signatures
   has_many :petitions, through: :signatures
+
+  def admin?
+    return role == 2
+  end
+
+  def at_least_gov?
+    return role > 0
+  end
+
+  def government?
+    return role == 1
+  end
+
+  def default?
+    return role == 0
+  end
+
+  def get_role
+    roles = {
+      0 => "Default",
+      1 => "Government",
+      2 => "Admin"
+    }
+
+    return roles[role]
+  end
 
   def self.from_omniauth(access_token)
     data = access_token.info

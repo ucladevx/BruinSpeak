@@ -1,4 +1,4 @@
-<div class="profile-wrapper">
+<div class="profile-wrapper" id="profile-wrapper">
     <% if @user.profile_pic.url %>
     <img id="profile-pic" class="prof-icon img-circle" src=<%= image_path(@user.profile_pic.url) %> alt="Profile picture">
     <% else %>
@@ -8,21 +8,23 @@
     <div class="profile-description">
         <h1 class="prof-name"><%= @user.first_name + " " + @user.last_name %></h1>
         <h4 class="prof-sub"><span class="petition-num"><%= @public_petitions.count %> <span>Petitions | Joined <span class="join-date"><%= @user.created_at.strftime("%b %Y") %></span></h2>
-        <% if current_user and current_user.role.downcase != "default" %>
-            <h4 class="prof-sub">Role: <%= @user.role.capitalize %></h4>
+        <% if current_user and current_user.at_least_gov? %>
+            <h4 class="prof-sub">Role: <%= @user.get_role.capitalize %></h4>
         <% end %>
-        <% if current_user and current_user.id != @user.id and current_user.role.downcase == "admin" %>
-            <%= form_for @user do |f| %>
-                <%= f.hidden_field :id, value: @user.id %>
-                <%= f.select :role, [['Admin','admin'], ['Government','government'], ['Default','default']] %>
-                <%= f.submit "Change Role" %>
-            <% end %>
-        <% elsif current_user and current_user.id != @user.id and current_user.role.downcase == "government" %>
-            <%= form_for @user do |f| %>
-                <%= f.hidden_field :id, value: @user.id %>
-                <%= f.select :role, [['Government','government'], ['Default','default']] %>
-                <%= f.submit "Change Role" %>
-            <% end %>
+        <% if current_user and current_user.id != @user.id and current_user.admin? %>
+            <div id="profile-role-change">
+              <select name="profile-role" id="profile-role">
+                <%= options_for_select([["Default", 0], ["Government", 1], ["Admin", 2]], [@user.role]) %>
+              </select>
+              <button id="profile-role-button">Change Role</button>
+            </div>
+        <% elsif current_user and current_user.id != @user.id and current_user.government? and @user.role <= current_user.role %>
+            <div id="profile-role-change">
+              <select name="profile-role" id="profile-role">
+                <%= options_for_select([["Default", 0], ["Government", 1]], [@user.role]) %>
+              </select>
+              <button id="profile-role-button">Change Role</button>
+            </div>
         <% end %>
 
         <% if current_user and @user.id == current_user.id %>
