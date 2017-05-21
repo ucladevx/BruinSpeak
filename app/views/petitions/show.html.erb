@@ -38,13 +38,29 @@
   <div class="pet-content">
     <div class="pet-img-container">
       <div class="tag">
-        <% if @petition.status == "closed" %>
-          <img src=<%= image_path("closed_badge.png") %>>
-        <% elsif @petition.status == "victory" %>
-          <img src=<%= image_path("victory_badge.png") %>>
-        <% else %>
-          <img src=<%= image_path("active_badge.png") %>>
-        <% end %>
+        <div id="status-dropdown" class="status-dropdown">
+          <span><% if @petition.status == "closed" %>
+            <img src=<%= image_path("closed_badge.png") %>>
+          <% elsif @petition.status == "victory" %>
+            <img src=<%= image_path("victory_badge.png") %>>
+          <% else %>
+            <img src=<%= image_path("active_badge.png") %>>
+          <% end %></span>
+          <div class="status-dropdown-content">
+            <% if current_user and (@petition.user.id == current_user.id or current_user.admin?) %>
+              <%= link_to "Delete Post", petition_path(@petition.id), method: :delete %>
+            <% end %>
+            <% if @petition.status != "closed" %>
+              <a>Change to 'Closed'</a>
+            <% end %>
+            <% if @petition.status != "victory" %>
+              <a>Change to 'Victory'</a>
+            <% end %>
+            <% if @petition.status == "closed" or @petition.status == "victory" %>
+              <a>Change to 'Active'</a>
+            <% end %>
+          </div>
+      </div>
       </div>
       <% if @petition.image.url %>
         <img src=<%= image_path(@petition.image.url) %> width="700" height="450"/>

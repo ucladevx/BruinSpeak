@@ -1,3 +1,21 @@
+$(document.body).click(function(e){
+  $('.status-dropdown-content').removeClass('selected');
+  $('.dropdown-content').removeClass('selected');
+});
+
+$('.status-dropdown').click(function(e){
+  e.stopPropagation();
+  $('.status-dropdown-content').toggleClass('selected')
+  $('.dropdown-content').removeClass('selected')
+});
+
+$('.dropdown').click(function(e){
+   e.stopPropagation();
+   $('.dropdown-content').toggleClass('selected')
+   $('.status-dropdown-content').removeClass('selected')
+});
+
+
 $(function() {
   (function (){
     var el = document.getElementById("profile_upload");
