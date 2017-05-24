@@ -53,12 +53,6 @@
 </div>
 
 <div class="container">
-
-    <ul class="nav nav-pills nav-justified pages-tabs">
-        <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num"><%= @signatures.count %></span>)</a></li>
-        <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Created (<span class="favorite-num"><%= @public_petitions.count %></span>)</a></li>
-        <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Unpublished (<span class="started-num"><%= @private_petitions.count %></span>)</a></li>
-    </ul>
     <div class="tab-content">
         <div class="tab-pane in active" id="signed-tab">
             <% count = 0 %>
