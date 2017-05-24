@@ -30,3 +30,6 @@ tags
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore cached assets
+/public/assets/**
