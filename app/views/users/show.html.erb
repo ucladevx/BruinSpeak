@@ -47,7 +47,9 @@
         <ul class="nav nav-pills nav-justified pages-tabs">
             <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<%= @signatures.count %>)</a></li>
             <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Created (<%= @public_petitions.count %>)</a></li>
-            <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Unpublished (<%= @private_petitions.count %>)</a></li>
+            <% if current_user and current_user.id == @user.id %>
+              <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Unpublished (<%= @private_petitions.count %>)</a></li>
+            <% end %>
         </ul>
     </div>
 </div>

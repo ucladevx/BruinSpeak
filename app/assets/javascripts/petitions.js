@@ -51,7 +51,7 @@ function replaceChild(el, message) {
   if(btn != null) {
     btn.onclick = function(e) {
       e.preventDefault();
-      var newInput = "<input placeholder='Who?' type='text' name='petition[recievers][]'>";
+      var newInput = "<input placeholder='Who?' type='text' name='petition[recievers][]' class='petition-create--input'>";
       document.getElementById("petition-recievers").innerHTML += newInput;
     }
   }

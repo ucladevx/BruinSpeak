@@ -81,6 +81,18 @@ progress[value] {
   float: left;
 }
 
+.petition-create--input {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 3px;
+  border: 1px solid $bruinspeak_gray;
+  color: $bruinspeak_gray;
+
+  &:focus {
+    border: 1px solid $bruinspeak_blue;
+  }
+}
+
 .petition-page-author p {
   margin-top: 0;
 }

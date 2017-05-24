@@ -20,14 +20,14 @@
       <p>This is the first thing people will see about your petition.
         Get their attention with a short title that focuses on the change you’d like them to support.</p>
       <p>
-        <%= f.text_field :title, placeholder: "Title" %>
+        <%= f.text_field :title, placeholder: "Title", class: "petition-create--input" %>
       </p><br>
 
       <h2><b>2. Add a Description</b></h2>
       <p>People are more likely to support your petition if it’s clear why you care.
         Explain how this change will impact the UCLA community.</p>
       <p>
-        <%= f.text_area :description, placeholder: "Description" %>
+        <%= f.text_area :description, placeholder: "Description", class: "petition-create--input" %>
       </p><br>
 
       <h2><b>3. Choose Categories</b></h2>
@@ -35,7 +35,7 @@
          add as many relevant tags as you can. This will help other people search
          for your petition using BruinSpeak’s search feature.</p>
       <p>
-        <%= f.text_field :tag_list, placeholder: "Tags" %>
+        <%= f.text_field :tag_list, placeholder: "Tags", class: "petition-create--input" %>
       </p><br>
 
       <h2><b>4. Add an Image/Video</b></h2>
@@ -48,19 +48,19 @@
       <h2><b>5. Set a Goal</b></h2>
       <p>Choose how many signatures you need for your petition to be successful.</p>
       <p>
-        <%= f.number_field :goal, min: 10, value: 10 %>
+        <%= f.number_field :goal, min: 10, value: 10, class: "petition-create--input" %>
       </p><br>
 
       <h2><b>6. Requesting Money</b></h2>
       <p>Ask the student government for money for your cause.</p>
       <p>
-        <%= f.number_field :money_request, min: 0, value: 0 %>
+        <%= f.number_field :money_request, min: 0, value: 0, class: "petition-create--input" %>
       </p><br>
 
       <h2><b>7. Deliver To</b></h2>
       <p>Who do you want to answer to this petiton?</p>
       <div id="petition-recievers">
-        <input placeholder="Who?" type="text" name="petition[recievers][]">
+        <input placeholder="Who?" type="text" name="petition[recievers][]" , class="petition-create--input">
       </div>
       <button class="btn btn-info" id="petition-recievers-button" style="margin-left:0; margin-bottom:30px; margin-top:10px">Add More</button>
       <br>
