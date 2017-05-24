@@ -4,7 +4,7 @@
       <div class="carousel-image" style="background-image: url('<%= image_url(petition.image.url) %>')" alt="Avatar">
     <% else %>
       <!-- <img src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg"> -->
-      <div class="carousel-image" style="background-image: url('http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg')">
+      <div class="carousel-image" style="background-image: url(<%= image_url("card_default") %>)">
     <% end %>
   </div>
 <% end %>
@@ -20,17 +20,21 @@
       <li>
         <img width="40px" height="40px" class="petiton-stat-img" src="/assets/supporters_icon.png">
         <div class="stats-value"><%= petition.signatures.count + 1 %></div>
-        <span>signed</span>
+        <% if petition.signatures.count + 1 == 1 %>
+          <span>Supporter</span>
+        <% else %>
+          <span>Supporters</span>
+        <% end %>
       </li>
       <li>
         <img width="40px" height="40px" class="petiton-stat-img" src="/assets/supporters_icon.png">
         <div class="stats-value"><%=  petition.goal %></div>
-        <span>needed</span>
+        <span>Needed</span>
       </li>
       <li>
        <img width="40px" height="40px" class="petiton-stat-img" src="/assets/money_icon.png">
-        <div class="stats-value">$ <%=  petition.money_request %></div>
-        <span>requested</span>
+        <div class="stats-value">$<%=  petition.money_request %></div>
+        <span>Requested</span>
       </li>
       <!--<li>
         <div class="stats-value">2</div>

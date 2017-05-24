@@ -6,7 +6,7 @@
       <% end %>
     <% else %>
       <%= link_to petition_path(petition.id) do %>
-        <img class="petition-img" src="/assets/card_default" alt="petition image">
+        <% image_tag "card_default", class: "petition-img", alt: "petition image" %>
       <% end %>
     <% end %>
   </div>
@@ -22,13 +22,17 @@
       <img width="50px" height="50px" class="petiton-stat-img" src="/assets/supporters_icon.png">
       <div class="petition-stat-stack">
         <div><%= petition.signatures.count + 1 %></div>
-        <div>Supporters</div>
+        <% if petition.signatures.count + 1 == 1 %>
+          <span>Supporter</span>
+        <% else %>
+          <span>Supporters</span>
+        <% end %>
       </div>
     </div>
     <div class="petition-stats-col">
       <img width="50px" height="50px" class="petiton-stat-img" src="/assets/money_icon.png">
       <div class="petition-stat-stack">
-        <div>$ <%= petition.money_request %></div>
+        <div>$<%= petition.money_request %></div>
         <div>Requested</div>
       </div>
     </div>
