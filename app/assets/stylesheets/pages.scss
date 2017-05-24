@@ -225,6 +225,17 @@ ul {
   width: 50px;
 }
 
+.carousel-image {
+  height: 400px;
+  width: 50%;
+  float: left;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
 .carousel-inner {
   width: 1000px;
   height: 400px;
@@ -235,14 +246,6 @@ ul {
   position: absolute;
   bottom: 0;
   right: 0;
-}
-
-.carousel-inner > .item > a > img {
-  height: 400px;
-  width: 50%;
-  float: left;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
 }
 
 .carousel.slide {

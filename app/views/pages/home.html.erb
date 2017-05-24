@@ -16,15 +16,9 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <% @top_petitions.each_with_index do |petition, index| %>
-        <% if index == 0 %>
-          <div class="item active">
+          <div class="item <%= index == 0 ? "active" : "" %>">
             <%= render 'shared/featured_petition', petition: petition %>
           </div>
-        <% else %>
-          <div class="item">
-            <%= render 'shared/featured_petition', petition: petition %>
-          </div>
-        <% end %>
       <% end %>
     </div>
 

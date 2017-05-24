@@ -20,8 +20,15 @@
     padding-left: 10px;
 }
 
-.footer-right-elements a{
+.footer-right-elements {
+  li {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  a {
     color: #19172A;
+  }
 }
 
 .footer-logo{
