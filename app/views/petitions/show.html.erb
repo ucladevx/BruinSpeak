@@ -62,7 +62,7 @@
       <% if @petition.image.url %>
         <img src=<%= image_path(@petition.image.url) %> width="700" height="450"/>
       <% else %>
-        <img src=<%= image_url("card_default") %> width="700" height="450"/>
+        <img src=<%= image_url("pet_default") %> width="700" height="450"/>
       <% end %>
     </div>
     <p><%= @petition.description %></p>
