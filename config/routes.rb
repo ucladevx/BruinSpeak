@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
   post '/users/:id/role', to: 'users#update_role', :constraints => { :only_ajax => true }
   post '/petitions/:id/public', to: 'petitions#toggle_public', :constraints => { :only_ajax => true }
+  post '/petitions/:id/victory', to: 'petitions#change_to_victory', as: 'victory', :constraints => { :only_ajax => true }
+  post '/petitions/:id/closed', to: 'petitions#change_to_closed', as: 'closed', :constraints => { :only_ajax => true }
+  post '/petitions/:id/active', to: 'petitions#change_to_active', as: 'active', :constraints => { :only_ajax => true }
+
   post '/signatures', to: 'signatures#create'
   delete '/signatures.:user_id', to: 'signatures#destroy'
   get '/tag/:id', to: 'pages#tag', as: 'tag'
