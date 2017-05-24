@@ -104,6 +104,7 @@ GEM
       activesupport (>= 4.2.0)
     hashie (3.5.5)
     i18n (0.8.1)
+    image_magick (0.1.9)
     ipaddress (0.8.3)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -241,10 +242,11 @@ DEPENDENCIES
   figaro (~> 1.1)
   fog-aws
   font-awesome-sass (~> 4.6.2)
+  image_magick (~> 0.1.9)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
-  mini_magick
+  mini_magick (~> 4.7)
   modernizr-rails (~> 2.7, >= 2.7.1)
   omniauth-google-oauth2
   pg (~> 0.18)

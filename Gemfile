@@ -27,8 +27,11 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'thor', '>=0.14.4'
 
+#resizing for images that must come before mini_magick
+gem 'image_magick', '~> 0.1.9'
+
 # image processing
-gem "mini_magick"
+gem 'mini_magick', '~> 4.7'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

@@ -55,6 +55,18 @@ ul {
   list-style-type: none;
 }
 
+#about-images-grid {
+    margin-top: 2%;
+}
+
+#about-top {
+    background-image: url("/assets/colorful_circles.png");
+    background-size: contain;
+    height: inherit;
+    width: 80%;
+}
+
+
 .alert {
     text-align: center;
 }
@@ -430,11 +442,6 @@ ul {
     width: 80%;
 }
 
-#explore-top span {
-    font-size: 20px;
-    color: black;
-}
-
 .popular {
   width: 90%;
   max-width: 1450px;
@@ -705,6 +712,11 @@ ul {
   position: absolute;
   z-index: 1;
   border-radius: 5px;
+}
+
+
+.thumb {
+    margin-bottom: 30px;
 }
 
 html {
