@@ -70,7 +70,7 @@ ul {
 
 
 .button {
-  background-color: #0099cc;
+  background-color: $bruinspeak_blue;
   border-radius: 5px;
   color: white;
   padding: 10px 10px;
@@ -124,11 +124,11 @@ ul {
 }
 
 .card {
-  box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 350px;
   height: 500px;
-  border-radius: 5px;
+  border-radius: 10px;
   position: relative;
   margin: 15px;
 
@@ -250,7 +250,7 @@ ul {
   margin: auto;
   border-radius: 8px;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
   position: absolute;
   bottom: 0;
   right: 0;
@@ -271,8 +271,8 @@ ul {
   display: block;
   max-height: 700px;
   max-width: 1200px;
-  padding-top: 50px;
-  background-size: 70% 250px;
+  padding-top: 125px;
+  background-size: 110% 75%;
   background-position: top;
   background-image: url("/assets/royce_icon.png");
   background-color: rgba(255,255,255,0.6);
@@ -360,9 +360,11 @@ ul {
 }
 
 .con {
-  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: relative;
   height: 175px;
+  font-family: $bruinspeak_open_sans;
 }
 
 .con.bottom {
@@ -407,17 +409,16 @@ ul {
     color: black;
 }
 
-.home-popular-title {
+.popular {
   width: 90%;
-  max-width: 1500px;
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1450px;
+  margin: 0 auto;
+}
 
-  h1 {
-    font-size: 30px;
-    margin-left: 50px;
-  }
+.home-popular-title {
+  margin-bottom: 15px;
+  margin-left: 70px;
+  font-size: 30px;
 }
 
 .sign-icon {
@@ -463,6 +464,11 @@ ul {
   font-size: 16px;
   color: $bruinspeak_black;
   letter-spacing: 1.7px;
+}
+
+#petition-carousel {
+  margin-top: 50px;
+  margin-bottom: 200px;
 }
 
 .petition-img {
@@ -516,6 +522,19 @@ ul {
   padding: 0;
   list-style-type: none;
   font-size: 16px;
+
+  li {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+  li * {
+    margin-right: 5px;
+  }
 }
 
 .petition-stats-carousel span {
@@ -531,8 +550,6 @@ ul {
   color: $bruinspeak_black;
   text-decoration: none;
 }
-
-
 
 .profile-icon {
   width: 130px;
@@ -680,7 +697,7 @@ input, textarea {
 #start-pet-btn{
   font-family: $bruinspeak_open_sans;
   font-size: 15px;
-  padding: 15px;
+  padding: 13px;
   box-shadow: 2px 2px 5px #888888;
 }
 

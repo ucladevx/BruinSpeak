@@ -1,15 +1,15 @@
 <div class="center-info">
-  <p class="home-title">UCLA's platform for change</p>
+  <p class="home-title">UCLA's Platform for Change</p>
   <p class="home-subtitle">12,342 students are taking action.</p>
   <p class="home-subtitle home-subtitle--victories"><u>Victories every day.</u></p>
   <br>
   <%= link_to "START PETITION", new_petition_path, :class => "button", :id => "start-pet-btn" %>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="petition-carousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#petition-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#petition-carousel" data-slide-to="1"></li>
+      <li data-target="#petition-carousel" data-slide-to="2"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -22,25 +22,27 @@
     </div>
 
       <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <a class="left carousel-control" href="#petition-carousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <a class="right carousel-control" href="#petition-carousel" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
   </div>
 </div>
 <% count = 0 %>
-<div class="home-popular-title"><h1>What's Popular</h1></div>
-<div class="home-petition-wrapper">
-  <div id="petition-cards">
-    <% @petitions.each do |petition| %>
-      <%= render 'shared/post', petition: petition %>
-    <% end %>
-  </div>
-  <div id="infinite-scrolling">
-    <%= will_paginate @petitions %>
+<div class="popular">
+  <h1 class="home-popular-title">What's Popular</h1>
+  <div class="home-petition-wrapper">
+    <div id="petition-cards">
+      <% @petitions.each do |petition| %>
+        <%= render 'shared/post', petition: petition %>
+      <% end %>
+    </div>
+    <div id="infinite-scrolling">
+      <%= will_paginate @petitions %>
+    </div>
   </div>
 </div>

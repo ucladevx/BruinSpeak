@@ -11,7 +11,7 @@
     <% end %>
   </div>
   <div class="con">
-    <%= link_to petition.title, petition_path(petition.id), class: "petition-title" %>
+    <b><%= link_to petition.title, petition_path(petition.id), class: "petition-title" %></b>
     <%= link_to user_path(petition.user.id) do %>
       <p class="petition-author"><%= petition.user.full_name %></p>
     <% end %>
@@ -28,7 +28,7 @@
     <div class="petition-stats-col">
       <img width="50px" height="50px" class="petiton-stat-img" src="/assets/money_icon.png">
       <div class="petition-stat-stack">
-        <div>$<%= petition.money_request %></div>
+        <div>$ <%= petition.money_request %></div>
         <div>Requested</div>
       </div>
     </div>
