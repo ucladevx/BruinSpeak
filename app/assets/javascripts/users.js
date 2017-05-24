@@ -45,13 +45,13 @@ $(function() {
   (function() {
     // TODO: Clean this up later!
 
-    let sel = document.getElementById("profile-role");
-    let btn = document.getElementById("profile-role-button");
+    var sel = document.getElementById("profile-role");
+    var btn = document.getElementById("profile-role-button");
     if(btn && sel) {
       btn.onclick = function(e) {
-        let parent = document.getElementById("profile-role-change");
-        let wrapper = document.getElementById("profile-wrapper");
-        let roleEl = document.getElementsByClassName("prof-sub")[1];
+        var parent = document.getElementById("profile-role-change");
+        var wrapper = document.getElementById("profile-wrapper");
+        var roleEl = document.getElementsByClassName("prof-sub")[1];
 
         const roles = {
           0 : "Role: Default",
@@ -59,17 +59,17 @@ $(function() {
           2 : "Role: Admin"
         }
 
-        let self = this;
+        var self = this;
         e.preventDefault();
-        let newRole = parseInt(sel.value,10);
+        var newRole = parseInt(sel.value,10);
         this.disabled = true;
-        let loader = document.createElement("div");
+        var loader = document.createElement("div");
         loader.classList = ["loader"];
         parent.prepend(loader);
 
         $.post(document.URL+"/role", { role: newRole })
           .done(function(data) {
-            let notice = document.createElement("div")
+            var notice = document.createElement("div")
             notice.classList = "notice alert alert-info";
             notice.innerText = "Role changed successfully";
             roleEl.innerText = roles[newRole];
@@ -81,7 +81,7 @@ $(function() {
             }, 3000);
           }).fail(function(err) {
             console.log(err);
-            let notice = document.createElement("div")
+            var notice = document.createElement("div")
             notice.classList = "notice alert alert-danger";
             notice.innerText = "There was a problem changing the role";
             parent.prepend(notice);
