@@ -34,15 +34,20 @@
         <% end %>
 
         <div>
-            <p class="profile-info">About: <span class="profile-values"><%= @user.about %></span></p>
-            <p class="profile-info">Major: <span class="profile-values"><%= @user.major %></span></p>
-            <p class="profile-info">Organizations: <span class="profile-values"><%= @user.organizations %></span></p>
+            <% if @user.about != "" %>
+              <p class="profile-info">About: <%= @user.about %></p>
+            <% end %>
+            <% if @user.major != "" %>
+              <p class="profile-info">Major: <%= @user.major %></p>
+            <% end %>
+            <% if @user.organizations != "" %>
+              <p class="profile-info">Organizations: <%= @user.organizations %></p>
+            <% end %>
         </div>
-
         <ul class="nav nav-pills nav-justified pages-tabs">
-            <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<span class="signed-num"><%= @signatures.count %></span>)</a></li>
-            <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Created (<span class="favorite-num"><%= @public_petitions.count %></span>)</a></li>
-            <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Unpublished (<span class="started-num"><%= @private_petitions.count %></span>)</a></li>
+            <li class="active profile-tabs"><a href="#signed-tab" data-toggle="tab">Signed (<%= @signatures.count %>)</a></li>
+            <li class="profile-tabs"><a href="#favorites-tab" data-toggle="tab">Created (<%= @public_petitions.count %>)</a></li>
+            <li class="profile-tabs"><a href="#started-tab" data-toggle="tab">Unpublished (<%= @private_petitions.count %>)</a></li>
         </ul>
     </div>
 </div>
@@ -51,7 +56,7 @@
     <div class="tab-content">
         <div class="tab-pane in active" id="signed-tab">
             <% count = 0 %>
-            <ul>
+            <ul class="profile-card-list">
                 <% @signatures.each do |signature| %>
                 <% petition = Petition.find(signature.petition_id) %>
                 <% if count % 4 == 0 && count != 0 %>
@@ -67,11 +72,11 @@
         </div>
         <div class="tab-pane" id="favorites-tab">
             <% count = 0 %>
-            <ul>
+            <ul class="profile-card-list">
                 <% @public_petitions.each do |petition| %>
                 <% if count % 4 == 0 && count != 0 %>
             </ul>
-            <ul>
+            <ul class="profile-card-list">
                 <% end %>
                 <li class="card-list">
                     <%= render 'shared/post', petition: petition %>
@@ -82,11 +87,11 @@
         </div>
         <div class="tab-pane" id="started-tab">
             <% count = 0 %>
-            <ul>
+            <ul class="profile-card-list">
                 <% @private_petitions.each do |petition| %>
                 <% if count % 4 == 0 && count != 0 %>
             </ul>
-            <ul>
+            <ul class="profile-card-list">
                 <% end %>
                 <li class="card-list">
                     <%= render 'shared/post', petition: petition %>
