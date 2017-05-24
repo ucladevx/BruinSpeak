@@ -4,7 +4,7 @@
       <div class="carousel-image" style="background-image: url('<%= image_url(petition.image.url) %>')" alt="Avatar">
     <% else %>
       <!-- <img src="http://cdn.modernfarmer.com/wp-content/uploads/2014/12/squirrel.jpg"> -->
-      <div class="carousel-image" style="background-image: url(<%= image_url("card_default") %>)">
+      <div class="carousel-image" style="background-image: url(<%= image_path("card_default") %>)">
     <% end %>
   </div>
 <% end %>
@@ -18,7 +18,7 @@
   <div class="carousel-bottom">
     <ul class="petition-stats-carousel">
       <li>
-        <img width="40px" height="40px" class="petiton-stat-img" src="/assets/supporters_icon.png">
+        <img width="40px" height="40px" class="petiton-stat-img" src=<%= image_path("supporters_icon") %>>
         <div class="stats-value"><%= petition.signatures.count + 1 %></div>
         <% if petition.signatures.count + 1 == 1 %>
           <span>Supporter</span>
