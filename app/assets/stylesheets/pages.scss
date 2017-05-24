@@ -13,7 +13,7 @@
 }
 
  html, body {
-   font-family: 'Open Sans', sans-serif;
+   font-family: $bruinspeak_open_sans;
  }
 
 html {
@@ -30,6 +30,10 @@ body {
 
 div {
   position: relative;
+}
+
+h1 {
+  font-family: $bruinspeak_open_sans;
 }
 
 h2 {
@@ -170,10 +174,13 @@ ul {
 }
 
 #petition-cards {
+  max-width: 1400px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0 auto;
+
   @media all and (max-width: $break-med) {
     flex-direction: column;
   }
@@ -190,6 +197,7 @@ ul {
 }
 
 .carousel-content {
+  font-family: $bruinspeak_open_sans;
   text-align: left;
   height: 400px;
   float: left;
@@ -332,6 +340,7 @@ ul {
 }
 
 .home-title {
+  font-family: sans-serif;
   font-size: 50px;
   font-weight: bold;
   margin-bottom: 0;
@@ -398,6 +407,18 @@ ul {
     color: black;
 }
 
+.home-popular-title {
+  width: 90%;
+  max-width: 1500px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1 {
+    font-size: 30px;
+    margin-left: 50px;
+  }
+}
 
 .sign-icon {
   float: right;
@@ -657,7 +678,10 @@ input, textarea {
 }
 
 #start-pet-btn{
-     box-shadow: 2px 2px 5px #888888;
+  font-family: $bruinspeak_open_sans;
+  font-size: 15px;
+  padding: 15px;
+  box-shadow: 2px 2px 5px #888888;
 }
 
 @media (max-width: 768px){

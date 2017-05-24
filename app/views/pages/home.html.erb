@@ -1,4 +1,3 @@
-<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" %>
 <div class="center-info">
   <p class="home-title">UCLA's platform for change</p>
   <p class="home-subtitle">12,342 students are taking action.</p>
@@ -34,7 +33,7 @@
   </div>
 </div>
 <% count = 0 %>
-<h1 style="padding-left:50px; margin-bottom:40px">What's Popular</h1>
+<div class="home-popular-title"><h1>What's Popular</h1></div>
 <div class="home-petition-wrapper">
   <div id="petition-cards">
     <% @petitions.each do |petition| %>
