@@ -1,19 +1,19 @@
-let confirm_public = "This petition is now public.";
-let confirm_private = "This petition is now private.";
-let prompt_public = "Click here to make this petition public.";
-let prompt_private = "Click here to make this petition private.";
+var confirm_public = "This petition is now public.";
+var confirm_private = "This petition is now private.";
+var prompt_public = "Click here to make this petition public.";
+var prompt_private = "Click here to make this petition private.";
 
 function replaceChild(el, message) {
     el.removeChild(el.firstChild);
 
-    let loader = document.createElement("div");
+    var loader = document.createElement("div");
     el.append(loader);
     loader.classList = "loader";
     el.innerText = message;
 }
 
 (function() {
-  let el = document.getElementById('petition-notice');
+  var el = document.getElementById('petition-notice');
   if(el != null) {
     el.onclick = function (){
 
@@ -47,7 +47,7 @@ function replaceChild(el, message) {
     }
   }
 
-  let btn = document.getElementById("petition-recievers-button");
+  var btn = document.getElementById("petition-recievers-button");
   if(btn != null) {
     btn.onclick = function(e) {
       e.preventDefault();

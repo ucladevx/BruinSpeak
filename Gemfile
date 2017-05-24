@@ -65,6 +65,12 @@ gem 'will_paginate', '~> 3.1.5'
 #jquery on mediaquerys
 gem 'modernizr-rails', '~> 2.7', '>= 2.7.1'
 
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+# Documentation: https://github.com/laserlemon/figaro
+gem 'figaro', '~> 1.1'
+
+gem 'fog-aws'
+
 group :development do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

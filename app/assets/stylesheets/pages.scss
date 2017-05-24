@@ -1,4 +1,3 @@
-@import "_variables";
 @import "bootstraply";
 @import "footer";
 @import "forms";
@@ -127,7 +126,7 @@ ul {
   height: 500px;
   border-radius: 5px;
   position: relative;
-  margin: 15px auto;
+  margin: 15px;
 
   @media all and (max-width: $break-small) {
     width: 90%;

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:update_role]
   def show
     @user = User.find(params[:id])
     @public_petitions = Petition.where(user_id: @user.id).where.not(public: "FALSE")
@@ -7,16 +8,31 @@ class UsersController < ApplicationController
   end
 
   def update_role
-    user = User.find(params[:user][:id])
-    new_role = params[:user][:role]
+    user = User.find(params[:id])
+    new_role = params[:role].to_i
 
     respond_to do |format|
-      if user.update(role: new_role)
-        # TODO: make AJAX request instead of reloading page
-        format.html { redirect_to(:back, notice: 'Role was successfully changed') }
+      if current_user.admin?
+        user.role = new_role
+        if user.save
+          message = { message: "User role successfully update to #{new_role}" }
+          format.json { render json: message, status: 200 }
+        else
+          message = { message: "There was a problem changing the role" }
+          format.json { render json: message, status: 500 }
+        end
+      elsif current_user.government? and new_role  < 2
+        user.role = new_role
+        if user.save
+          message = { message: "User role successfully update to #{new_role}" }
+          format.json { render json: message, status: 200 }
+        else
+          message = { message: "There was a problem changing the role" }
+          format.json { render json: message, status: 500 }
+        end
       else
-        # TODO: If the comment fails to delete, pop up a notification
-        format.html { redirect_to(:back) }
+        message = { error: 'You are not allowed to change to this role' }
+        format.json { render json: message, status: 401 }
       end
     end
   end

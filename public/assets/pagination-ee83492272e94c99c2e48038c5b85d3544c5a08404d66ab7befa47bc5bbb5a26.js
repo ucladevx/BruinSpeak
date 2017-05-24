@@ -1,0 +1,1 @@
+(function(){jQuery(function(){$("#infinite-scrolling").size()>0&&$(window).on("scroll",function(){var i;(i=$(".pagination .next_page").attr("href"))&&$(window).scrollTop()>$(document).height()-$(window).height()-10&&($(".pagination").html('<img src="/assets/ajax-loader.gif" alt="Loading..." title="Loading..." />'),console.log($.getScript(i)))})})}).call(this);

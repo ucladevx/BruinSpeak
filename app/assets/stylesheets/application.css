@@ -13,13 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- @import "_variables";
- @import "bootstraply";
- @import "footer";
- @import "forms";
- @import "navbar";
- @import "pages";
- @import "petitions";
- @import "signatures";
- @import "users";
