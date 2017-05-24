@@ -318,6 +318,13 @@ ul {
   background-repeat: no-repeat;
 }
 
+.center-heading {
+    text-align: center;
+    margin: auto;
+    display: block;
+    max-width: 1200px;
+}
+
 .circle {
     border-radius:50%;
     position:absolute;
@@ -460,6 +467,38 @@ ul {
   width: 30px;
   cursor: pointer;
 }
+
+
+.member-cards
+{
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.member
+{
+    padding-bottom: 50px;
+}
+.member-desc
+{
+    display: inline;
+    text-align: left;
+}
+.member-desc small
+{
+    font-weight: 300;
+}
+.member-desc p
+{
+    overflow: hidden;
+}
+.member-cards img
+{
+    width: 120px;
+    display: inline;
+    float: left;
+        margin-right: 20px;
+}
+
 
 .notice {
     text-align: center;
