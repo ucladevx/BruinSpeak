@@ -22,6 +22,11 @@ html {
 
 a {
   text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 body {
@@ -190,20 +195,36 @@ ul {
   box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
 }
 
+.carousel-arrow {
+  vertical-align: middle;
+}
+
 .carousel-bottom {
   bottom: 0;
   position: absolute;
   margin-bottom: 20px;
 }
 
+.carousel-content-wrapper {
+  position: absolute;
+  height: 93%;
+  width: 95%;
+  margin-top: 2%;
+  margin-left: 3%;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
 .carousel-content {
   font-family: $bruinspeak_open_sans;
   text-align: left;
-  height: 400px;
+  height: 100%;
   float: left;
   padding: 30px;
   padding-right: 36px;
   width: 50%;
+  background-color: white;
+  border-radius: 8px;
 }
 
 .carousel-content-title {
@@ -214,12 +235,11 @@ ul {
 }
 
 .carousel-content-author {
-  font-size: 23px;
-  font-style: italic;
+  font-size: 17px;
   font-weight: normal;
-  color: grey;
+  color: $bruinspeak_black;
+  margin-top: 7px;
   margin-bottom: 20px;
-  line-height: 120%;
 }
 
 .carousel-content-desc {
@@ -234,7 +254,7 @@ ul {
 }
 
 .carousel-image {
-  height: 400px;
+  height: 100%;
   width: 50%;
   float: left;
   overflow: hidden;
@@ -245,15 +265,21 @@ ul {
 }
 
 .carousel-inner {
-  width: 1000px;
+  width: 90%;
+  max-width: 1000px;
   height: 400px;
-  margin: auto;
   border-radius: 8px;
-  background-color: white;
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  background-color: transparent;
+  // box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+}
+
+.carousel-indicators {
+  margin-left: -22%;
+}
+
+.carousel-item {
+  height: 100%;
+  width: 100%;
 }
 
 .carousel.slide {
@@ -467,8 +493,13 @@ ul {
 }
 
 #petition-carousel {
+  width: 90%;
   margin-top: 50px;
   margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .petition-img {
@@ -521,10 +552,10 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  font-size: 16px;
+  font-size: 14px;
 
   li {
-    margin-right: 10px;
+    // margin-right: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -540,6 +571,13 @@ ul {
 .petition-stats-carousel span {
   font-size: 16px;
   padding-left: 0;
+}
+
+.petition-status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 .petition-title {
@@ -699,6 +737,11 @@ input, textarea {
   font-size: 15px;
   padding: 13px;
   box-shadow: 2px 2px 5px #888888;
+
+  &:hover {
+    color: white;
+    background-color: $bruinspeak_green;
+  }
 }
 
 @media (max-width: 768px){
@@ -719,4 +762,10 @@ input, textarea {
     #explore-buttons-grid{
         display: none;
     }
+}
+
+.vertical-center {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
