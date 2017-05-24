@@ -58,6 +58,27 @@ class PetitionsController < ApplicationController
     redirect_to root_path
   end
 
+  def change_to_victory
+    @petition = Petition.find(params[:id])
+    @petition.status = "victory"
+    @petition.save
+    redirect_to @petition
+  end
+
+  def change_to_active
+    @petition = Petition.find(params[:id])
+    @petition.status = "active"
+    @petition.save
+    redirect_to @petition
+  end
+
+  def change_to_closed
+    @petition = Petition.find(params[:id])
+    @petition.status = "closed"
+    @petition.save
+    redirect_to @petition
+  end
+
   private
   def petitionParams
     params[:petition][:recievers] = params[:petition][:recievers].join(",")
