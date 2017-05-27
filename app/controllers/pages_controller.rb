@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @petitions = Petition.trending().paginate(page: params[:page], per_page: 8)
-    @top_petitions = Petition.where(public: true).limit(3)
+    @top_petitions = Petition.where(public: true).limit(3).trending()
     respond_to do |format|
       format.html
       format.js
@@ -10,7 +10,18 @@ class PagesController < ApplicationController
 
   def explore
     @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc).limit(15)
-    @petitions = Petition.where(public: true)
+    @petitions = Petition.where(public: true).trending().paginate(page: params[:petitions_page], per_page: 8)
+    @victories = Petition.where(public: true, status: "victory").order(updated_at: :desc).paginate(page: params[:victories_page], per_page: 8)
+    @recent = Petition.where(public: true).order(updated_at: :desc).paginate(page: params[:recent_page], per_page: 8)
+    @type = params[:type]
+    if !@type
+      @type = "petitions"
+    end
+    puts "TYPE: " + @type.to_s
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def tag

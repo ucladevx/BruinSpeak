@@ -29,43 +29,54 @@
 
 <div class="container">
     <ul class="nav nav-pills nav-justified pages-tabs">
-        <li class="active profile-tabs"><a href="#featured-tab" data-toggle="tab">Featured</a></li>
-        <li class="profile-tabs"><a href="#victories-tab" data-toggle="tab">Victories</a></li>
-        <li class="profile-tabs"><a href="#popular-tab" data-toggle="tab">Popular</a></li>
-        <li class="profile-tabs"><a href="#recent-tab" data-toggle="tab">Recent</a></li>
+        <% if @type == "petitions" %>
+            <li class="active profile-tabs"><a href="#featured-tab" data-toggle="tab">Featured</a></li>
+            <li class="profile-tabs"><a href="#victories-tab" data-toggle="tab">Victories</a></li>
+            <li class="profile-tabs"><a href="#recent-tab" data-toggle="tab">Recent</a></li>
+        <% elsif @type == "victories" %>
+            <li class="profile-tabs"><a href="#featured-tab" data-toggle="tab">Featured</a></li>
+            <li class="active profile-tabs"><a href="#victories-tab" data-toggle="tab">Victories</a></li>
+            <li class="profile-tabs"><a href="#recent-tab" data-toggle="tab">Recent</a></li>
+        <% else %>
+            <li class="profile-tabs"><a href="#featured-tab" data-toggle="tab">Featured</a></li>
+            <li class="profile-tabs"><a href="#victories-tab" data-toggle="tab">Victories</a></li>
+            <li class="active profile-tabs"><a href="#recent-tab" data-toggle="tab">Recent</a></li>
+        <% end %>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane in active" id="featured-tab">
-            <% count = 0 %>
+        <% if @type == "petitions" %>
+            <div class="tab-pane in active" id="featured-tab">
+        <% else %>
+            <div class="tab-pane" id="featured-tab">
+        <% end %>
             <ul>
-                <% @petitions.each do |petition| %>
-                <% if count % 4 == 0 && count != 0 %>
+                <div id="petition-cards">
+                    <% @petitions.each do |petition| %>
+                    <li>
+                        <%= render 'shared/post', petition: petition %>
+                    </li>
+                    <% end %>
+                </div>
             </ul>
-            <ul>
-                <% end %>
-                <li>
-                    <%= render 'shared/post', petition: petition %>
-                </li>
-                <% count = count + 1 %>
-                <% end %>
-            </ul>
+            <%= will_paginate @petitions, :param_name => 'petitions_page', params: { type: "petitions" } %>
         </div>
-        <div class="tab-pane" id="victories-tab">
-            <% count = 0 %>
+        <% if @type == "victories" %>
+            <div class="tab-pane in active" id="victories-tab">
+        <% else %>
+            <div class="tab-pane" id="victories-tab">
+        <% end %>
             <ul>
-                <% @petitions.each do |petition| %>
-                <% if count % 4 == 0 && count != 0 %>
+                <div id="petition-cards">
+                    <% @victories.each do |petition| %>
+                    <li>
+                        <%= render 'shared/post', petition: petition %>
+                    </li>
+                    <% end %>
+                </div>
             </ul>
-            <ul>
-                <% end %>
-                <li>
-                    <%= render 'shared/post', petition: petition %>
-                </li>
-                <% count = count + 1 %>
-                <% end %>
-            </ul>
+            <%= will_paginate @victories, :param_name => 'victories_page', params: { type: "victories" } %>
         </div>
-        <div class="tab-pane" id="popular-tab">
+        <!--<div class="tab-pane" id="popular-tab">
             <% count = 0 %>
             <ul>
                 <% @petitions.each do |petition| %>
@@ -79,21 +90,22 @@
                 <% count = count + 1 %>
                 <% end %>
             </ul>
-        </div>
-        <div class="tab-pane" id="recent-tab">
-            <% count = 0 %>
+        </div>-->
+        <% if @type == "recent" %>
+            <div class="tab-pane in active" id="recent-tab">
+        <% else %>
+            <div class="tab-pane" id="recent-tab">
+        <% end %>
             <ul>
-                <% @petitions.each do |petition| %>
-                <% if count % 4 == 0 && count != 0 %>
+                <div id="petition-cards">
+                    <% @recent.each do |petition| %>
+                    <li>
+                        <%= render 'shared/post', petition: petition %>
+                    </li>
+                    <% end %>
+                </div>
             </ul>
-            <ul>
-                <% end %>
-                <li>
-                    <%= render 'shared/post', petition: petition %>
-                </li>
-                <% count = count + 1 %>
-                <% end %>
-            </ul>
+            <%= will_paginate @recent, :param_name => 'recent_page', params: { type: "recent" } %>
         </div>
     </div>
 </div>
