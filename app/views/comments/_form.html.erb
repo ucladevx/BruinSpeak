@@ -1,5 +1,5 @@
 <% if current_user %>
-  <%= form_for @new_comment do |f| %>
+  <%= form_for @new_comment, :remote=>true do |f| %>
     <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
     <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
     <%= f.text_area :body, label: false, class: 'form-control' %>
