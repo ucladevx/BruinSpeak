@@ -11,8 +11,8 @@ class PagesController < ApplicationController
   def explore
     @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc).limit(15)
     @petitions = Petition.where(public: true).trending().paginate(page: params[:petitions_page], per_page: 8)
-    @victories = Petition.where(public: true, status: "victory").order(updated_at: :desc).paginate(page: params[:victories_page], per_page: 8)
-    @recent = Petition.where(public: true).order(updated_at: :desc).paginate(page: params[:recent_page], per_page: 8)
+    @victories = Petition.where(public: true, status: "victory").order(created_at: :desc).paginate(page: params[:victories_page], per_page: 8)
+    @recent = Petition.where(public: true).order(created_at: :desc).paginate(page: params[:recent_page], per_page: 8)
     @type = params[:type]
     if !@type
       @type = "petitions"
