@@ -1,0 +1,8 @@
+<% unless @comment.parent_id.nil?  %>
+  console.log("<%= @current_user %>")
+  $('#comment-<%= @comment.parent_id%>').append('<%= escape_javascript (render partial: "comments/reply", locals: { comments: [@comment], current_user: @current_user }) %>')
+<% else %>
+  $('.comments-container').prepend('<%= escape_javascript (render partial: "comments/reply", locals: { comments: [@comment], current_user: @current_user }) %>')
+<% end %>
+
+initComments()

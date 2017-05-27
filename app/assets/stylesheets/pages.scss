@@ -384,6 +384,28 @@ ul {
     margin-left:4.166666667%;
 }
 
+.contact-us {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(50, 143, 214, 0.4);
+}
+
+.contact-us p a {
+  font-size: 18px;
+  color: #737373;
+}
+
+.contact-us p a:hover {
+  color: #8c8c8c;
+}
+
+.contact-background img {
+  margin: auto;
+  display: block;
+  width: 80%;
+}
+
 .home-title {
   font-family: sans-serif;
   font-size: 50px;

@@ -1,19 +1,16 @@
 <div style="margin-top:10px; margin-bottom:100px">
   <div class="container padded" style="width:500px">
     <h1 class="new-petition-title"><b>Create Petition</b></h1>
-    <br>
     <%= form_for(@petition) do |f| %>
-      <% if @petition.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@petition.errors.count, "error") %> prohibited this petition from being saved:</h2>
 
-          <ul>
-          <% @petition.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
+    <% if @petition.errors.any? %>
+      <div id="error_explanation">
+
+        <% @petition.errors.full_messages.each do |message| %>
+          <p class="petition-error"><%= message %></p>
+        <% end %>
+      </div>
+    <% end %>
 
       <%= f.hidden_field :user_id, value: current_user.id %>
       <h2><b>1. Add Your Petition Title</b></h2>
