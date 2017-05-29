@@ -45,12 +45,17 @@ progress[value] {
   margin-bottom: 10px;
 }
 
-.new_signature input {
-  margin-top: 5px;
-  margin-left: 20px;
-  width: 30%;
-  background-color: #328FD6;
+.new_signature {
+  height: 60%;
+
+  input {
+    margin-top: 5px;
+    margin-left: 20px;
+    width: 30%;
+    background-color: #328FD6;
+  }
 }
+
 
 .pet-container {
   margin-bottom: inherit;

@@ -79,49 +79,7 @@
   </div>
   <div class="share-container">
     <div class="share-card">
-      <% if @petition.status == "closed" %>
-        <h3 class="share-title">Petition Closed!</h3>
-      <% elsif @petition.status == "victory" %>
-        <h3 class="share-title">Petition Closed!</h3>
-      <% else %>
-        <h3 class="share-title">Sign Petition!</h3>
-      <% end %>
-      <ul style="padding-left:20px">
-        <li>
-          <img class="share-icon" src="/assets/default_profile_picture.png">
-        </li>
-        <li>
-          <p style="letter-spacing:0.9px; font-size:16px"><%= @petition.signatures.count + 1 %>/<%= @petition.goal %> Supporters</p>
-        </li>
-      </ul>
-      <progress value=<%= @petition.signatures.count + 1 %> max=<%= @petition.goal %>></progress>
-      <% if @petition.status == "closed" or @petition.status == "victory" %>
-        <p style="margin-left: 20px">Signatures are Closed</p>
-        <%= link_to image_tag("/assets/facebook_share_button", class: "share-facebook"), "http://www.facebook.com/sharer.php?u=#{petition_url(@petition)}" %>
-        <!--<%= link_to "Tweet it", "http://twitter.com/home?status=#{@petition.title} #{petition_url(@petition)}" %>-->
-      <% elsif !current_user %>
-        <p style="margin-left: 20px">You must be signed in to sign this petition</p>
-        <%= link_to image_tag("/assets/facebook_share_button", class: "share-facebook"), "http://www.facebook.com/sharer.php?u=#{petition_url(@petition)}" %>
-        <!--<%= link_to "Tweet it", "http://twitter.com/home?status=#{@petition.title} #{petition_url(@petition)}" %>-->
-      <% elsif current_user.id != @petition.user.id and !current_user.petitions.exists?(@petition.id) %>
-        <%= form_for @signature, html: {style: 'height: 100%;'} do |f| %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          <%= f.hidden_field :petition_id, value: @petition.id %>
-          <%= f.text_area :reason, label: false, class: "write-box", placeholder: "I am supporting this petition because..." %>
-
-          <%= submit_tag 'SIGN', class: 'btn btn-primary' %>
-          <%= link_to image_tag("/assets/facebook_share_button", class: "share-facebook"), "http://www.facebook.com/sharer.php?u=#{petition_url(@petition)}" %>
-          <!--<%= link_to "Tweet it", "http://twitter.com/home?status=#{@petition.title} #{petition_url(@petition)}" %>-->
-        <% end %>
-      <% elsif current_user.id != @petition.user_id %>
-        <p style="margin-left: 20px">You signed this petition</p>
-        <%= link_to  "Remove Signature", signatures_path(@current_user.id), method: :delete, remote: false, class: 'signature-remove' %>
-        <%= link_to image_tag("/assets/facebook_share_button", class: "share-facebook"), "http://www.facebook.com/sharer.php?u=#{petition_url(@petition)}" %>
-        <!--<%= link_to "Tweet it", "http://twitter.com/home?status=#{@petition.title} #{petition_url(@petition)}" %>-->
-      <% else %>
-        <%= link_to image_tag("/assets/facebook_share_button", class: "share-facebook"), "http://www.facebook.com/sharer.php?u=#{petition_url(@petition)}" %>
-        <!--<%= link_to "Tweet it", "http://twitter.com/home?status=#{@petition.title} #{petition_url(@petition)}" %>-->
-      <% end %>
+      <%= render "petitions/sign" %>
     </div>
   </div>
 </div>

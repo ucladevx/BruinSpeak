@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   post '/petitions/:id/closed', to: 'petitions#change_to_closed', as: 'closed', :constraints => { :only_ajax => true }
   post '/petitions/:id/active', to: 'petitions#change_to_active', as: 'active', :constraints => { :only_ajax => true }
 
-  post '/signatures', to: 'signatures#create'
-  delete '/signatures.:user_id', to: 'signatures#destroy'
+  post '/signatures', to: 'signatures#create', :constraints => { :only_ajax => true }
+  delete '/signatures.:user_id', to: 'signatures#destroy', :constraints => { :only_ajax => true }
   get '/tag/:id', to: 'pages#tag', as: 'tag'
   devise_scope :user do
     get '/user/remove_picture', to: 'users/registrations#remove_picture', as: 'remove_picture'

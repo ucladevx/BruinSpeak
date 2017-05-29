@@ -1,0 +1,7 @@
+<%= form_for @signature, :remote=>true do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :petition_id, value: @petition.id %>
+  <%= f.text_area :reason, label: false, class: "write-box", placeholder: "I am supporting this petition because..." %>
+
+  <%= submit_tag "SIGN", class: "btn btn-primary", method: :post %>
+<% end %>
