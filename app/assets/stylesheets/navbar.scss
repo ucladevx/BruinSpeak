@@ -172,11 +172,12 @@
     width: 40px;
     height: 40px;
     object-fit: cover;
-    margin-top: 10%;
 }
 
 .nav-prof-li {
-    
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10%;
 }
 
 .navbar-brand{
@@ -197,7 +198,7 @@
 }
 
 .search-btn-reg{
-    margin-left: 75px;
+    margin-left: 67px;
     font-size: 14px;
     height: auto;
     width: auto;
@@ -297,9 +298,12 @@
     #search-btn{
         padding-left: 1px;
     }
-    .nav-prof {
-        margin-left: 15px;
+    .nav-prof-li{
         margin-top: 0px;
+    }
+    #navbar-form {
+        margin-top: 7.5px;
+        margin-bottom: 7.5px;
     }
 }
 
