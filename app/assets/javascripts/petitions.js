@@ -12,7 +12,15 @@ function replaceChild(el, message) {
     el.innerText = message;
 }
 
+function removeReciever(e) {
+  e.preventDefault();
+
+  this.parentElement.remove();
+}
+
 (function() {
+  $(".petition-create--btn").click(removeReciever);
+
   var el = document.getElementById('petition-notice');
   if(el != null) {
     el.onclick = function (){
@@ -51,12 +59,14 @@ function replaceChild(el, message) {
   if(btn != null) {
     btn.onclick = function(e) {
       e.preventDefault();
-      var newInput = document.createElement("input");
-      newInput.name = "petition[recievers][]";
-      newInput.placeholder = "Who?";
-      newInput.type = "text";
-      newInput.classList = ["petition-create--input"];
 
+      var inHtml = `<input placeholder="Who?" type="text" name="petition[recievers][]" , class="petition-create--input petition-create--input--recievers">
+      <button class="petition-create--btn">Remove</button>`
+
+      var newInput = document.createElement("div");
+      newInput.classList = ["petition-recievers-wrapper"];
+      newInput.innerHTML = inHtml;
+      newInput.children[1].onclick = removeReciever;
       document.getElementById("petition-recievers").append(newInput);
     }
   }

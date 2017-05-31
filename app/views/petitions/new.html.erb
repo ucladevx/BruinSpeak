@@ -1,5 +1,5 @@
 <div style="margin-top:10px; margin-bottom:100px">
-  <div class="container padded" style="width:500px">
+  <div class="container padded petition-create--wrapper">
     <h1 class="new-petition-title"><b>Create Petition</b></h1>
     <%= form_for(@petition) do |f| %>
 
@@ -7,70 +7,73 @@
       <div id="error_explanation">
 
         <% @petition.errors.full_messages.each do |message| %>
-          <p class="petition-error"><%= message %></p>
+          <p class="petition-error"><%= message %></div>
         <% end %>
       </div>
     <% end %>
 
       <%= f.hidden_field :user_id, value: current_user.id %>
       <h2><b>1. Add Your Petition Title</b></h2>
-      <p>This is the first thing people will see about your petition.
-        Get their attention with a short title that focuses on the change you’d like them to support.</p>
-      <p>
+      <div>This is the first thing people will see about your petition.
+        Get their attention with a short title that focuses on the change you’d like them to support.</div>
+      <div>
         <%= f.text_field :title, placeholder: "Title", class: "petition-create--input" %>
-      </p><br>
+      </div><br>
 
       <h2><b>2. Add a Description</b></h2>
-      <p>People are more likely to support your petition if it’s clear why you care.
-        Explain how this change will impact the UCLA community.</p>
-      <p>
+      <div>People are more likely to support your petition if it’s clear why you care.
+        Explain how this change will impact the UCLA community.</div>
+      <div>
         <%= f.text_area :description, placeholder: "Description", class: "petition-create--input" %>
-      </p><br>
+      </div><br>
 
       <h2><b>3. Choose Categories</b></h2>
-      <p>These are the filters you want to add for your petition,
+      <div>These are the filters you want to add for your petition,
          add as many relevant tags as you can. This will help other people search
-         for your petition using BruinSpeak’s search feature.</p>
-      <p>
+         for your petition using BruinSpeak’s search feature.</div>
+      <div>
         <%= f.text_field :tag_list, placeholder: "Tags", class: "petition-create--input" %>
-      </p><br>
+      </div><br>
 
-      <h2><b>4. Add an Image/Video</b></h2>
-      <p>Petitions with a photo or video receive many times more
-        signatures than those without. Include one that captures the emotion of your petition.</p>
-      <p>
+      <h2><b>4. Add an Image</b></h2>
+      <div>Petitions with a photo receive many times more
+        signatures than those without. Include one that captures the emotion of your petition.</div>
+      <div>
         <%= f.file_field :image %>
-      </p><br>
+      </div><br>
 
       <h2><b>5. Set a Goal</b></h2>
-      <p>Choose how many signatures you need for your petition to be successful.</p>
-      <p>
+      <div>Choose how many signatures you need for your petition to be successful.</div>
+      <div>
         <%= f.number_field :goal, min: 10, value: 10, class: "petition-create--input" %>
-      </p><br>
+      </div><br>
 
       <h2><b>6. Requesting Money</b></h2>
-      <p>Ask the student government for money for your cause.</p>
-      <p>
+      <div>Ask the student government for money for your cause.</div>
+      <div>
         <%= f.number_field :money_request, min: 0, value: 0, class: "petition-create--input" %>
-      </p><br>
+      </div><br>
 
       <h2><b>7. Deliver To</b></h2>
-      <p>Who do you want to answer to this petiton?</p>
+      <div>Who do you want to answer to this petiton?</div>
       <div id="petition-recievers">
-        <input placeholder="Who?" type="text" name="petition[recievers][]" , class="petition-create--input">
+        <div class="petition-recievers-wrapper">
+          <input placeholder="Who?" type="text" name="petition[recievers][]" , class="petition-create--input petition-create--input--recievers">
+          <button class="petition-create--btn">Remove</button>
+        </div>
       </div>
       <button class="btn btn-info" id="petition-recievers-button" style="margin-left:0; margin-bottom:30px; margin-top:10px">Add More</button>
       <br>
 
       <h2><b>8. Make it Public</b></h2>
-      <p>Do you want to launch it right now or wait until later?</p>
-      <p>
+      <div>Do you want to launch it right now or wait until later?</div>
+      <div>
         <%= f.check_box :public %>
-      </p><br>
+      </div><br>
 
-      <p>
-        <%= f.submit class: "btn btn-primary" %>
-      </p>
+      <div>
+        <%= f.submit class: "btn btn-primary", :style => "margin: auto;" %>
+      </div>
 
     <% end %>
   </div>

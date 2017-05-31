@@ -73,6 +73,14 @@ progress[value] {
   display: inline-block;
 }
 
+.petition-create--wrapper {
+  width: 60%;
+
+  @media (max-width: $break-med) {
+    width: 90%;
+  }
+}
+
 .pet-img-container {
    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
    border: 0;
@@ -103,16 +111,35 @@ progress[value] {
   float: left;
 }
 
+.petition-create--btn {
+  height: auto;
+  margin: auto;
+  width: 19%;
+  background-color: $bruinspeak_red;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 10px;
+}
+
 .petition-create--input {
   padding: 10px;
+  margin-top: 5px;
   border-radius: 3px;
   border: 1px solid $bruinspeak_gray;
   color: black;
+  width: 100%;
 
   &:focus {
     border: 1px solid $bruinspeak_blue;
   }
 }
+
+.petition-create--input--recievers {
+  width: 80%;
+  display: inline;
+}
+
 
 .petition-desc {
     padding-top: 2%;
