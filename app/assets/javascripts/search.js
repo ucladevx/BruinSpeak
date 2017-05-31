@@ -11,19 +11,26 @@ $(function () {
     function closeSearch() {
         var $form = $('.navbar-collapse form[role="search"].active')
         var $remElem = $('.nav-rem');
+        var $searchBtn = $('#search-btn');
         $form.find('input').val('');
         $form.removeClass('active');
         $remElem.removeClass("nav-dis");
+        $searchBtn.removeClass("search-btn-search");
+        $searchBtn.addClass("search-btn-reg");
     }
 
     // Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
     $(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
         event.preventDefault();
         var $remElem = $('.nav-rem');
+        var $searchBtn = $('#search-btn');
         console.log($remElem);
+        console.log($searchBtn);
         var $form = $(this).closest('form'),
             $input = $form.find('input');
         $remElem.addClass("nav-dis");
+        $searchBtn.removeClass("search-btn-reg");
+        $searchBtn.addClass("search-btn-search");
         $form.addClass('active');
         $input.focus();
 

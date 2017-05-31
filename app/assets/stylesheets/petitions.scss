@@ -5,7 +5,7 @@
 @import "variables";
 
 progress[value] {
-  width: 250px;
+  width: 90%;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -86,11 +86,15 @@ progress[value] {
   margin: 5px;
   border-radius: 3px;
   border: 1px solid $bruinspeak_gray;
-  color: $bruinspeak_gray;
+  color: black;
 
   &:focus {
     border: 1px solid $bruinspeak_blue;
   }
+}
+
+.petition-desc {
+    padding-top: 2%;
 }
 
 .petition-page-author p {

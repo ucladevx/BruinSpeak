@@ -154,7 +154,6 @@
 
 .nav-input-group {
     width: 100%;
-    margin-left: 10px;
 }
 
 #nav-speak-reg{
@@ -190,6 +189,19 @@
     display: none;
 }
 
+.search-btn-reg{
+    margin-left: 67px;
+    font-size: 14px;
+    height: auto;
+    width: auto;
+}
+
+.search-btn-search{
+    margin-left: 0px;
+    font-size: 14px;
+    height: auto;
+    width: auto;
+}
 
 @media (max-width: 768px) {
     .navbar-header {

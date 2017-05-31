@@ -65,7 +65,7 @@
         <img src=<%= image_url("pet_default") %> width="700" height="450"/>
       <% end %>
     </div>
-    <p><%= @petition.description %></p>
+    <p class="petition-desc"><%= @petition.description %></p>
 
     <% if get_recievers(@petition).count > 0 %>
       <p class="bottom-petition-text">This petition will be delivered to:</p>
