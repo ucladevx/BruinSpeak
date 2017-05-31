@@ -49,15 +49,19 @@
         <% else %>
             <div class="tab-pane" id="featured-tab">
         <% end %>
-            <ul>
-                <div id="petition-cards">
+            <div class="petition-cards">
+                <ul>
                     <% @petitions.each do |petition| %>
-                    <li>
-                        <%= render 'shared/post', petition: petition %>
-                    </li>
+                        <li><%= render 'shared/post', petition: petition %></li>
                     <% end %>
-                </div>
-            </ul>
+                    <% if @petitions.count % 3 == 1 %>
+                      <li></li>
+                      <li></li>
+                    <% elsif @petitions.count % 3 == 2 %>
+                      <li></li>
+                    <% end %>
+                </ul>
+            </div>
             <%= will_paginate @petitions, :param_name => 'petitions_page', params: { type: "petitions" } %>
         </div>
         <% if @type == "victories" %>
@@ -65,15 +69,19 @@
         <% else %>
             <div class="tab-pane" id="victories-tab">
         <% end %>
-            <ul>
-                <div id="petition-cards">
+            <div class="petition-cards">
+                <ul>
                     <% @victories.each do |petition| %>
-                    <li>
-                        <%= render 'shared/post', petition: petition %>
-                    </li>
+                        <li><%= render 'shared/post', petition: petition %></li>
                     <% end %>
-                </div>
-            </ul>
+                    <% if @victories.count % 3 == 1 %>
+                      <li></li>
+                      <li></li>
+                    <% elsif @victories.count % 3 == 2 %>
+                      <li></li>
+                    <% end %>
+                </ul>
+            </div>
             <%= will_paginate @victories, :param_name => 'victories_page', params: { type: "victories" } %>
         </div>
         <% if @type == "recent" %>
@@ -81,15 +89,19 @@
         <% else %>
             <div class="tab-pane" id="recent-tab">
         <% end %>
-            <ul>
-                <div id="petition-cards">
+            <div class="petition-cards">
+                <ul>
                     <% @recent.each do |petition| %>
-                    <li>
-                        <%= render 'shared/post', petition: petition %>
-                    </li>
+                        <li><%= render 'shared/post', petition: petition %></li>
                     <% end %>
-                </div>
-            </ul>
+                    <% if @recent.count % 3 == 1 %>
+                      <li></li>
+                      <li></li>
+                    <% elsif @recent.count % 3 == 2 %>
+                      <li></li>
+                    <% end %>
+                </ul>
+            </div>
             <%= will_paginate @recent, :param_name => 'recent_page', params: { type: "recent" } %>
         </div>
     </div>

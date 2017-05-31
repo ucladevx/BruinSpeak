@@ -61,15 +61,17 @@
             <div class="petition-cards">
                 <ul>
                     <% @signatures.each do |signature| %>
-                    <% petition = Petition.find(signature.petition_id) %>
-                    <% if count % 4 == 0 && count != 0 %>
-                </ul>
-                <ul>
+                        <% petition = Petition.find(signature.petition_id) %>
+                        <li>
+                            <%= render 'shared/post', petition: petition %>
+                        </li>
+                        <% count = count + 1 %>
                     <% end %>
-                    <li>
-                        <%= render 'shared/post', petition: petition %>
-                    </li>
-                    <% count = count + 1 %>
+                    <% if count % 3 == 1 %>
+                      <li></li>
+                      <li></li>
+                    <% elsif count % 3 == 2 %>
+                      <li></li>
                     <% end %>
                 </ul>
             </div>
@@ -79,14 +81,16 @@
             <div class="petition-cards">
                 <ul>
                     <% @public_petitions.each do |petition| %>
-                    <% if count % 4 == 0 && count != 0 %>
-                </ul>
-                <ul>
+                        <li>
+                            <%= render 'shared/post', petition: petition %>
+                        </li>
+                        <% count = count + 1 %>
                     <% end %>
-                    <li>
-                        <%= render 'shared/post', petition: petition %>
-                    </li>
-                    <% count = count + 1 %>
+                    <% if count % 3 == 1 %>
+                      <li></li>
+                      <li></li>
+                    <% elsif count % 3 == 2 %>
+                      <li></li>
                     <% end %>
                 </ul>
             </div>
@@ -96,14 +100,16 @@
             <div class="petition-cards">
                 <ul>
                     <% @private_petitions.each do |petition| %>
-                    <% if count % 4 == 0 && count != 0 %>
-                </ul>
-                <ul>
+                        <li>
+                            <%= render 'shared/post', petition: petition %>
+                        </li>
+                        <% count = count + 1 %>
                     <% end %>
-                    <li>
-                        <%= render 'shared/post', petition: petition %>
-                    </li>
-                    <% count = count + 1 %>
+                    <% if count % 3 == 1 %>
+                      <li></li>
+                      <li></li>
+                    <% elsif count % 3 == 2 %>
+                      <li></li>
                     <% end %>
                 </ul>
             </div>
