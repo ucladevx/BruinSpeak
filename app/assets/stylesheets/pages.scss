@@ -56,14 +56,14 @@ ul {
 }
 
 #about-images-grid {
-    margin-top: 2%;
+  margin-top: 2%;
 }
 
 #about-top {
-    background-image: url("/assets/colorful_circles.png");
-    background-size: contain;
-    height: inherit;
-    width: 80%;
+  background-image: url("/assets/colorful_circles.png");
+  background-size: contain;
+  height: inherit;
+  width: 80%;
 }
 
 
@@ -105,8 +105,8 @@ ul {
 }
 
 .btn {
-    width: 180px;
-    height: 100px;
+  width: 180px;
+  height: 100px;
 }
 
 @media (min-width: 992px) {
@@ -145,8 +145,8 @@ ul {
 .card {
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 350px;
-  height: 500px;
+  width: 300px;
+  height: 450px;
   border-radius: 10px;
   position: relative;
   margin: 15px;
@@ -321,30 +321,38 @@ ul {
 }
 
 .center-heading {
-    text-align: center;
-    margin: auto;
-    display: block;
-    max-width: 1200px;
+  text-align: center;
+  margin: auto;
+  display: block;
+  max-width: 1200px;
 }
 
 .circle {
-    border-radius:50%;
-    position:absolute;
-    z-index: -1;
+  border-radius:50%;
+  position:absolute;
+  z-index: -1;
 }
 
 .comments-header {
   position: relative;
   clear: both;
-  border-bottom: 1px solid #CCCCCC;
-  margin-left: 15px;
+  margin-left: 15%;
   margin-bottom: 10px;
+  padding-top: 70px;
+  width: 85%;
+
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 .comments-container {
   position: relative;
   clear: both;
-  margin-left: 10px;
+  margin-left: 13.5%;
+  width: 70%;
+  max-width: 1500px;
 
   p {
     margin-bottom: 0px;
@@ -377,13 +385,13 @@ ul {
 }
 
 #container {
-    width:500px;
-    height:200px;
-    position:relative;
+  width:500px;
+  height:200px;
+  position:relative;
 }
 
 .col-half-offset {
-    margin-left:4.166666667%;
+  margin-left:4.166666667%;
 }
 
 .contact-us {
@@ -466,14 +474,14 @@ ul {
 }
 
 #explore-buttons-grid {
-    margin-top: 2%;
+  margin-top: 2%;
 }
 
 #explore-top{
-    background-image: url("/assets/colorful_circles.png");
-    background-size: contain;
-    height: inherit;
-    width: 80%;
+  background-image: url("/assets/colorful_circles.png");
+  background-size: contain;
+  height: inherit;
+  width: 80%;
 }
 
 .popular {
@@ -498,51 +506,48 @@ ul {
 
 .member-cards
 {
-    padding-top: 30px;
-    padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 .member
 {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 .member-desc
 {
-    display: inline;
-    text-align: left;
+  display: inline;
+  text-align: left;
 }
 .member-desc small
 {
-    font-weight: 300;
+  font-weight: 300;
 }
 .member-desc p
 {
-    overflow: hidden;
+  overflow: hidden;
 }
 .member-cards img
 {
-    width: 150px;
-    display: inline;
-    float: left;
-        margin-right: 20px;
+  width: 150px;
+  display: inline;
+  float: left;
+  margin-right: 20px;
 }
 
 
 .notice {
-    text-align: center;
+  text-align: center;
 }
 
 .pages-tabs
 {
-    width: 100%;
-    margin: auto;
+  width: 100%;
+  margin: auto;
+  margin-top: 25px;
 }
 
 .pet-container {
   margin-bottom: inherit;
-}
-
-.pet-container div {
-  display: inline-block;
 }
 
 .pet-content {
@@ -568,7 +573,7 @@ ul {
 #petition-carousel {
   width: 90%;
   margin-top: 30px;
-  margin-bottom: 200px;
+  margin-bottom: 125px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -579,6 +584,10 @@ ul {
   height: 225px;
   width: 100%;
   border-radius: 5px 5px 0 0;
+  // float: left;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 
 .petition-desc {
@@ -598,7 +607,7 @@ ul {
 }
 
 .petition-page-title {
-  font-size: 25px;
+  font-size: 35px;
   text-align: center;
   width: 500px;
   overflow: auto;
@@ -669,14 +678,19 @@ ul {
   float: left;
 }
 
+.profile-description {
+  font-family: $bruinspeak_open_sans;
+}
+
 .prof-name {
-    font-weight: bold;
-    font-size: 40px;
+  font-weight: bold;
+  font-size: 40px;
 }
 
 .prof-sub {
-    font-weight: bold;
-    font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 0px;
 }
 
 
@@ -696,7 +710,7 @@ ul {
 
 .search-results {
   margin: 0 auto;
-  width: 95%;
+  width: 85%;
 }
 
 .search-users {
@@ -818,23 +832,23 @@ input, textarea {
 }
 
 @media (max-width: 768px){
-    .brand-small-view {
-    display: inline-flex !important;
-    }
+  .brand-small-view {
+  display: inline-flex !important;
+  }
 
-    .brand-large-view {
-    display: none !important;
-    }
-    .carousel {
-        display: none;
-    }
+  .brand-large-view {
+  display: none !important;
+  }
+  .carousel {
+      display: none;
+  }
 }
 
 
 @media(max-width: 787px){
-    #explore-buttons-grid{
-        display: none;
-    }
+  #explore-buttons-grid{
+      display: none;
+  }
 }
 
 .vertical-center {
