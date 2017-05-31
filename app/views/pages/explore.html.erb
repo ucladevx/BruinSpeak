@@ -76,21 +76,6 @@
             </ul>
             <%= will_paginate @victories, :param_name => 'victories_page', params: { type: "victories" } %>
         </div>
-        <!--<div class="tab-pane" id="popular-tab">
-            <% count = 0 %>
-            <ul>
-                <% @petitions.each do |petition| %>
-                <% if count % 4 == 0 && count != 0 %>
-            </ul>
-            <ul>
-                <% end %>
-                <li>
-                    <%= render 'shared/post', petition: petition %>
-                </li>
-                <% count = count + 1 %>
-                <% end %>
-            </ul>
-        </div>-->
         <% if @type == "recent" %>
             <div class="tab-pane in active" id="recent-tab">
         <% else %>
