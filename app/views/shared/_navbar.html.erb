@@ -32,8 +32,8 @@
                 </li>
             </ul>
 
+            <% if current_user %>
             <ul class="nav navbar-nav navbar-right nav-rem" id="navbar-user">
-                <% if current_user %>
                     <!--<%= link_to user_path(current_user.id) do %>
                         <li class="navbar-dynam-content" ><%= current_user.first_name + " " + current_user.last_name %></li>
                         <% if current_user.profile_pic.url %>
@@ -44,9 +44,9 @@
                     <% end %>-->
                     <div class="dropdown">
                         <span><% if current_user.profile_pic.url %>
-                            <li><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle nav-prof dropdown" style="object-fit: cover; margin-top: 11%" alt="edit" /></li>
+                            <li class="nav-prof-li"><img src=<%= image_path(current_user.profile_pic.url) %> class="img-circle nav-prof dropdown" style="object-fit: cover; margin-top: 11%" alt="edit" /></li>
                         <% else %>
-                             <li><img src=<%= image_path("default_profile_picture.png") %> class="img-circle nav-prof dropdown" alt="edit" /></li>
+                             <li class="nav-prof-li"><img src=<%= image_path("default_profile_picture.png") %> class="img-circle nav-prof dropdown" alt="edit" /></li>
                         <% end %></span>
                         <div class="dropdown-content">
                           <%= button_to "Profile", user_path(current_user.id), method: "get", class: "dropdown-btn btn btn-success" %>
@@ -55,12 +55,12 @@
                     </div>
             </ul>
 
-
+            <% else %>
             <ul class="nav navbar-nav navbar-right nav-rem" id="navbar-sign">
-                <% else %>
                     <li><%= link_to "Sign in", user_google_oauth2_omniauth_authorize_path %></li>
-                <% end %>
             </ul>
+            <% end %>
+
 
             <ul class="nav navbar-nav navbar-right nav-rem" id="navbar-explore">
                 <li><%= link_to "Explore", explore_path, :id => "nav-explore-href" %></li>
