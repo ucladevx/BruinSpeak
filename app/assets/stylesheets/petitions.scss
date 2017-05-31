@@ -31,18 +31,14 @@ progress[value] {
 }
 
 .new_comment {
-  margin-bottom: 10px;
   width: 50%;
-  margin-left: 15%;
-}
+  transform: translateX(-50%);
+  margin-bottom: 20px;
 
-.new_comment textarea {
-  margin-bottom: 10px;
-}
-
-.new_comment input {
-  margin-left: 0;
-  margin-bottom: 10px;
+  input {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
 }
 
 .new_signature {
@@ -58,7 +54,9 @@ progress[value] {
 
 .pet-container {
   margin-bottom: inherit;
-  margin-left: 5%;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   width: 90%;
