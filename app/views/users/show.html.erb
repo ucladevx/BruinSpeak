@@ -58,49 +58,55 @@
     <div class="tab-content">
         <div class="tab-pane in active" id="signed-tab">
             <% count = 0 %>
-            <ul class="profile-card-list">
-                <% @signatures.each do |signature| %>
-                <% petition = Petition.find(signature.petition_id) %>
-                <% if count % 4 == 0 && count != 0 %>
-            </ul>
-            <ul>
-                <% end %>
-                <li class="card-list">
-                    <%= render 'shared/post', petition: petition %>
-                </li>
-                <% count = count + 1 %>
-                <% end %>
-            </ul>
+            <div class="petition-cards">
+                <ul>
+                    <% @signatures.each do |signature| %>
+                    <% petition = Petition.find(signature.petition_id) %>
+                    <% if count % 4 == 0 && count != 0 %>
+                </ul>
+                <ul>
+                    <% end %>
+                    <li>
+                        <%= render 'shared/post', petition: petition %>
+                    </li>
+                    <% count = count + 1 %>
+                    <% end %>
+                </ul>
+            </div>
         </div>
         <div class="tab-pane" id="favorites-tab">
             <% count = 0 %>
-            <ul class="profile-card-list">
-                <% @public_petitions.each do |petition| %>
-                <% if count % 4 == 0 && count != 0 %>
-            </ul>
-            <ul class="profile-card-list">
-                <% end %>
-                <li class="card-list">
-                    <%= render 'shared/post', petition: petition %>
-                </li>
-                <% count = count + 1 %>
-                <% end %>
-            </ul>
+            <div class="petition-cards">
+                <ul>
+                    <% @public_petitions.each do |petition| %>
+                    <% if count % 4 == 0 && count != 0 %>
+                </ul>
+                <ul>
+                    <% end %>
+                    <li>
+                        <%= render 'shared/post', petition: petition %>
+                    </li>
+                    <% count = count + 1 %>
+                    <% end %>
+                </ul>
+            </div>
         </div>
         <div class="tab-pane" id="started-tab">
             <% count = 0 %>
-            <ul class="profile-card-list">
-                <% @private_petitions.each do |petition| %>
-                <% if count % 4 == 0 && count != 0 %>
-            </ul>
-            <ul class="profile-card-list">
-                <% end %>
-                <li class="card-list">
-                    <%= render 'shared/post', petition: petition %>
-                </li>
-                <% count = count + 1 %>
-                <% end %>
-            </ul>
+            <div class="petition-cards">
+                <ul>
+                    <% @private_petitions.each do |petition| %>
+                    <% if count % 4 == 0 && count != 0 %>
+                </ul>
+                <ul>
+                    <% end %>
+                    <li>
+                        <%= render 'shared/post', petition: petition %>
+                    </li>
+                    <% count = count + 1 %>
+                    <% end %>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
