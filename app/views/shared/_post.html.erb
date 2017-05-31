@@ -2,11 +2,13 @@
   <div>
     <% if petition.image.url %>
       <%= link_to petition_path(petition.id) do %>
-        <img class="petition-img" src=<%= image_url(petition.image.url) %> alt="Avatar">
+        <!-- <img class="petition-img" src=<%= image_url(petition.image.url) %> alt="Avatar"> -->
+        <div class="petition-img" style="background-image: url('<%= image_url(petition.image.url) %>')"></div>
       <% end %>
     <% else %>
       <%= link_to petition_path(petition.id) do %>
-        <% image_tag "card_default", class: "petition-img", alt: "petition image" %>
+        <!-- <% image_tag "card_default", class: "petition-img", alt: "petition image" %> -->
+        <div class="petition-img" style="background-image: url(<%= image_path('card_default') %>"></div>
       <% end %>
     <% end %>
   </div>

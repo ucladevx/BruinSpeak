@@ -60,11 +60,12 @@
       </div>
       </div>
       <% if @petition.image.url %>
-        <div class="petition-image" style="background-image: url('<%= image_url(petition.image.url) %>')">
+        <div class="petition-image" style="background-image: url('<%= image_url(petition.image.url) %>')"></div>
       <% else %>
-        <div class="petition-image" style="background-image: url(<%= image_path('pet_default') %>">
+        <div class="petition-image" style="background-image: url(<%= image_path('pet_default') %>"></div>
       <% end %>
     </div>
+
     <p class="petition-desc"><%= @petition.description %></p>
 
     <% if get_recievers(@petition).count > 0 %>
