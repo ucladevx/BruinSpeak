@@ -305,6 +305,7 @@ ul {
   font-size: 16px;
   font-weight: normal;
   display: inline;
+  word-wrap: break-word;
 }
 
 .carousel-control.right, .carousel-control.left {
@@ -641,6 +642,7 @@ ul {
 .petition-desc {
   font-size: 14px;
   margin-top: 10px;
+  word-wrap: break-word;
 }
 
 .petition-page-author {
