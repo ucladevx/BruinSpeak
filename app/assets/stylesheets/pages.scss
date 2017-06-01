@@ -212,7 +212,8 @@ ul {
   li {
     display: inline-block;
     margin: 40px 0;
-    width: calc(33% - 40px - 1px);
+    width: 400px;
+    // width: calc(33% - 40px - 1px);
     // height: 300px;
 
     &:nth-of-type(3n+2) {
@@ -222,7 +223,8 @@ ul {
 
   @media (max-width: $break-xl) {
     li {
-      width: calc(50% - 40px - 1px);
+      //width: 400px;
+      // width: calc(40% - 40px - 1px);
       // height: 400px;
 
       &:nth-of-type(3n+2) {
@@ -238,7 +240,7 @@ ul {
 
   @media (max-width: $break-large) {
     li {
-      width: 400px;
+      //width: 400px;
       // height: 400px;
       margin-left: auto;
       margin-right: auto;
