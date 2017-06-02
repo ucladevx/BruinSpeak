@@ -49,8 +49,8 @@
                              <li class="nav-prof-li"><img src=<%= image_path("default_profile_picture.png") %> class="img-circle nav-prof dropdown" alt="edit" /></li>
                         <% end %></span>
                         <div class="dropdown-content">
-                            <li><%= link_to "Profile", user_path(current_user.id), method: "get", class: "" %></li>
-                            <li><%= link_to "Logout", destroy_user_session_path, :method => "delete", class: "" %></li>
+                            <li><%= button_to "Profile", user_path(current_user.id), method: "get", class: "", style: "background: none; border: none" %></li>
+                            <li><%= button_to "Logout", destroy_user_session_path, method: :delete, class: "", style: "background: none; border: none" %></li>
                         </div>
                     </div>
             </ul>
