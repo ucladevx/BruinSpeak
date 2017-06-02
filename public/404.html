@@ -4,57 +4,60 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  body {
-    background-color: white;
-    color: #000120;
-    text-align: center;
-    font-family: sans-serif;
-    margin: 0;
-  }
-
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  div.dialog > div {
-    border: 1px solid #CCC;
-    padding: 7px 12% 0;
-    box-shadow: 2px 2px 5px #888888;
-  }
-
-  h1 {
-    font-size: 70px;
-    color: #000120;
-    line-height: 1.5em;
-    margin: 0px;
-  }
-
-  a:link {
-      text-decoration: none;
+    body {
+      background-color: white;
       color: #000120;
-  }
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+    }
 
-  #speak {
+    h1 {
+      font-size: 70px;
+      color: #000120;
+      line-height: 1.5em;
+      margin: 0px;
+    }
+
+    a {
       color: #328fd6;
-  }
+    }
 
-  #site-title{
+    a:link {
+      text-decoration: none;
+      color: #328fd6;
+    }
+
+    #speak {
+      color: #328fd6;
+    }
+
+    #site-title{
       font-size: 18px;
       font-weight: bold;
-  }
+      color: black;
+    }
+
+    .container-404 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
+  <div class="container-404">
+    <div class="content-404">
+        <img src="../app/assets/images/logo.png" />
         <h1>Whoops.</h1>
         <p>The page you were looking for doesn't exist.</p>
         <p>You may have mistyped the address or the page may have moved.</p>
-        <p> Click here to be redirected to <a href="http://bruinspeak.heroku.com" id="site-title">BRUIN<span id="speak">SPEAK</span></a></p>
+        <p> Click <a href="http://bruinspeak.heroku.com">here</a> to be redirected to <a href="http://bruinspeak.heroku.com" id="site-title">BRUIN<span id="speak">SPEAK</span></a></p>
     </div>
   </div>
 </body>

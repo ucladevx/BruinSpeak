@@ -8,19 +8,8 @@
       background-color: white;
       color: #000120;
       text-align: center;
-      font-family: sans-serif;
+      font-family: 'Open Sans', sans-serif;
       margin: 0;
-  }
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  div.dialog > div {
-    border: 1px solid #CCC;
-    padding: 7px 12% 0;
-    box-shadow: 2px 2px 5px #888888;
   }
 
   h1 {
@@ -44,15 +33,24 @@
       font-weight: bold;
   }
 
+  .container-500 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
+  <div class="container-500">
     <div>
+        <img src="../app/assets/images/logo.png" />
         <h1>Whoops.</h1>
-        <p>We're sorry, but something went wrong.</p>
+        <p>We're sorry, something went wrong on our end.</p>
     </div>
   </div>
 </body>
