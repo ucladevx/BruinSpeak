@@ -22,6 +22,18 @@ class PetitionsController < ApplicationController
     if user_signed_in?
       @new_comment = Comment.build_from(@petition, current_user.id, "")
     end
+
+    if user_signed_in? and current_user.at_least_gov?
+      respond_to do |format|
+        format.html
+        format.csv { send_data gen_signatures_csv(@petition), filename: "petition-#{@petition.id}-signatures-#{Date.today}.csv"}
+      end
+    else
+      request.format = "html"
+      respond_to do | format|
+        format.html
+      end
+    end
   end
 
   def toggle_public
@@ -80,6 +92,19 @@ class PetitionsController < ApplicationController
   end
 
   private
+  def gen_signatures_csv(petition)
+    header = %w{first_name last_name email reason signed_at major year}
+    CSV.generate(headers: true) do |csv|
+      csv << header
+
+      petition.signatures.each do |sig|
+        user = sig.user
+        line = [user.first_name, user.last_name, user.email, sig.reason, sig.created_at, user.major, user.year]
+        csv << line
+      end
+    end
+  end
+
   def petitionParams
     params[:petition][:recievers] = params[:petition][:recievers].join(",")
     params.require(:petition).permit(:title, :description, :image, :tag_list, :goal, :user_id, :money_request, :public, :recievers)

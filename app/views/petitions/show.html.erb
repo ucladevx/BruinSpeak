@@ -11,6 +11,10 @@
   </div>
 <% end %>
 
+<%if current_user && current_user.at_least_gov? %>
+  <%= link_to 'Download List of Signatures', petition_path(format: :csv) %>
+<% end %>
+
 <div class="petition-page-header">
   <h1 class="petition-page-title"><%= @petition.title %></h1>
   <%= link_to user_path(@petition.user) do %>
