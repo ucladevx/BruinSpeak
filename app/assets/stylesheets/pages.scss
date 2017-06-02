@@ -450,16 +450,16 @@ ul {
   width: 50%;
   margin: auto;
   text-align: center;
-  background-color: rgba(50, 143, 214, 0.4);
 }
 
 .contact-us p a {
   font-size: 18px;
-  color: #737373;
+  color: $bruinspeak_blue;
+  text-decoration: none;
 }
 
 .contact-us p a:hover {
-  color: #8c8c8c;
+  color: $bruinspeak_green;
 }
 
 .contact-background img {
