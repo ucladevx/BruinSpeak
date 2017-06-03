@@ -28,4 +28,17 @@ function initComments() {
   console.log("Initializing comments.");
 }
 
+function initSearchOverride() {
+  $('#search').val("");
+  $('#search').keypress(function(e) {
+    console.log("going");
+    if(e.which == 13) {
+      e.preventDefault();
+      $('#search-btn').click();
+    }
+  });
+}
+
+initSearchOverride();
+
 initComments();
