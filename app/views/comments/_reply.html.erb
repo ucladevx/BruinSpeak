@@ -13,9 +13,9 @@
       <% end %>
       </span>
       <% if comment.user.admin? %>
-        <span class="comment-role-admin">[Admin]</span>
+        <img src="<%= image_path("adminbutton.png") %>" class="comment_admin_tag" />
       <% elsif comment.user.government? %>
-        <span class="comment-role-gov">[Student Gov]</span>
+        <img src="<%= image_path("govbutton.png") %>" class="comment_gov_tag" />
       <% end %>
       <%= comment.user.first_name + " " + comment.user.last_name %></h4>
     <% end %>
