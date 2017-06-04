@@ -1,22 +1,4 @@
-$(document.body).click(function(e){
-  $('.status-dropdown-content').removeClass('selected');
-  $('.dropdown-content').removeClass('selected');
-});
-
-$('.status-dropdown').click(function(e){
-  e.stopPropagation();
-  $('.status-dropdown-content').toggleClass('selected')
-  $('.dropdown-content').removeClass('selected')
-});
-
-$('.dropdown').click(function(e){
-   e.stopPropagation();
-   $('.dropdown-content').toggleClass('selected')
-   $('.status-dropdown-content').removeClass('selected')
-});
-
-
-$(function() {
+var UserModule = function() {
   (function (){
     var el = document.getElementById("profile_upload");
     var file = document.getElementById("user_profile_pic");
@@ -94,7 +76,7 @@ $(function() {
       }
     }
   })()
-})
+}
 
 function handleProfileUpload() {
   var preview = document.getElementById("profile-pic-edit");
@@ -119,3 +101,8 @@ function handleProfileUpload() {
   reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
   reader.readAsDataURL(file);
 }
+
+
+document.addEventListener("turbolinks:load", function() {
+  UserModule();
+})

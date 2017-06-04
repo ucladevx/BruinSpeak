@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag :modernizr %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', :defer => "defer" %>
   </head>
 
   <body>
@@ -22,6 +23,5 @@
     <% end %>
     <%= yield %>
     <%= render partial: 'shared/footer'%>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

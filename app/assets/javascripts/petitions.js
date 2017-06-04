@@ -71,3 +71,28 @@ function removeReciever(e) {
     }
   }
 })()
+
+$(document).ready(function(){
+    $('.dropdown-toggle').dropdown();
+    initSearchOverride();
+
+    initComments();
+})
+
+function initComments() {
+  $('.comment-reply').click(function() {
+    $(this).closest('.comment').find('.reply-form').toggle();
+  });
+  console.log("Initializing comments.");
+}
+
+function initSearchOverride() {
+  $('#search').val("");
+  $('#search').keypress(function(e) {
+    console.log("going");
+    if(e.which == 13) {
+      e.preventDefault();
+      $('#search-btn').click();
+    }
+  });
+}

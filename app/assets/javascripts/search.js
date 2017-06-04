@@ -1,49 +1,79 @@
-$(function () {
-    // Remove Search if user Resets Form or hits Escape!
-    $('body, .navbar-collapse form[role="search"] button[type="reset"]').on('click keyup', function(event) {
-        console.log(event.currentTarget);
-        if (event.which == 27 && $('.navbar-collapse form[role="search"]').hasClass('active') ||
-            $(event.currentTarget).attr('type') == 'reset') {
-            closeSearch();
-        }
-    });
+var searchModule = (function () {
+    'use strict';
+
+    // cache elements
+    var $searchForm = $('#navbar-form');
+    var $searchBtn = $('#search-btn');
+    var $searchExit = $('#search-btn-exit');
+    var $searchInput = $('#search');
+    var $navRems = $('.nav-rem');
+
+    var ESC = 27;
+    var ENTER = 13;
 
     function closeSearch() {
-        var $form = $('.navbar-collapse form[role="search"].active')
-        var $remElem = $('.nav-rem');
-        var $searchBtn = $('#search-btn');
-        $form.find('input').val('');
-        $form.removeClass('active');
-        $remElem.removeClass("nav-dis");
-        $searchBtn.removeClass("search-btn-search");
-        $searchBtn.addClass("search-btn-reg");
+      console.log('CLOSING SEARCH');
+      $searchInput.val('');
+      $searchForm.removeClass('active');
+
+      $navRems.removeClass("nav-dis");
+
+      $searchBtn.removeClass("search-btn-search");
+      $searchBtn.addClass("search-btn-reg");
     }
 
-    // Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
-    $(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
-        event.preventDefault();
-        var $remElem = $('.nav-rem');
-        var $searchBtn = $('#search-btn');
-        console.log($remElem);
-        console.log($searchBtn);
-        var $form = $(this).closest('form'),
-            $input = $form.find('input');
-        $remElem.addClass("nav-dis");
-        $searchBtn.removeClass("search-btn-reg");
-        $searchBtn.addClass("search-btn-search");
-        $form.addClass('active');
-        $input.focus();
+    function openSearch() {
+      console.log('OPENING SEARCH');
+      $navRems.addClass("nav-dis");
 
-    });
+      $searchBtn.removeClass("search-btn-reg");
+      $searchBtn.addClass("search-btn-search");
 
-    $("#search").bind("keypress", {}, keypressInBox);
+      $searchForm.addClass('active');
+      $searchInput.focus();
+    }
 
-    function keypressInBox(e) {
-      var code = (e.keyCode ? e.keyCode : e.which);
-      if (code == 13) { //Enter keycode
-
-        document.getElementById("search").value = "";
+    function handleKeyPress(e) {
+      console.log('HANDLING FORM KEYPRESS');
+      if(e.which === ESC && $searchForm.hasClass('active')) {
+        e.preventDefault();
+        closeSearch();
+      } else if(e.which === ENTER && $searchInput.val === '') {
+        e.preventDefault();
       }
-    };
+    }
 
-});
+    function handleSearchClick(e) {
+      console.log('HANDLING SEARCH CLICK');
+      if(!$searchForm.hasClass('active')) {
+        e.preventDefault();
+        openSearch();
+      }
+    }
+
+    function init() {
+      console.log('Initializing Search');
+      $searchBtn.on('click', handleSearchClick);
+      $searchExit.on('click', closeSearch);
+      $searchInput.on('keyup', handleKeyPress);
+    }
+
+    function recache() {
+      $searchForm = $('#navbar-form');
+      $searchBtn = $('#search-btn');
+      $searchExit = $('#search-btn-exit');
+      $searchInput = $('#search');
+      $navRems = $('.nav-rem');
+    }
+
+    return {
+      init: init,
+      recache: recache
+    }
+})();
+
+
+document.addEventListener("turbolinks:load", function() {
+  searchModule.recache();
+  searchModule.init();
+})
