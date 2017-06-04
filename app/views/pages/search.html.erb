@@ -34,6 +34,12 @@
           <%= render 'shared/post', petition: petition %>
         </li>
       <% end %>
+      <% if @petitions.count % 3 == 1 %>
+        <li></li>
+        <li></li>
+      <% elsif @victories.count % 3 == 2 %>
+        <li></li>
+      <% end %>
     </ul>
     <%= will_paginate @petitions %>
 </div>
