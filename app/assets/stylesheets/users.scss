@@ -223,3 +223,11 @@
   margin-left: 0px;
   margin-bottom: 10px;
 }
+
+@media(max-width:767px) {
+  .dropdown-content.selected {
+    position: relative;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
