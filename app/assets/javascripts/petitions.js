@@ -60,8 +60,7 @@ function removeReciever(e) {
     btn.onclick = function(e) {
       e.preventDefault();
 
-      var inHtml = `<input placeholder="Who?" type="text" name="petition[recievers][]" , class="petition-create--input petition-create--input--recievers">
-      <button class="petition-create--btn">Remove</button>`
+      var inHtml = '<input placeholder="Who?" type="text" name="petition[recievers][]" , class="petition-create--input petition-create--input--recievers"><button class="petition-create--btn">Remove</button>'
 
       var newInput = document.createElement("div");
       newInput.classList = ["petition-recievers-wrapper"];
