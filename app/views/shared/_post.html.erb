@@ -21,7 +21,7 @@
   </div>
   <div class="petition-stats-wrapper">
     <div class="petition-stats-col">
-      <img width="50px" height="50px" class="petiton-stat-img" src="/assets/supporters_icon.png">
+      <%= image_tag "supporters_icon.png", class: "petiton-stat-img", width: "50px", height: "50px" %>
       <div class="petition-stat-stack">
         <div><%= petition.signatures.count + 1 %></div>
         <% if petition.signatures.count + 1 == 1 %>
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="petition-stats-col">
-      <img width="50px" height="50px" class="petiton-stat-img" src="/assets/money_icon.png">
+      <%= image_tag "money_icon.png", class: "petiton-stat-img", width: "50px", height: "50px" %>
       <div class="petition-stat-stack">
         <div>$<%= petition.money_request %></div>
         <div>Requested</div>

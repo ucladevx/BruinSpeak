@@ -27,12 +27,12 @@
         <% end %>
       </li>
       <li>
-        <img width="40px" height="40px" class="petiton-stat-img" src="/assets/supporters_icon.png">
+        <%= image_tag "supporters_icon.png", class: "petiton-stat-img", width: "40px", height: "40px" %>
         <div class="stats-value"><%=  petition.goal %></div>
         <span>Needed</span>
       </li>
       <li>
-       <img width="40px" height="40px" class="petiton-stat-img" src="/assets/money_icon.png">
+        <%= image_tag "money_icon.png", class: "petiton-stat-img", width: "40px", height: "40px" %>
         <div class="stats-value">$<%=  petition.money_request %></div>
         <span>Requested</span>
       </li>
