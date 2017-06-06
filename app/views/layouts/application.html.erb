@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bruinspeak</title>
+    <title>Bruinspeak | <%= @title || "UCLA's Platform for Change" %></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href=<%= image_path("logo.png") %> />
+
+    <meta property="og:title" content="BruinSpeak | <%=h @title || "UCLA's Platform for Change" %> " />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content=<%= @image || image_url("royce_icon.png") %>  />
+    <meta property="og:description" content="<%=h @desc || 'UCLA\'s Platform for Change' %>" />
+    <meta property="og:url" content="<%= request.original_url  %>" />
 
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">

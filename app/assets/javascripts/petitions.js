@@ -78,7 +78,23 @@ $(document).ready(function(){
 
     initComments();
     initButtons();
+    initPetitionDropdown();
 })
+
+document.addEventListener("turbolinks:load", function() {
+  initPetitionDropdown();
+})
+
+function initPetitionDropdown() {
+  $('#status-dropdown').on('click', function(e) {
+    $dropdown = $('.status-dropdown-content');
+    if($dropdown.hasClass('selected')) {
+      $dropdown.removeClass('selected');
+    } else {
+      $dropdown.addClass('selected');
+    }
+  })
+}
 
 function initComments() {
   $('.comment-reply').click(function() {

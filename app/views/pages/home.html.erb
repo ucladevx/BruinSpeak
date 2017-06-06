@@ -1,9 +1,9 @@
 <div class="center-info" style="background-image: url('<%= image_url("royce_icon.png") %>')">
   <p class="home-title">UCLA's Platform for Change</p>
-  <p class="home-subtitle">12,342 students are taking action.</p>
+  <p class="home-subtitle"><%= @users_count %> students are taking action.</p>
   <p class="home-subtitle home-subtitle--victories"><u>Victories every day.</u></p>
   <br>
-  <%= link_to "START PETITION", new_petition_path, :class => "button", :id => "start-pet-btn" %>
+  <%= link_to "START PETITION", new_petition_path, :class => "button start-pet-btn" %>
   <div id="petition-carousel" class="carousel slide hidden-xs" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
