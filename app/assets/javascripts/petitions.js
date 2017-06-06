@@ -81,6 +81,9 @@ $(document).ready(function(){
     initPetitionDropdown();
 })
 
+document.addEventListener("turbolinks:load", function() {
+  initPetitionDropdown();
+})
 
 function initPetitionDropdown() {
   $('#status-dropdown').on('click', function(e) {
