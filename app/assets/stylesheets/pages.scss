@@ -365,6 +365,10 @@ ul {
   background-color: rgba(255,255,255,0.6);
   background-blend-mode: lighten;
   background-repeat: no-repeat;
+
+  h1 {
+    font-weight: 700;
+  }
 }
 
 .center-heading {
@@ -866,7 +870,7 @@ input, textarea {
   float: left;
 }
 
-#start-pet-btn{
+.start-pet-btn{
   font-family: $bruinspeak_open_sans;
   font-size: 15px;
   padding: 13px;

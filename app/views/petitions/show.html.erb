@@ -12,7 +12,7 @@
 <% end %>
 
 <%if current_user && current_user.at_least_gov? %>
-  <%= link_to 'Download List of Signatures', petition_path(format: :csv) %>
+  <div class="download-signatures"><%= link_to 'Download List of Signatures', petition_path(format: :csv), class: "button start-pet-btn dl-sigs" %></div>
 <% end %>
 
 <div class="petition-page-header">
