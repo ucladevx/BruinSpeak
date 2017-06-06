@@ -1,6 +1,11 @@
 .btn-nav:hover {
     background-color: white;
 }
+
+.navbar-nav, .nav-input-group, .navbar-brand {
+    height: 54px;
+}
+
 .navbar-right {
     font-size: 16px;
 }
@@ -84,32 +89,6 @@
     padding-left: 0px;
 }
 
-
-.navbar-collapse form[role="search"] {
-    // position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    z-index: 0;
-}
-.navbar-collapse form[role="search"] button,
-.navbar-collapse form[role="search"] input {
-    padding: 8px 12px;
-    border-radius: 0px;
-    border-width: 0px;
-    box-shadow: none;
-    outline: none;
-}
-
-
-.navbar-collapse form[role="search"] input {
-    padding: 16px 12px;
-    font-size: 14pt;
-    font-style: italic;
-    box-shadow: none;
-}
 .navbar-collapse form[role="search"] button[type="reset"] {
     display: none;
 }
@@ -150,6 +129,9 @@
     box-shadow: none;
 }
 
+#search-btn-exit {
+    outline: none;
+}
 
 #nav-search-span{
     width: 1%;
