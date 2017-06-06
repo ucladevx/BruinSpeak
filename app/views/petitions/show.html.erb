@@ -70,7 +70,7 @@
       <% end %>
     </div>
 
-    <p class="petition-desc"><%= @petition.description %></p>
+    <p class="petition-desc"><%= simple_format @petition.description %></p>
 
     <% if get_recievers(@petition).count > 0 %>
       <p class="bottom-petition-text">This petition will be delivered to:</p>
