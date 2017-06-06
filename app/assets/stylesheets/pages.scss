@@ -16,6 +16,11 @@
    font-family: $bruinspeak_open_sans;
  }
 
+ .about-text {
+    font-family: $bruinspeak_open_sans;
+    font-size: 16px;
+ }
+
 html {
   padding-bottom: 60px;
  }
@@ -28,10 +33,6 @@ a {
     text-decoration: none;
     color: $bruinspeak_blue;
   }
-}
-
-body {
-  font-family: sans-serif;
 }
 
 div {
@@ -472,7 +473,7 @@ ul {
 }
 
 .home-title {
-  font-family: sans-serif;
+  font-family: $bruinspeak_open_sans;
   font-size: 50px;
   font-weight: bold;
   margin-bottom: 0;
@@ -571,7 +572,7 @@ ul {
 }
 .member
 {
-  padding-bottom: 50px;
+  padding: 25px 0;
 }
 .member-desc
 {

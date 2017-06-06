@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" />
-
+<% @title = @petition.title %>
+<% @image = request.base_url + @petition.image.url if @petition.image.url %>
+<% @desc = @petition.description[0..100] if @petition.description %>
 <!-- If user is logged in, show alert to let them make it public or private -->
 <% if current_user && current_user.id == @petition.user_id %>
   <div class="notice alert alert-info petition-notice-hidden" id="petition-notice">
