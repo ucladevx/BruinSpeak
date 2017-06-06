@@ -212,7 +212,7 @@ ul {
   li {
     display: inline-block;
     margin: 40px 0;
-    width: 400px;
+    width: 350px;
     // width: calc(33% - 40px - 1px);
     // height: 300px;
 
@@ -221,7 +221,7 @@ ul {
     }
   }
 
-  @media (max-width: $break-xl) {
+  @media (max-width: $break-large) {
     li {
       //width: 400px;
       // width: calc(40% - 40px - 1px);
