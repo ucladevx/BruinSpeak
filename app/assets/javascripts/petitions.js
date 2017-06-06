@@ -82,7 +82,7 @@ $(document).ready(function(){
 
 function initComments() {
   $('.comment-reply').click(function() {
-    $(this).closest('.comment').find('.reply-form').toggle();
+    $(this).closest('.comment').find('.reply-form').first().toggle();
   });
   console.log("Initializing comments.");
 }
