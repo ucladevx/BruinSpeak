@@ -304,10 +304,17 @@ ul {
 }
 
 .carousel-content-desc {
-  font-size: 16px;
-  font-weight: normal;
+  height: 200px;
+  overflow: hidden;
   display: inline;
-  word-wrap: break-word;
+
+  p {
+    height: 42%;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: normal;
+    word-wrap: break-word;
+  }
 }
 
 .carousel-control.right, .carousel-control.left {

@@ -14,7 +14,7 @@
   <%= link_to user_path(petition.user.id) do %>
     <p class="carousel-content-author"><%= petition.user.full_name %></p>
   <% end %>
-  <p class="carousel-content-desc"><%= petition.description[0..500] %>...</p>
+  <div class="carousel-content-desc"><p><%= petition.description[0..500] %>...</p></div>
   <div class="carousel-bottom">
     <ul class="petition-stats-carousel">
       <li>
