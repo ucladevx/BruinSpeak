@@ -17,18 +17,20 @@
 
 <div class="petition-page-header">
   <h1 class="petition-page-title"><%= @petition.title %></h1>
-  <%= link_to user_path(@petition.user) do %>
-  <div class="profile-icon">
-      <% if @petition.user.profile_pic.url %>
-        <img class="picture img-circle" src=<%= image_path(@petition.user.profile_pic.url) %> alt="Profile picture">
-      <% else %>
-        <img class="picture img-circle" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
-      <% end %>
-  </div>
   <div class="petition-page-author">
-    <p><%= @petition.user.first_name + " " + @petition.user.last_name %></p>
+    <%= link_to user_path(@petition.user) do %>
+    <div class="profile-icon">
+        <% if @petition.user.profile_pic.url %>
+          <img class="picture img-circle" src=<%= image_path(@petition.user.profile_pic.url) %> alt="Profile picture">
+        <% else %>
+          <img class="picture img-circle" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+        <% end %>
+    </div>
+    <div class="petition-page-author-name">
+      <p><%= @petition.user.first_name + " " + @petition.user.last_name %></p>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
 
 <div class="pet-container">

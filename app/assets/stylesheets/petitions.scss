@@ -113,12 +113,26 @@ progress[value] {
 }
 
 .petition-page-author {
+  width: auto;
+  margin: 0 auto;
+
+  a {
+    text-align: center;
+  }
+}
+
+.petition-page-author-name {
   font-size: 30px;
   letter-spacing: 1.6px;
   color: #000120;
   margin-top: 0;
-  width: 320px;
+  padding: 0px 20px;
+  width: auto;
   float: left;
+}
+
+.petition-page-author-name p {
+  margin-top: 0;
 }
 
 .petition-create--btn {
@@ -155,13 +169,10 @@ progress[value] {
     padding-top: 2%;
 }
 
-.petition-page-author p {
-  margin-top: 0;
-}
-
 .petition-page-header {
   text-align: center;
-  width: 766px;
+  width: 75%;
+  max-width: 1200px;
   overflow: auto;
   margin: auto;
   margin-bottom: 10px;
@@ -177,6 +188,7 @@ progress[value] {
 }
 
 .petition-page-title {
+  width: 100%;
   margin-top: 30px;
   font-size: 60px;
   font-weight: bold;
@@ -187,11 +199,9 @@ progress[value] {
 }
 
 .profile-icon {
-  width: 200px;
   padding-right: 0;
   padding-bottom: 20px;
   float: left;
-  margin-left: 65px;
 }
 
 .picture {
