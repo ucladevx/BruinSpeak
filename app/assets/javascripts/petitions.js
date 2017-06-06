@@ -18,7 +18,7 @@ function removeReciever(e) {
   this.parentElement.remove();
 }
 
-(function() {
+function initButtons() {
   $(".petition-create--btn").click(removeReciever);
 
   var el = document.getElementById('petition-notice');
@@ -57,6 +57,7 @@ function removeReciever(e) {
 
   var btn = document.getElementById("petition-recievers-button");
   if(btn != null) {
+    console.log("hi");
     btn.onclick = function(e) {
       e.preventDefault();
 
@@ -69,13 +70,14 @@ function removeReciever(e) {
       document.getElementById("petition-recievers").append(newInput);
     }
   }
-})()
+}
 
 $(document).ready(function(){
     $('.dropdown-toggle').dropdown();
     initSearchOverride();
 
     initComments();
+    initButtons();
 })
 
 function initComments() {
