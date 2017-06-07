@@ -193,6 +193,10 @@ button{
       color: $bruinspeak_black;
       font-size: 16px;
       font-weight: 500;
+
+      @media (max-width: $break-med) {
+        font-size: 13px;
+      }
     }
   }
 
@@ -788,6 +792,10 @@ button{
   font-size: 22px;
   color: $bruinspeak_black;
   text-decoration: none;
+
+  @media (max-width: $break-med) {
+    font-size: 20px;
+  }
 }
 
 .profile-icon {

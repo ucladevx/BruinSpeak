@@ -94,13 +94,13 @@ $(document).ready(function(){
     $('.dropdown-toggle').dropdown();
     initSearchOverride();
 
-    initComments();
     initButtons();
     initPetitionDropdown();
 })
 
 document.addEventListener("turbolinks:load", function() {
   initPetitionDropdown();
+  initComments();
 })
 
 function initPetitionDropdown() {
@@ -115,7 +115,8 @@ function initPetitionDropdown() {
 }
 
 function initComments() {
-  $('.comment-reply').click(function() {
+  $('.comment-reply').closest('.comment').find('.reply-form').hide()
+  $('.comment-reply').unbind('click').bind('click', function() {
     $(this).closest('.comment').find('.reply-form').first().toggle();
   });
   console.log("Initializing comments.");
