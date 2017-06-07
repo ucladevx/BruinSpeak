@@ -104,6 +104,17 @@ ul {
   font-family: 'Abel', serif;
   letter-spacing: 3px;
   box-shadow: 0px 1px 0px 1px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+button{
+    background-color: white;
+}
+
+.btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus, .btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus, .open > .btn-default.dropdown-toggle:hover, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle.focus,
+.btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+    border-color: white;
+    background-color: white;
 }
 
 .btn {

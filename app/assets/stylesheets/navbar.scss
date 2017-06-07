@@ -36,17 +36,17 @@
 
 .navbar-custom {
     background-color:white;
-    color:#19172A;
+    color: #000120;
     border-radius:0;
 }
 
 .navbar-custom .navbar-nav > li > a {
-    color:#19172A;
+    color: #000120;
 }
 
 .navbar-custom .navbar-nav > .active > a {
     color: #ffffff;
-    background-color:transparent;
+    //background-color:transparent;
 }
 
 .navbar-custom .navbar-nav > li > a:hover,
@@ -58,7 +58,7 @@
 }
 
 .navbar-custom .navbar-brand {
-    color:#19172A;
+    color: #000120;
 }
 
 .navbar-dynam-content {
@@ -264,7 +264,11 @@
     }
 }
 
-@media(max-width: 768px){
+.btn-default, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+    //background-color: black;
+}
+
+@media(max-width: 768px){ //when small screen
     #nav-speak-reg{
         display: none;
     }
@@ -289,7 +293,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { //when not small screen
   .navbar-nav.navbar-center {
     position: absolute;
     left: 50%;
