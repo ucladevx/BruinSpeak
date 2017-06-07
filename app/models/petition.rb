@@ -36,8 +36,8 @@ class Petition < ApplicationRecord
   end
 
   def self.trending
-    Rails.cache.fetch("trending_petitions", expires_in: 1.hour) do
+    # Rails.cache.fetch("trending_petitions", expires_in: 1.hour) do
       get_trending()
-    end
+    # end
   end
 end
