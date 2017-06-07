@@ -10,3 +10,7 @@ var dropDown = function() {
 document.addEventListener("turbolinks:load", function() {
   dropDown();
 })
+
+$(document).click(function(){
+  $("#dropdown-content").removeClass('selected');
+});
