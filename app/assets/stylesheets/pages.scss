@@ -153,10 +153,6 @@ ul {
   border-radius: 10px;
   position: relative;
 
-  // @media all and (max-width: $break-small) {
-  //   width: 90%;
-  // }
-
   .petition-stats-wrapper {
     display: inline-flex;
     width: 100%;
@@ -165,7 +161,7 @@ ul {
 
     @media all and (max-width: $break-med) {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
     }
   }
 
@@ -187,6 +183,10 @@ ul {
       font-size: 16px;
       font-weight: 500;
     }
+  }
+
+  @media (max-width: $break-med) {
+    height: 500px;
   }
 }
 
@@ -324,6 +324,12 @@ ul {
     font-weight: normal;
     word-wrap: break-word;
   }
+
+  @media (max-width: 875px) {
+    p {
+      height: 35%;
+    }
+  }
 }
 
 .carousel-control.right, .carousel-control.left {
@@ -414,12 +420,20 @@ ul {
   max-width: 1200px;
   left: 50%;
   transform: translateX(-50%);
-  margin-left: 8%;
+
+  @media (max-width: $break-large) {
+    left: 48%;
+    width: 70%;
+  }
+
+  @media (max-width: $break-med) {
+    margin-bottom: 90px;
+  }
 }
 
 .comments-header {
   margin-bottom: 10px;
-  padding-top: 70px;
+  padding-top: 20px;
   width: 100%;
 
   h4 {

@@ -47,7 +47,7 @@
           <% else %>
             <img src=<%= image_path("active_badge.png") %>>
           <% end %></span>
-          <% if current_user and (current_user.admin? or current_user.government?) %>
+          <% if current_user and (current_user.admin? or current_user.government? or @petition.user.id == current_user.id) %>
             <div class="status-dropdown-content">
               <% if current_user and (current_user.government? or current_user.admin?) %>
                 <% if @petition.status != "closed" %>
@@ -92,5 +92,11 @@
     </div>
   </div>
 </div>
+
+<div class="overlay" id="petition-overlay"></div>
+<div class="share-card share-card-mobile" id="share-card-mobile">
+  <%= render "petitions/sign" %>
+</div>
+<div class="button start-pet-btn petition-sign-mobile" id="sign-mobile">Sign this petition</div>
 
 <%= render "comments/template", commentable: @petition, new_comment: @comment %>

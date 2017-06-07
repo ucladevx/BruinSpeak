@@ -21,6 +21,24 @@ function removeReciever(e) {
 function initButtons() {
   $(".petition-create--btn").click(removeReciever);
 
+  var sign_mobile = document.getElementById('sign-mobile');
+  if (sign_mobile != null) {
+    sign_mobile.onclick = function(e) {
+      e.preventDefault();
+
+      console.log("Clicking mobile sign button");
+
+      if ($("#petition-overlay").css("visibility") == "hidden") {
+        $("#petition-overlay").css("visibility", "visible");
+        $("#share-card-mobile").css("visibility", "visible");
+      }
+      else {
+        $("#petition-overlay").css("visibility", "hidden");
+        $("#share-card-mobile").css("visibility", "hidden");
+      }
+    }
+  }
+
   var el = document.getElementById('petition-notice');
   if(el != null) {
     el.onclick = function (){
