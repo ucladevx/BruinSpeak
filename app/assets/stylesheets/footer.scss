@@ -1,7 +1,7 @@
 @import "variables";
 
-@media (max-width: 448px){
-    .footer-right-elements
+@media (max-width: 697px){
+    .pull-right
     {
         display: none;
     }
@@ -29,7 +29,7 @@
   }
 
   a {
-    color: #19172A;
+    color: #000120;
     font-family: $bruinspeak_open_sans;
   }
 }

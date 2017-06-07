@@ -35,13 +35,13 @@
 
         <div>
             <% unless @user.about.nil? || @user.about == "" %>
-              <p class="profile-info">About: <%= @user.about %></p>
+              <p class="profile-info"><span class="prof-info-sub">About:</span> <%= @user.about %></p>
             <% end %>
             <% unless @user.major.nil? || @user.major == "" %>
-              <p class="profile-info">Major: <%= @user.major %></p>
+              <p class="profile-info"><span class="prof-info-sub">Major:</span> <%= @user.major %></p>
             <% end %>
             <% unless @user.organizations.nil? || @user.organizations == "" %>
-              <p class="profile-info">Organizations: <%= @user.organizations %></p>
+              <p class="profile-info"><span class="prof-info-sub">Organizations:</span> <%= @user.organizations %></p>
             <% end %>
         </div>
         <ul class="nav nav-pills nav-justified pages-tabs">

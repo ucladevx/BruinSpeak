@@ -14,6 +14,7 @@
 
  html, body {
    font-family: $bruinspeak_open_sans;
+   color: $bruinspeak_black;
  }
 
  .about-text {
@@ -293,7 +294,7 @@ ul {
   font-size: 33px;
   font-weight: bold;
   line-height: 120%;
-  color: black;
+  color: $bruinspeak_black;
 }
 
 .carousel-content-author {
@@ -377,6 +378,12 @@ ul {
   h1 {
     font-weight: 700;
   }
+}
+
+.center-heading{
+    h1 {
+        font-weight: 700;
+    }
 }
 
 .center-heading {
@@ -481,6 +488,7 @@ ul {
 
 .home-title {
   font-family: $bruinspeak_open_sans;
+  // color: $bruinspeak_black;
   font-size: 50px;
   font-weight: bold;
   margin-bottom: 0;
@@ -580,6 +588,9 @@ ul {
 .member
 {
   padding: 25px 0;
+  padding-right: 2%;
+  // width: 475px;
+  // margin-right: 10px;
 }
 .member-desc
 {
@@ -762,6 +773,9 @@ ul {
   margin: 20px 0px;
 }
 
+.prof-info-sub{
+    font-weight: bold;
+}
 
 .reply {
   cursor: pointer;
@@ -860,7 +874,7 @@ html {
 }
 
 .copyright a {
-    color: #19172A;
+    color: #000120;
 }
 
 input, textarea {
@@ -891,6 +905,19 @@ input, textarea {
   }
 }
 
+
+.vertical-center {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.tab-content {
+  display: inline-grid;
+  width: 100%;
+}
+
+
 @media (max-width: 768px){
   .brand-small-view {
   display: inline-flex !important;
@@ -911,13 +938,11 @@ input, textarea {
   }
 }
 
-.vertical-center {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-
-.tab-content {
-  display: inline-grid;
-  width: 100%;
+@media(max-width: 883px){
+    .member {
+        margin-left: 40px;
+    }
+    .member-desc p{
+        margin-right: 40px;
+    }
 }
