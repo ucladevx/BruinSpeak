@@ -10,6 +10,7 @@ class Petition < ApplicationRecord
   validates :goal, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   mount_uploader :image, PetitionImageUploader
+  validates_size_of :image, maximum: 5.megabyte, message: "Image size exceeds the allowable limit (5 MB)."
 
   belongs_to :user
 
