@@ -8,7 +8,7 @@ $(".share-card").empty().append(' \
   <% end %> \
   <ul style="padding-left:20px"> \
     <li> \
-      <img class="share-icon" src="/assets/default_profile_picture.png"> \
+      <%= image_tag "default_profile_picture.png", class: "share-icon" %> \
     </li> \
     <li> \
       <p style="letter-spacing:0.9px; font-size:16px"><%= @petition.signatures.count + 1 %>/<%= @petition.goal %> Supporters</p> \
@@ -27,5 +27,5 @@ $(".share-card").empty().append(' \
     <p style="margin-left: 20px">You signed this petition</p> \
     <%= link_to "Remove Signature", signatures_path(current_user.id), method: :delete, remote: true, class: 'signature-remove' %> \
   <% end %> \
-  <%= link_to image_tag("/assets/facebook_share_button", class: "share-facebook"), "http://www.facebook.com/sharer.php?u=#{petition_url(@petition)}" %> \
+  <%= link_to image_tag("facebook_share_button.png", class: "share-facebook", target: "_blank"), "https://www.facebook.com/sharer/sharer.php?u=#{petition_url(@petition)}" %> \
 ')
