@@ -153,9 +153,9 @@ ul {
   border-radius: 10px;
   position: relative;
 
-  @media all and (max-width: $break-small) {
-    width: 90%;
-  }
+  // @media all and (max-width: $break-small) {
+  //   width: 90%;
+  // }
 
   .petition-stats-wrapper {
     display: inline-flex;
@@ -221,6 +221,13 @@ ul {
     // &:nth-of-type(3n+2) {
     //   margin: 0 40px;
     // }
+  }
+
+  @media (max-width: 841px) {
+    li {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   // @media (max-width: $break-large) {
@@ -570,6 +577,11 @@ ul {
   margin-bottom: 15px;
   margin-left: 70px;
   font-size: 30px;
+
+  @media (max-width: 414px){
+    text-align: center;
+    margin-left: 0;
+  }
 }
 
 .sign-icon {
