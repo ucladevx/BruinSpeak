@@ -70,7 +70,7 @@
       <% if @petition.image.url %>
         <div class="petition-image" style="background-image: url('<%= image_url(@petition.image.url) %>')"></div>
       <% else %>
-        <div class="petition-image" style="background-image: url(<%= image_path('pet_default') %>"></div>
+        <div class="petition-image" style="background-image: url(<%= image_path('pet_default.jpg') %>"></div>
       <% end %>
     </div>
 
