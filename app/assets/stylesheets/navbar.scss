@@ -2,10 +2,6 @@
     background-color: white;
 }
 
-.navbar-nav, .nav-input-group, .navbar-brand {
-    height: 54px;
-}
-
 .navbar-right {
     font-size: 16px;
 }
@@ -301,5 +297,9 @@
   }
   .navbar-right {
       margin-right: -30px;
+  }
+
+  .navbar-nav, .nav-input-group, .navbar-brand {
+      height: 54px;
   }
 }
