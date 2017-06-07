@@ -36,7 +36,7 @@
 </div>
 
 <div class="pet-container">
-  <div class="pet-content">
+  <!-- <div class="pet-content pet-div">
     <div class="pet-img-container">
       <div class="tag">
         <div id="status-dropdown" class="status-dropdown">
@@ -86,10 +86,65 @@
       <% end %>
     <% end %>
   </div>
-  <div class="share-container">
+  <div class="share-container pet-div">
     <div class="share-card">
       <%= render "petitions/sign" %>
     </div>
+  </div> -->
+  <div class="wrapper">
+      <div class="pet-img-container">
+        <div class="tag">
+          <div id="status-dropdown" class="status-dropdown">
+            <span><% if @petition.status == "closed" %>
+              <img src=<%= image_path("closed_badge.png") %>>
+            <% elsif @petition.status == "victory" %>
+              <img src=<%= image_path("victory_badge.png") %>>
+            <% else %>
+              <img src=<%= image_path("active_badge.png") %>>
+            <% end %></span>
+            <% if current_user and (current_user.admin? or current_user.government?) %>
+              <div class="status-dropdown-content">
+                <% if current_user and (current_user.government? or current_user.admin?) %>
+                  <% if @petition.status != "closed" %>
+                    <%= button_to "Change to 'Closed'", closed_path(@petition.id), class: "status-btn btn btn-success", method: :post %>
+                  <% end %>
+                  <% if @petition.status != "victory" %>
+                    <%= button_to "Change to 'Victory'", victory_path(@petition.id), class: "status-btn btn btn-success", method: :post %>
+                  <% end %>
+                  <% if @petition.status == "closed" or @petition.status == "victory" %>
+                    <%= button_to "Change to 'Active'", active_path(@petition.id), class: " status-btn btn btn-success", method: :post %>
+                  <% end %>
+                <% end %>
+                <% if current_user and (@petition.user.id == current_user.id or current_user.admin?) %>
+                  <%= button_to "Delete Post", petition_path(@petition.id), method: :delete, class: "status-btn btn btn-danger" %>
+                <% end %>
+              </div>
+            <% end %>
+        </div>
+        </div>
+        <% if @petition.image.url %>
+          <div class="petition-image" style="background-image: url('<%= image_url(@petition.image.url) %>')"></div>
+        <% else %>
+          <div class="petition-image" style="background-image: url(<%= image_path('pet_default.jpg') %>"></div>
+        <% end %>
+      </div>
+
+      <p class="petition-desc"><%= simple_format @petition.description %></p>
+
+      <% if get_recievers(@petition).count > 0 %>
+        <p class="bottom-petition-text">This petition will be delivered to:</p>
+        <% recievers = get_recievers(@petition) %>
+        <% if recievers %>
+          <% get_recievers(@petition).each do |reciever| %>
+            <p class="board-members"><%= reciever %></p>
+          <% end %>
+        <% end %>
+      <% end %>
+  </div>
+  <div class="wrapper2">
+      <div class="share-card">
+        <%= render "petitions/sign" %>
+      </div>
   </div>
 </div>
 

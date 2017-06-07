@@ -76,6 +76,14 @@ progress[value] {
   }
 }
 
+// .pet-div{
+//     // position: absolute;
+// // top: 50%;
+// // left: 50%;
+// // margin-top: -170px;
+// margin-left: -300px;
+// }
+
 .pet-container {
   margin-bottom: inherit;
   margin: 0 auto;
@@ -91,7 +99,6 @@ progress[value] {
 .pet-content {
   margin-bottom: 50px;
   margin-left: 8%;
-  width: 50%;
   float: left;
   max-width: 700px;
   display: inline-block;
@@ -236,6 +243,7 @@ progress[value] {
 
 .share-container {
   width: 40%;
+ // margin-top: 500px;
 }
 
 .share-facebook {
@@ -346,4 +354,83 @@ progress[value] {
   color: red;
   font-weight: bold;
   font-size: 18px;
+}
+
+
+
+.wrapper2{
+
+	margin:0px auto;
+
+	-webkit-box-shadow:rgba(0, 0, 0, 0.289063) 0 2px 3px;
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#F0F1EE;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-left-radius:15px;
+  border-bottom-right-radius:15px;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;
+  box-shadow:rgba(0, 0, 0, 0.289063) 0 2px 3px;
+  position: relative;
+  margin: 20px auto;
+
+}
+
+.wrapper{
+
+	margin:0px auto;
+	text-align: center;
+
+	-webkit-box-shadow:rgba(0, 0, 0, 0.289063) 0 2px 3px;
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#F0F1EE;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-left-radius:15px;
+  border-bottom-right-radius:15px;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;
+  box-shadow:rgba(0, 0, 0, 0.289063) 0 2px 3px;
+  position: relative;
+
+
+
+}
+
+
+/* MODIFIED */
+.wrapper {
+    position: absolute;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -300px;
+}
+.wrapper2 {
+    position: absolute;
+    left: 50%;
+    margin-top: 600px;
+    margin-left: -300px;
+}
+
+
+@media (max-width: 768px) {
+    .pet-div{
+        margin-left: -300px;
+    }
+    .share-container{
+        margin-top: 500px;
+    }
+    .pet-content{
+        width: 46.71%;
+    }
+    .share-card{
+        margin-left: 0px;
+    }
 }
