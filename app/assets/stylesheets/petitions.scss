@@ -63,6 +63,11 @@ progress[value] {
     margin-top: 10px;
     margin-left: 0px;
   }
+
+  @media (max-width: $break-large) {
+    width: 100%;
+    transform: translateX(0%);
+  }
 }
 
 .new_signature {
@@ -74,6 +79,16 @@ progress[value] {
     width: 30%;
     background-color: #328FD6;
   }
+}
+
+.overlay {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-51%);
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(255,255,255,.9);
 }
 
 .pet-container {
@@ -95,6 +110,11 @@ progress[value] {
   float: left;
   max-width: 700px;
   display: inline-block;
+
+  @media (max-width: $break-med) {
+    margin-left: 4%;
+    width: 85%;
+  }
 }
 
 .petition-create--wrapper {
@@ -143,6 +163,11 @@ progress[value] {
   padding: 0px 20px;
   width: auto;
   float: left;
+
+  @media (max-width: $break-med) {
+    font-size: 20px;
+    padding: 14px 20px;
+  }
 }
 
 .petition-page-author-name p {
@@ -178,7 +203,6 @@ progress[value] {
   display: inline;
 }
 
-
 .petition-desc {
     padding-top: 2%;
 }
@@ -210,6 +234,24 @@ progress[value] {
   color: #000120;
   margin-bottom: 15px;
   padding-bottom: 10px;
+
+  @media (max-width: $break-med) {
+    font-size: 42px ;
+  }
+}
+
+.petition-sign-mobile {
+  visibility: hidden;
+  position: fixed;
+  width: calc(100% - 14px);
+  left: 0;
+  bottom: 0;
+  margin: 7px;
+  z-index: 10;
+
+  @media (max-width: $break-med) {
+    visibility: visible;
+  }
 }
 
 .profile-icon {
@@ -232,10 +274,33 @@ progress[value] {
   box-shadow: 0px 2px 15px rgba(0,0,0,0.2);
   border-radius: 5px;
   position: relative;
+
+  @media (max-width: $break-med) {
+    visibility: hidden;
+    position: fixed;
+  }
+}
+
+.share-card-mobile {
+  visibility: hidden;
+  background: white;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 10;
+  width: 90%;
+  // height: 500px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 25%;
 }
 
 .share-container {
   width: 40%;
+
+  @media (max-width: $break-med) {
+    position: absolute;
+  }
 }
 
 .share-facebook {
