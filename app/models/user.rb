@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :role, numericality: { greater_than_or_equal_to: 0, less_than: 3 }
 
   mount_uploader :profile_pic, ProfilePicUploader
+  validates_size_of :profile_pic, maximum: 5.megabyte, message: "Image size exceeds the allowable limit (5 MB)."
 
   has_many :petitions, dependent: :destroy
   has_many :signatures
