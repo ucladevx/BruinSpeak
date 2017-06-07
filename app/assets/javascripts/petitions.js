@@ -19,7 +19,7 @@ function removeReciever(e) {
 }
 
 function initButtons() {
-  $(".petition-create--btn").click(removeReciever);
+  $(".petition-create--btn").unbind('click').click(removeReciever);
 
   var sign_mobile = document.getElementById('sign-mobile');
   if (sign_mobile != null) {
@@ -101,10 +101,11 @@ $(document).ready(function(){
 document.addEventListener("turbolinks:load", function() {
   initPetitionDropdown();
   initComments();
+  initButtons();
 })
 
 function initPetitionDropdown() {
-  $('#status-dropdown').on('click', function(e) {
+  $('#status-dropdown').unbind('click').on('click', function(e) {
     $dropdown = $('.status-dropdown-content');
     if($dropdown.hasClass('selected')) {
       $dropdown.removeClass('selected');
@@ -124,7 +125,7 @@ function initComments() {
 
 function initSearchOverride() {
   $('#search').val("");
-  $('#search').keypress(function(e) {
+  $('#search').unbind('keypress').keypress(function(e) {
     console.log("going");
     if(e.which == 13) {
       e.preventDefault();
