@@ -7,8 +7,8 @@
     </div>
     <ul>
       <% @users.each do |user| %>
-        <li class="search-user-card">
-          <%= link_to user_path(user) do %>
+        <%= link_to user_path(user) do %>
+          <li class="search-user-card">
             <% if user.profile_pic.url %>
               <img class="search-user-icon" src=<%= image_path(user.profile_pic.url) %> alt="Profile picture">
             <% else %>
@@ -17,8 +17,8 @@
             <div class="search-user-name">
               <p><%= user.first_name.capitalize + " " + user.last_name.capitalize %></p>
             </div>
-          <% end %>
-        </li>
+          </li>
+        <% end %>
       <% end %>
     </ul>
     <%= will_paginate @users %>
