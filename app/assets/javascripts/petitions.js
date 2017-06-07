@@ -95,7 +95,6 @@ $(document).ready(function(){
     initSearchOverride();
 
     initButtons();
-    initPetitionDropdown();
 })
 
 document.addEventListener("turbolinks:load", function() {
@@ -104,7 +103,7 @@ document.addEventListener("turbolinks:load", function() {
 })
 
 function initPetitionDropdown() {
-  $('#status-dropdown').on('click', function(e) {
+  $('#status-dropdown').off('click').on('click', function(e) {
     $dropdown = $('.status-dropdown-content');
     if($dropdown.hasClass('selected')) {
       $dropdown.removeClass('selected');
