@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @petitions = Petition.trending().paginate(page: params[:page], per_page: 8)
+    @petitions = Petition.trending().paginate(page: params[:page], per_page: 6)
     @top_petitions = Petition.where(public: true).limit(3).trending()
     @users_count = User.count()
     respond_to do |format|
@@ -11,9 +11,9 @@ class PagesController < ApplicationController
 
   def explore
     @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc).limit(15)
-    @petitions = Petition.where(public: true).trending().paginate(page: params[:petitions_page], per_page: 8)
-    @victories = Petition.where(public: true, status: "victory").order(created_at: :desc).paginate(page: params[:victories_page], per_page: 8)
-    @recent = Petition.where(public: true).order(created_at: :desc).paginate(page: params[:recent_page], per_page: 8)
+    @petitions = Petition.where(public: true).trending().paginate(page: params[:petitions_page], per_page: 6)
+    @victories = Petition.where(public: true, status: "victory").order(created_at: :desc).paginate(page: params[:victories_page], per_page: 6)
+    @recent = Petition.where(public: true).order(created_at: :desc).paginate(page: params[:recent_page], per_page: 6)
     @type = params[:type]
     if !@type
       @type = "petitions"
