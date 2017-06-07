@@ -93,4 +93,10 @@
   </div>
 </div>
 
+<div class="overlay" id="petition-overlay"></div>
+<div class="share-card share-card-mobile" id="share-card-mobile">
+  <%= render "petitions/sign" %>
+</div>
+<div class="button start-pet-btn petition-sign-mobile" id="sign-mobile">Sign this petition</div>
+
 <%= render "comments/template", commentable: @petition, new_comment: @comment %>
