@@ -30,6 +30,20 @@ Migrate database:
 Start the server:
 `$ rails s`
 
+# Hosting
+
+Hosting is provided through Heroku. Once the correct remote is set up, simply use "git push heroku master" to push the product to production.
+
+To run commands on heroku, use `heroku run command-to-run`.
+
+Use the heroku dashboard to configure database and environment variables.
+
+Use the Figaro gem to push environment secrets to Heroku.
+
+Image hosting is provided through AWS.
+
+To receive a list of environment variables, as well as a list of Heroku, AWS, and email credentials, contact a previous administrator.
+
 # Additional Commands:
 
 View all available routes:
