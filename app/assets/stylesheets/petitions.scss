@@ -4,6 +4,7 @@
 
 @import "variables";
 
+
 progress[value] {
   width: 90%;
   margin-left: 20px;
@@ -126,7 +127,7 @@ progress[value] {
 }
 
 .pet-img-container {
-   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2); 
    border: 0;
    width: 100%;
    margin-top: 4%;
@@ -271,7 +272,7 @@ progress[value] {
 .share-card {
   margin-left: 100px;
   width: 325px;
-  height: 550px;
+  height: 550px; 
   box-shadow: 0px 2px 15px rgba(0,0,0,0.2);
   border-radius: 5px;
   position: relative;
@@ -418,3 +419,5 @@ progress[value] {
   font-weight: bold;
   font-size: 18px;
 }
+
+

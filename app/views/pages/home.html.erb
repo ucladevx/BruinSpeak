@@ -51,14 +51,14 @@
     <div class="petition-cards">
       <ul>
         <% @petitions.each do |petition| %>
-          <li><%= render 'shared/post', petition: petition %></li>
+         <li><%= render 'shared/post', petition: petition %></li>  
         <% end %>
         <% if @petitions.count % 3 == 1 %>
           <li></li>
           <li></li>
         <% elsif @petitions.count % 3 == 2 %>
           <li></li>
-        <% end %>
+        <% end %> 
       </ul>
     </div>
     <!--<div id="infinite-scrolling">-->
