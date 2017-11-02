@@ -44,6 +44,9 @@ class PagesController < ApplicationController
                  .paginate(page: params[:page], per_page: 12)
   end
 
+  def impact
+  end
+
   def about
   end
 
