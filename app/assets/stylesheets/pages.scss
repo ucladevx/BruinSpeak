@@ -389,6 +389,26 @@ button{
 
 }
 
+.intro {
+  height: 100vh;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 60px;
+  display: block;
+  max-height: 700px;
+  max-width: 1200px;
+  padding-top: 125px;
+  background-size: 110% 75%;
+  background-position: top;
+  background-color: rgba(255,255,255,0.6);
+  background-blend-mode: lighten;
+  background-repeat: no-repeat;
+
+  h1 {
+    font-weight: 700;
+  }
+}
+
 .center-info {
   text-align: center;
   margin: auto;
