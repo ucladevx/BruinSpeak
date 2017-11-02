@@ -73,7 +73,7 @@
         <div class="petition-image" style="background-image: url(<%= image_path('pet_default.jpg') %>"></div>
       <% end %>
     </div>
-
+    <p class="petition-desc">Petition created on <%= @petition.created_at.to_formatted_s(:long) %></br></p>
     <p class="petition-desc"><%= simple_format @petition.description %></p>
 
     <% if get_recievers(@petition).count > 0 %>
