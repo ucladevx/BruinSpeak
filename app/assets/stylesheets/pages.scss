@@ -672,6 +672,16 @@ button{
 
 }
 
+#paper{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		/*height:100%;*/
+		height: 100%;
+		z-index:-1;
+}
+
 .home-title {
   font-family: $bruinspeak_open_sans;
   // color: $bruinspeak_black;
