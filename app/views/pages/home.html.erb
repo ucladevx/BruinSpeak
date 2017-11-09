@@ -65,8 +65,7 @@
 <div class="popular">
   <h1 class="home-popular-title">What's Popular</h1>
   <div class="home-petition-wrapper">
-    <div class="petition-cards">
-      <ul>
+    <ul class="petition-cards">
         <% @petitions.each do |petition| %>
          <li><%= render 'shared/post', petition: petition %></li>
         <% end %>
@@ -76,10 +75,9 @@
         <% elsif @petitions.count % 3 == 2 %>
           <li></li>
         <% end %>
-      </ul>
-    </div>
-    <!--<div id="infinite-scrolling">-->
+    </ul>
+    <div id="infinite-scrolling">
       <%= will_paginate @petitions %>
-    <!--</div>-->
+    </div>
   </div>
 </div>
