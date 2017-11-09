@@ -75,7 +75,6 @@ function initButtons() {
 
   var btn = document.getElementById("petition-recievers-button");
   if(btn != null) {
-    console.log("hi");
     btn.onclick = function(e) {
       e.preventDefault();
 
@@ -90,17 +89,42 @@ function initButtons() {
   }
 }
 
+$('#new-petition-form').carousel({
+    interval: false,
+})
+
 $(document).ready(function(){
     $('.dropdown-toggle').dropdown();
     initSearchOverride();
-
+    checkitem();
     initButtons();
 })
+
+function checkitem()                        // check function
+{
+    var $this = $('#new-petition-form');
+    if ($('.carousel-inner .item:first').hasClass('active')) {
+        // Hide left arrow
+        $('#left-arrow-petition-form').hide();
+        // But show right arrow
+        $('#right-arrow-petition-form').show();
+    } else if ($('.carousel-inner .item:last').hasClass('active')) {
+        // Hide right arrow
+        $('#right-arrow-petition-form').hide();
+        // But show left arrow
+        $('#left-arrow-petition-form').show();
+    } else {
+        $('#left-arrow-petition-form').show();
+        $('#right-arrow-petition-form').show();
+    }
+}
 
 document.addEventListener("turbolinks:load", function() {
   initPetitionDropdown();
   initComments();
   initButtons();
+  checkitem();
+  $('#new-petition-form').on('slid.bs.carousel', checkitem);
 })
 
 function initPetitionDropdown() {

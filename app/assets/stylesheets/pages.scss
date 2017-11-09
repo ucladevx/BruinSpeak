@@ -238,7 +238,7 @@ button{
   @media (max-width: 1100px) {
     li {
       margin: 40px 20px;
-      width: 300px;   
+      width: 300px;
       // find a number here to dynamically change card size
      //  width: calc(55% - 40px - 1px);
     }
@@ -347,7 +347,110 @@ button{
   }
 }
 
-.carousel-control.right, .carousel-control.left {
+// FOR NEW CREATE PETITION CAROUSEL
+.controlsBlock {
+   	position: relative;
+   	bottom: 0;
+   	left: 0;
+   	top: 10px;
+   	display: block;
+   	width: 177px;
+   	margin: 0 auto;
+   	z-index: 1;
+   	height: 24px;
+   	text-align: center;
+}
+
+.controls {
+   	position: relative;
+   	display: block;
+}
+
+.carousel-control.pet-form {
+  	position: absolute;
+  	top: 25.5px;
+  	bottom: 0;
+  	left: 0;
+  	background: #000000;
+  	font-size: 5px;
+  	background: none !important;
+  	color: #000 !important;
+  	text-align: center;
+}
+
+.carousel-control.pet-form i {
+    	font-size: 20px;
+}
+
+.pet-form.left {
+  	left: 0;
+}
+
+.pet-form.right {
+  	right: 0;
+
+}
+
+.carousel-control.pet-form:hover,
+.carousel-control.pet-form:focus {
+  	color: #000;
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+  	position: absolute;
+  	z-index: 5;
+  	display: inline-block;
+}
+
+.carousel-control .glyphicon-chevron-left {
+  	left: 0;
+}
+
+.carousel-control .glyphicon-chevron-right {
+  	right: 0;
+}
+
+.carousel-indicators.pet-form {
+  	position: relative;
+  	bottom: 0;
+  	left: 50%;
+  	z-index: 15;
+  	width: 60%;
+  	top: 10px;
+  	padding-left: 0;
+  	margin-left: -30%;
+  	text-align: center;
+  	list-style: none;
+}
+
+.carousel-indicators.pet-form li {
+  	display: inline-block;
+   	zoom: 1;
+   	width: 10px;
+   	height: 10px;
+   	margin: 0 2px;
+   	background: transparent;
+   	-webkit-border-radius: 50%;
+   	-moz-border-radius: 50%;
+   	border-radius: 50%;
+   	border: 3px solid transparent;
+   	-webkit-box-shadow: rgba(0,0,0,0.5) 0 0 2px;
+   	-moz-box-shadow: rgba(0,0,0,0.5) 0 0 2px;
+   	box-shadow: rgba(0,0,0,0.5) 0 0 2px;
+   	cursor: pointer;
+}
+
+.carousel-indicators.pet-form .active {
+  	width: 10px;
+  	height: 10px;
+  	margin: 0;
+  	background-color: #000000;
+}
+// END NEW CREATE PETITION CAROUSEL
+
+.carousel-control.left,
+.carousel-control.right {
   background-image: none;
   width: 50px;
 }
@@ -992,6 +1095,10 @@ input, textarea {
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+}
+
+.vertical-bottom {
+  vertical-align: bottom;
 }
 
 .tab-content {
