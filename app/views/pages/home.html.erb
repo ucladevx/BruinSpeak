@@ -1,9 +1,25 @@
-<div class="center-info" style="background-image: url('<%= image_url("royce_icon.png") %>')">
+<div class="intro"  style="background-image: url('<%= image_url("royce_icon.png") %>')">
   <p class="home-title">UCLA's Platform for Change</p>
-  <p class="home-subtitle"><%= @users_count %> students are taking action.</p>
-  <p class="home-subtitle home-subtitle--victories"><u>Victories every day.</u></p>
+  <!-- <p class="home-subtitle"><%= @users_count %> students are taking action.</p>
+  <p class="home-subtitle home-subtitle--victories"><u>Victories every day.</u></p> -->
+
+  <div class = "count count-left">
+    <p>Successful Petitions</p>
+    <span class="counter">123,456</span>
+  </div>
+  <div class = "count count-right">
+    <p>Number of Signatures</p>
+    <span class="counter">123,456</span>
+  </div>
   <br>
   <%= link_to "START PETITION", new_petition_path, :class => "button start-pet-btn" %>
+</div >
+
+<div class="center-info" >
+  <!-- <p class="home-subtitle"><%= @users_count %> students are taking action.</p>
+  <p class="home-subtitle home-subtitle--victories"><u>Victories every day.</u></p>
+  <br>
+  <%= link_to "START PETITION", new_petition_path, :class => "button start-pet-btn" %> -->
   <div id="petition-carousel" class="carousel slide hidden-xs" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
