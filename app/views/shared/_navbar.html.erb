@@ -83,6 +83,9 @@
             </ul>
             <% end %>
 
+            <!-- <div id="remote">
+              <input class="typeahead form-control" type="text" placeholder="Oscar winners for Best Picture">
+            </div> -->
 
             <%= form_tag(search_path, method: 'get', class: 'nav navbar-nav navbar-right', role: 'search', id: 'navbar-form', data: {'active' => false}) do %>
                 <div class="input-group nav-input-group">
@@ -93,8 +96,10 @@
                     <% end %>
                     </span>
 
-                    <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "What are you looking for?"%>
-
+                    <!-- <div id="remote">
+                      <input class="typeahead form-control" type="text" placeholder="Search">
+                    </div> -->
+                    <%= text_field_tag :search, params[:search], class: "typeahead form-control", placeholder: "What are you looking for?"%>
 
                     <span class="input-group-btn" id="nav-search-span">
                     <%= button_tag(class: 'btn btn-default btn-nav', type: 'reset', id: 'search-btn-exit') do%>

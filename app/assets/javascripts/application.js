@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap-sprockets
+//= require twitter/typeahead
 //= require_tree .

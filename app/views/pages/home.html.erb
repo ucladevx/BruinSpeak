@@ -3,17 +3,37 @@
   <!-- <p class="home-subtitle"><%= @users_count %> students are taking action.</p>
   <p class="home-subtitle home-subtitle--victories"><u>Victories every day.</u></p> -->
 
+  <!-- Two Divs to animate count of petitions/signatures -->
   <div class = "count count-left">
-    <p>Successful Petitions</p>
-    <span class="counter">123,456</span>
+    <p class="count-text">Successful Petitions</p>
+    <span class="counter"><p class="count-number">123,456</p></span>
   </div>
+
   <div class = "count count-right">
-    <p>Number of Signatures</p>
-    <span class="counter">123,456</span>
+    <p class="count-text"> Number of Signatures </p>
+    <span class="counter"><p class="count-number">123,456</p></span>
   </div>
+
   <br>
   <%= link_to "START PETITION", new_petition_path, :class => "button start-pet-btn" %>
 </div >
+
+<!-- get trending tags -->
+<div class="trending navbar">
+   <% @tags.each do |tag| %>
+    <button class="trending-tag"><%= tag %></button>
+   <% end %>
+   <a class="left carousel-control" href="#petition-carousel" data-slide="prev">
+     <span class="vertical-center"></span><%= image_tag "Left Next Button.png", width: "40px", height: "40px", class: "carousel-arrow" %>
+     <span class="sr-only">Previous</span>
+   </a>
+   <a class="right carousel-control" href="#petition-carousel" data-slide="next">
+     <span class="vertical-center"></span><%= image_tag "Right Next Button.png", width: "40px", height: "40px", class: "carousel-arrow" %>
+     <span class="sr-only">Next</span>
+   </a>
+</div>
+
+<!-- <canvas id="paper"></canvas> -->
 
 <div class="center-info" >
   <!-- <p class="home-subtitle"><%= @users_count %> students are taking action.</p>
