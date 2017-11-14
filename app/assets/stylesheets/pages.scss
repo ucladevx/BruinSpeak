@@ -349,10 +349,10 @@ button{
 
 // FOR NEW CREATE PETITION CAROUSEL
 .controlsBlock {
-   	position: relative;
-   	bottom: 0;
-   	left: 0;
-   	top: 10px;
+   	// position: relative;
+   	// bottom: 0;
+   	// left: 0;
+   	// top: 10px;
    	display: block;
    	width: 177px;
    	margin: 0 auto;
@@ -469,10 +469,31 @@ button{
 .carousel-inner {
   width: 90%;
   max-width: 1000px;
-  height: 400px;
+  // height: 100%;
   border-radius: 8px;
   background-color: transparent;
   // box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+}
+
+#new-petition-container{
+  margin-top: 10px;
+  margin-bottom: 100px;
+  height: 85vh;
+}
+
+#new-petition-title{
+  text-align: center;
+}
+
+#new-petition-form{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.new-petition-h2{
+  b{
+    width: 100%;
+  }
 }
 
 .carousel-indicators {
