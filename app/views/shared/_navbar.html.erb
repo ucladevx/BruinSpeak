@@ -45,6 +45,15 @@
                 <li><%= link_to "Impact", impact_path, :id => "nav-impact-href" %></li>
             </ul>
 
+            <!-- Government Button -->
+            <% if current_user %>
+                <% if current_user.government? %>
+                <ul class="nav navbar-nav navbar-left nav-rem" id="navbar-government">
+                    <li><%= link_to "Government", government_path(current_user.id), :id => "nav-government-href" %></li>
+                </ul>
+                <% end %>
+            <% end %>
+
             <% if current_user %>
             <ul class="nav navbar-nav navbar-right nav-rem" id="navbar-user">
                     <!--<%= link_to user_path(current_user.id) do %>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'terms', to: "pages#terms"
   get 'privacy', to: "pages#privacy"
   get 'impact', to: "pages#impact"
+  get '/government/:id', to: 'pages#government', as: 'government'
   get '/users/:id', to: 'users#show', as: 'user'
   post '/users/:id/role', to: 'users#update_role', :constraints => { :only_ajax => true }
   post '/petitions/:id/public', to: 'petitions#toggle_public', :constraints => { :only_ajax => true }

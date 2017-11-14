@@ -943,13 +943,61 @@ button{
   float: left;
 }
 
+.prof-icon {
+  display: block;
+  margin-left: 72px;
+  margin-right: 72px;
+}
+
+.small-prof-icon {
+  width: 30px;
+  height: auto;
+  float: left;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+.border {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-color: #A9A9A9;
+}
+
 .profile-description {
   font-family: $bruinspeak_open_sans;
+  margin-top: 15px;
 }
 
 .prof-name {
   font-weight: bold;
   font-size: 40px;
+}
+
+.profile-name {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 1px;
+}
+
+.profile-name-link {
+  color: white;
+}
+
+.government-member-link {
+  margin-top: 0;
+  color: white;
+}
+
+.government-member {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.wrap-government-members {
+  padding: 8px;
 }
 
 .prof-sub {
@@ -1076,6 +1124,47 @@ input, textarea {
   position: relative;
   clear: both;
   float: left;
+}
+
+#left-sidebar { 
+  float: left;
+  position: absolute;
+  width: 250px;
+  top: 55px;
+  bottom: 20px;
+  background-color: #708090;
+  min-height: 400px;
+  padding-top: 15px;
+}
+
+#main {
+  margin-left: 250px;
+}
+
+.static-main-content {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.main-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+#gov-wrap {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#gov-body { 
+  overflow:auto;
+}
+
+#government {
+  color: #328fd6;
+
 }
 
 .start-pet-btn{

@@ -44,6 +44,16 @@ class PagesController < ApplicationController
                  .paginate(page: params[:page], per_page: 12)
   end
 
+  def government
+    @user = User.find(params[:id])
+    @petitions = Petition.trending().paginate(page: params[:page], per_page: 6)
+    @members = User.where(role: 1)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def impact
   end
 
