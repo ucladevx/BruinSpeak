@@ -1,6 +1,5 @@
 <div class="new-petition-container">
   <div class="container padded petition-create--wrapper">
-  <!-- <div class="padded petition-create--wrapper"> -->
     <h1 class="new-petition-title"><b>Create Petition</b></h1>
     <%= form_for(@petition) do |f| %>
 
@@ -96,17 +95,18 @@
 
     <% end %>
   </div>
-</div>
 
-<!-- Left and right controls -->
-<div class="controlsBlock">
-  <div class="controls">
-    <a id="left-arrow-petition-form" class="left carousel-control pet-form" href="#new-petition-form" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <div class="carousel-indicators pet-form">
-      <li data-target="#new-petition-form" data-slide-to="0" class="active"></li>
-      <li data-target="#new-petition-form" data-slide-to="1"></li>
-      <li data-target="#new-petition-form" data-slide-to="2"></li>
+  <!-- Left and right controls -->
+  <div class="controlsBlock">
+    <div class="controls">
+      <a id="left-arrow-petition-form" class="left carousel-control pet-form" href="#new-petition-form" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a id="right-arrow-petition-form" class="right carousel-control pet-form" href="#new-petition-form" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      <div class="carousel-indicators pet-form">
+        <li data-target="#new-petition-form" data-slide-to="0" class="active"></li>
+        <li data-target="#new-petition-form" data-slide-to="1"></li>
+        <li data-target="#new-petition-form" data-slide-to="2"></li>
+      </div>
     </div>
-    <a id="right-arrow-petition-form" class="right carousel-control pet-form" href="#new-petition-form" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
   </div>
+
 </div>
