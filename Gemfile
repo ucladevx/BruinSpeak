@@ -27,6 +27,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'thor', '>=0.14.4'
 
+# Typeahead gem
+gem 'twitter-typeahead-rails'
+
 # image processing
 gem 'mini_magick', '~> 4.7'
 

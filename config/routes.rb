@@ -7,12 +7,16 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'explore', to: "pages#explore"
   get 'search', to: "pages#search"
+  get 'searchPetitions', to: "pages#searchPetitions"
+  get 'searchUsers', to: "pages#searchUsers"
+  get 'searchTags', to: "pages#searchTags"
   get 'about', to: "pages#about"
   get 'contact', to: "pages#contact"
   get 'terms', to: "pages#terms"
   get 'privacy', to: "pages#privacy"
   get 'impact', to: "pages#impact"
   get '/users/:id', to: 'users#show', as: 'user'
+  get 'petitions/typeahead/:query' => 'petitions#typeahead'
   post '/users/:id/role', to: 'users#update_role', :constraints => { :only_ajax => true }
   post '/petitions/:id/public', to: 'petitions#toggle_public', :constraints => { :only_ajax => true }
   post '/petitions/:id/victory', to: 'petitions#change_to_victory', as: 'victory', :constraints => { :only_ajax => true }

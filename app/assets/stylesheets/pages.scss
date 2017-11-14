@@ -89,6 +89,14 @@ ul {
   font-size: 18px
 }
 
+.tt-cursor {
+  background-color: $bruinspeak_gray;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  background-color: $bruinspeak_gray;
+}
 
 .button {
   background-color: $bruinspeak_blue;
