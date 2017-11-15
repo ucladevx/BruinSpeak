@@ -6,12 +6,14 @@
   <!-- Two Divs to animate count of petitions/signatures -->
   <div class = "count count-left">
     <p class="count-text">Successful Petitions</p>
-    <span class="counter"><p class="count-number">123,456</p></span>
+    <div id="count1" class="hidden"><%= @petitions_count %></div>
+    <div id="odometer1" class="odometer"></div>
   </div>
 
   <div class = "count count-right">
     <p class="count-text"> Number of Signatures </p>
-    <span class="counter"><p class="count-number">123,456</p></span>
+    <div id="count1" class="hidden"><%= @petitions_count %></div>
+    <div id="odometer2" class="odometer"></div>
   </div>
 
   <br>
