@@ -19,18 +19,28 @@
 </div >
 
 <!-- get trending tags -->
-<div class="trending navbar">
-   <% @tags.each do |tag| %>
-    <button class="trending-tag"><%= tag %></button>
-   <% end %>
-   <a class="left carousel-control" href="#petition-carousel" data-slide="prev">
-     <span class="vertical-center"></span><%= image_tag "Left Next Button.png", width: "40px", height: "40px", class: "carousel-arrow" %>
-     <span class="sr-only">Previous</span>
-   </a>
-   <a class="right carousel-control" href="#petition-carousel" data-slide="next">
-     <span class="vertical-center"></span><%= image_tag "Right Next Button.png", width: "40px", height: "40px", class: "carousel-arrow" %>
-     <span class="sr-only">Next</span>
-   </a>
+<div class="trending-container">
+  <div class="trending navbar">
+    <!-- <a class="left carousel-control" href="#petition-carousel" data-slide="prev">
+      <span class="vertical-center"></span><%= image_tag "Left Next Button.png", width: "40px", height: "40px", class: "carousel-arrow" %>
+      <span class="sr-only">Previous</span>
+    </a> -->
+     <% @tags.each do |tag| %>
+     <div class="tag-container col-lg-3">
+       <%= link_to tag_path(tag.id) do %>
+
+       <img class= "tag-image" style="background-image: url('<%= image_url("tag.png") %>')"/>
+      <button class="trending-tag"><%= tag %></button>
+    </div>
+      <% end %>
+     <% end %>
+
+     <!-- <a class="right carousel-control" href="#petition-carousel" data-slide="next">
+       <span class="vertical-center"></span><%= image_tag "Right Next Button.png", width: "40px", height: "40px", class: "carousel-arrow" %>
+       <span class="sr-only">Next</span>
+     </a> -->
+
+  </div>
 </div>
 
 <!-- <canvas id="paper"></canvas> -->

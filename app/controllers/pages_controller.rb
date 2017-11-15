@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @petitions = Petition.trending().paginate(page: params[:page], per_page: 6)
     @top_petitions = Petition.where(public: true).limit(3).trending()
     @users_count = User.count()
-    @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc).limit(15)
+    @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc).limit(4)
     respond_to do |format|
       format.html
       format.js
