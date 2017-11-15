@@ -74,7 +74,6 @@ gem 'figaro', '~> 1.1'
 
 gem 'fog-aws'
 
-
 gem 'd3_rails'
 
 gem 'chartjs-ror'

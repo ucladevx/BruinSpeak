@@ -17,8 +17,8 @@
 //= require bootstrap-sprockets
 //= require twitter/typeahead
 //= require_tree .
-<<<<<<< HEAD
+
 //= require d3
-=======
+
 //= require Chart.min
->>>>>>> a92f1668e00297cd38d6176c14aaddeb48341308
+
