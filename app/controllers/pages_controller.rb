@@ -80,6 +80,24 @@ class PagesController < ApplicationController
   end
 
   def impact
+    @data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [
+        {
+            label: "Number of Petitions Signed",
+            background_color: "rgba(0,0,0,0)",
+            border_color: "rgb(47, 51, 58)",
+
+            data: [22, 42, 80, 104, 134, 189, 213, 221, 218, 248, 254, 259]
+        },
+        {
+            label: "Number of Petitions Started",
+            background_color: "rgba(0,0,0,0)",
+            border_color: "rgb(255,255,255)",
+            data: [3, 5, 7, 8, 10, 12, 16, 20, 28, 35, 37, 41]
+        }
+      ]
+    }
   end
 
   def about

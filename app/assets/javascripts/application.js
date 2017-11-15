@@ -17,3 +17,4 @@
 //= require bootstrap-sprockets
 //= require twitter/typeahead
 //= require_tree .
+//= require Chart.min
