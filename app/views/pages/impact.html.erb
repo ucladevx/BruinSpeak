@@ -1,1 +1,8 @@
-<h1> Impact page in development </h1>
+<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" %>
+<% @title = "Explore" %>
+
+<body style="background: linear-gradient(to top, rgb(124, 172, 249), rgb(255,255,255)) fixed;">
+<div style="width: 50%; height: 50%; margin: 0 auto;">
+  <%= line_chart @data %>
+</div>
+</body>

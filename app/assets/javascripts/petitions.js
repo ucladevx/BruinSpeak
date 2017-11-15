@@ -75,7 +75,6 @@ function initButtons() {
 
   var btn = document.getElementById("petition-recievers-button");
   if(btn != null) {
-    console.log("hi");
     btn.onclick = function(e) {
       e.preventDefault();
 
@@ -90,17 +89,122 @@ function initButtons() {
   }
 }
 
+function autocomplete()
+{
+  var petitions = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: 'searchPetitions/?search=%QUERY',
+      wildcard: '%QUERY'
+    }
+  });
+
+  var users = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('first_name' + 'last_name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: 'searchUsers/?search=%QUERY',
+      wildcard: '%QUERY'
+    }
+  });
+
+  var tags = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: 'searchTags/?search=%QUERY',
+      wildcard: '%QUERY'
+    }
+  });
+
+  petitions.initialize();
+  tags.initialize();
+  users.initialize();
+  $('.typeahead').typeahead({
+    hint: false,
+    highlight: true
+  },
+  {
+    name: 'petitions',
+    displayKey: 'title',
+    source: petitions.ttAdapter(),
+    limit: 10,
+    templates: {
+      header: '<h3 class="league-name">Petitions</h3>'
+    }
+  },
+  {
+    name: 'users',
+    source: users.ttAdapter(),
+    displayKey: function(user) {
+      return user.first_name + " " + user.last_name
+    },
+    limit: 10,
+    templates: {
+      header: '<h3 class="league-name">Users</h3>'
+    }
+  },
+  {
+    name: 'tags',
+    displayKey: 'name',
+    source: tags.ttAdapter(),
+    limit: 10,
+    templates: {
+      header: '<h3 class="league-name">Tags</h3>'
+    }
+  })
+
+  .on('typeahead:select', submitSuggestion)
+  .on('keydown', function(event) {
+    if (event.which === 13) {
+      submitSuggestion();
+    }
+  });
+}
+
+function submitSuggestion() {
+  $('#search-btn').click();
+}
+
+$('#new-petition-form').carousel({
+    interval: false,
+})
+
 $(document).ready(function(){
     $('.dropdown-toggle').dropdown();
     initSearchOverride();
-
+    checkitem();
     initButtons();
+    autocomplete();
 })
+
+function checkitem()                        // check function
+{
+    var $this = $('#new-petition-form');
+    if ($('.carousel-inner .item:first').hasClass('active')) {
+        // Hide left arrow
+        $('#left-arrow-petition-form').hide();
+        // But show right arrow
+        $('#right-arrow-petition-form').show();
+    } else if ($('.carousel-inner .item:last').hasClass('active')) {
+        // Hide right arrow
+        $('#right-arrow-petition-form').hide();
+        // But show left arrow
+        $('#left-arrow-petition-form').show();
+    } else {
+        $('#left-arrow-petition-form').show();
+        $('#right-arrow-petition-form').show();
+    }
+}
 
 document.addEventListener("turbolinks:load", function() {
   initPetitionDropdown();
   initComments();
   initButtons();
+  checkitem();
+  autocomplete();
+  $('#new-petition-form').on('slid.bs.carousel', checkitem);
 })
 
 function initPetitionDropdown() {

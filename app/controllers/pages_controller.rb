@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     @petitions = Petition.trending().paginate(page: params[:page], per_page: 6)
     @top_petitions = Petition.where(public: true).limit(3).trending()
     @users_count = User.count()
+    @tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc).limit(15)
     respond_to do |format|
       format.html
       format.js
@@ -44,7 +45,59 @@ class PagesController < ApplicationController
                  .paginate(page: params[:page], per_page: 12)
   end
 
+  def government
+    @user = User.find(params[:id])
+    @petitions = Petition.trending().paginate(page: params[:page], per_page: 6)
+    @members = User.where(role: 1)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def searchPetitions
+    @search = params[:search]
+    @search = @search.downcase
+    @petitions = Petition.where("lower(title) LIKE ?", "%" + @search + "%")
+                         .where(public: true)
+    render :json => @petitions
+  end
+
+  def searchUsers
+    @search = params[:search]
+    @search = @search.downcase
+    @users = User.where("lower(first_name) LIKE ?", "%" + @search + "%")
+                 .or(User.where("lower(last_name) LIKE ?", "%" + @search + "%"))
+                 .or(User.where("CONCAT(LOWER(first_name), ' ', LOWER(last_name)) LIKE ?", "%" + @search + "%"))
+    render :json => @users
+  end
+
+  def searchTags
+    @search = params[:search]
+    @search = @search.downcase
+    @tags = ActsAsTaggableOn::Tag.where("lower(name) LIKE ?", "%" + @search + "%")
+    render :json => @tags
+  end
+
   def impact
+    @data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [
+        {
+            label: "Number of Petitions Signed",
+            background_color: "rgba(0,0,0,0)",
+            border_color: "rgb(47, 51, 58)",
+
+            data: [22, 42, 80, 104, 134, 189, 213, 221, 218, 248, 254, 259]
+        },
+        {
+            label: "Number of Petitions Started",
+            background_color: "rgba(0,0,0,0)",
+            border_color: "rgb(255,255,255)",
+            data: [3, 5, 7, 8, 10, 12, 16, 20, 28, 35, 37, 41]
+        }
+      ]
+    }
   end
 
   def about

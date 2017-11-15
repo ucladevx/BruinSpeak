@@ -1,0 +1,45 @@
+<div id="left-sidebar">
+  <% if @user.profile_pic.url %>
+    <img id="profile-pic" class="prof-icon" src=<%= image_path(@user.profile_pic.url) %> alt="Profile picture">
+    <% else %>
+    <img id="profile-pic" class="prof-icon" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+    <% end %>
+    <div class="profile-description">
+        <p class="profile-name"><%= link_to @user.full_name, user_path(@user.id), class: "profile-name-link" %></p>
+        <p class="profile-name"><%= @user.email %></p>
+      </div>
+      <hr class="border">
+    <% @members.each do |members| %>
+    <div class="wrap-government-members">
+      <% if members.profile_pic.url %>
+      <img id="profile-pic" class="small-prof-icon img-circle" src=<%= image_path(members.profile_pic.url) %> alt="Profile picture">
+      <% else %>
+      <img id="profile-pic" class="small-prof-icon img-circle" src=<%= image_path("default_profile_picture.png") %> alt="Profile picture">
+      <% end %>
+      <div class="government-member"><%= link_to members.full_name, user_path(members.id), class: "government-member-link" %></div>
+    </div>
+    <% end %>
+</div>
+
+<div id="main">
+  <h1 class="static-main-content">STUDENT<span id="government">GOVERNMENT<span></h1>
+  <h1 class="main-title"><%= @user.first_name + "'s Dashboard"%></h1>
+  <br></br>
+  <div class="popular">
+    <h1 class="home-popular-title">Featured</h1>
+    <div class="home-petition-wrapper">
+      <ul class="petition-cards">
+          <% @petitions.each do |petition| %>
+            <li><%= render 'shared/post', petition: petition %></li>
+          <% end %>
+          <% if @petitions.count % 3 == 1 %>
+            <li></li>
+            <li></li>
+          <% elsif @petitions.count % 3 == 2 %>
+            <li></li>
+          <% end %>
+      </ul>
+      <%= will_paginate @petitions %>
+    </div>
+  </div>
+</div>

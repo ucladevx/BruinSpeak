@@ -1,5 +1,11 @@
 <% @petitions.each do |petition| %>
-  $('#petition-cards').append('<%= j render "shared/post", petition: petition %>')
+  $('.petition-cards').append('<li><%= j render "shared/post", petition: petition %></li>')
+<% end %>
+<% if @petitions.count % 3 == 1 %>
+  $('.petition-cards').append('<li></li>')
+  $('.petition-cards').append('<li></li>')
+<% elsif @petitions.count % 3 == 2 %>
+  $('.petition-cards').append('<li></li>')
 <% end %>
 <% if @petitions.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @petitions %>');
@@ -7,5 +13,4 @@
 <% else %>
   $(window).off('scroll');
   $('.pagination').remove();
-  console.log("removing scroll listener")
 <% end %>

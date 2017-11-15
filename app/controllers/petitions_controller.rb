@@ -112,5 +112,5 @@ class PetitionsController < ApplicationController
 
   def signatureParams
     params.require(:signature).permit(:support_text)
-  end
+  end    
 end
