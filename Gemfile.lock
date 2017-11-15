@@ -68,6 +68,8 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    d3_rails (4.1.1)
+      railties (>= 3.1.0)
     devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -237,6 +239,7 @@ DEPENDENCIES
   byebug
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
+  d3_rails
   devise (~> 4.2)
   figaro (~> 1.1)
   fog-aws
@@ -261,4 +264,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.5)
 
 BUNDLED WITH
-   1.14.6
+   1.16.0.pre.3

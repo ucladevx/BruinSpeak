@@ -71,6 +71,8 @@ gem 'figaro', '~> 1.1'
 
 gem 'fog-aws'
 
+gem 'd3_rails'
+
 group :development do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

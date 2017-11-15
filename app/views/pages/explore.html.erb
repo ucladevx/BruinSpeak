@@ -1,17 +1,36 @@
 <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" %>
 <% @title = "Explore" %>
-<div class="center-info" id="explore-top" style="background-image: url('<%= image_url("colorful_circles.png") %>')">
+<div class="center-info" id="explore-top" >
+<!-- style="background-image: url('<%= image_url("colorful_circles.png") %>')" -->
     <%= javascript_include_tag "explore", "data-turbolinks-track" => true  %>
-    <h1>Explore Petitions</h1>
+    <h1 id="explore-title">Explore Petitions</h1>
     <h2>Diverse Proposals. Be the change you want to see.</h2>
 
-    <div class="container-fluid" id="explore-buttons-grid">
-        <div class="row show-grid">
+      		
+    
 
+
+ <!--   <div class="container-fluid" id="explore-buttons-grid"> -->
+   <!-- 	 <div class="row show-grid">  -->
+    	  <div id="explore-chart"></div>
             <% @tags.each do |tag| %>
+            <!--
+         	<script>
+         		var name = "<%= tag.name %>";
+         		alert(name);
+
+         	</script>
+         	-->
+
+            <script>
+            var name = "<%= tag.name %>";
+            makeBubble(name);
+            </script>
+
             <%= link_to tag_path(tag.id) do %>
+            <!--
             <button  type="button" class="btn btn-default" id="explore-button"><div class=""><%= tag.name %></div>
-            </button>
+            </button> -->
             <% end %>
             <% end %>
             <!--<% if @tags.count < 12 %>
@@ -21,88 +40,7 @@
             <% end %>
             <% end %>-->
 
-        </div>
-    </div>
+     <!--  </div> -->
+ <!--   </div>  -->
 </div>
 
-</div>
-
-<div class="explore-petitions-container">
-    <ul class="nav nav-pills nav-justified pages-tabs">
-        <% if @type == "petitions" %>
-            <li class="active profile-tabs"><a href="#featured-tab" data-toggle="tab">Featured</a></li>
-            <li class="profile-tabs"><a href="#victories-tab" data-toggle="tab">Victories</a></li>
-            <li class="profile-tabs"><a href="#recent-tab" data-toggle="tab">Recent</a></li>
-        <% elsif @type == "victories" %>
-            <li class="profile-tabs"><a href="#featured-tab" data-toggle="tab">Featured</a></li>
-            <li class="active profile-tabs"><a href="#victories-tab" data-toggle="tab">Victories</a></li>
-            <li class="profile-tabs"><a href="#recent-tab" data-toggle="tab">Recent</a></li>
-        <% else %>
-            <li class="profile-tabs"><a href="#featured-tab" data-toggle="tab">Featured</a></li>
-            <li class="profile-tabs"><a href="#victories-tab" data-toggle="tab">Victories</a></li>
-            <li class="active profile-tabs"><a href="#recent-tab" data-toggle="tab">Recent</a></li>
-        <% end %>
-    </ul>
-    <div class="tab-content">
-        <% if @type == "petitions" %>
-            <div class="tab-pane in active" id="featured-tab">
-        <% else %>
-            <div class="tab-pane" id="featured-tab">
-        <% end %>
-            <div class="petition-cards">
-                <ul>
-                    <% @petitions.each do |petition| %>
-                        <li><%= render 'shared/post', petition: petition %></li>
-                    <% end %>
-                    <% if @petitions.count % 3 == 1 %>
-                      <li></li>
-                      <li></li>
-                    <% elsif @petitions.count % 3 == 2 %>
-                      <li></li>
-                    <% end %>
-                </ul>
-            </div>
-            <%= will_paginate @petitions, :param_name => 'petitions_page', params: { type: "petitions" } %>
-        </div>
-        <% if @type == "victories" %>
-            <div class="tab-pane in active" id="victories-tab">
-        <% else %>
-            <div class="tab-pane" id="victories-tab">
-        <% end %>
-            <div class="petition-cards">
-                <ul>
-                    <% @victories.each do |petition| %>
-                        <li><%= render 'shared/post', petition: petition %></li>
-                    <% end %>
-                    <% if @victories.count % 3 == 1 %>
-                      <li></li>
-                      <li></li>
-                    <% elsif @victories.count % 3 == 2 %>
-                      <li></li>
-                    <% end %>
-                </ul>
-            </div>
-            <%= will_paginate @victories, :param_name => 'victories_page', params: { type: "victories" } %>
-        </div>
-        <% if @type == "recent" %>
-            <div class="tab-pane in active" id="recent-tab">
-        <% else %>
-            <div class="tab-pane" id="recent-tab">
-        <% end %>
-            <div class="petition-cards">
-                <ul>
-                    <% @recent.each do |petition| %>
-                        <li><%= render 'shared/post', petition: petition %></li>
-                    <% end %>
-                    <% if @recent.count % 3 == 1 %>
-                      <li></li>
-                      <li></li>
-                    <% elsif @recent.count % 3 == 2 %>
-                      <li></li>
-                    <% end %>
-                </ul>
-            </div>
-            <%= will_paginate @recent, :param_name => 'recent_page', params: { type: "recent" } %>
-        </div>
-    </div>
-</div>
