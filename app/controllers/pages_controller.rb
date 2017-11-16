@@ -80,21 +80,34 @@ class PagesController < ApplicationController
   end
 
   def impact
-    @data = {
+    @data_petitions_started = {
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [
+        {
+            label: "Number of Petitions Started",
+            background_color: "rgba(0,0,0,0)",
+            border_color: "rgb(255,255,255)",
+            data: [3, 5, 7, 8, 10, 12, 16, 20, 28, 35, 37, 41]
+        }
+      ]
+    }
+    @data_pie_chart = {
+      labels: ["Users who have signed winning petitions", "Other users"],
+      datasets: [
+        {
+          data: [80,20],
+          background_color: ["rgb(121, 154, 206)", "rgb(213, 222, 237)"]
+        }
+      ]
+    }
+    @data_petitions_signed = {
       labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
       datasets: [
         {
             label: "Number of Petitions Signed",
             background_color: "rgba(0,0,0,0)",
             border_color: "rgb(47, 51, 58)",
-
             data: [22, 42, 80, 104, 134, 189, 213, 221, 218, 248, 254, 259]
-        },
-        {
-            label: "Number of Petitions Started",
-            background_color: "rgba(0,0,0,0)",
-            border_color: "rgb(255,255,255)",
-            data: [3, 5, 7, 8, 10, 12, 16, 20, 28, 35, 37, 41]
         }
       ]
     }
