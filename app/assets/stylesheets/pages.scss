@@ -358,14 +358,15 @@ button{
 // FOR NEW CREATE PETITION CAROUSEL
 .controlsBlock {
    	// position: relative;
-   	// bottom: 0;
+   	bottom: 0;
    	// left: 0;
    	// top: 10px;
    	// display: block;
    	margin: 0 auto;
    	z-index: 1;
-    width: 50%;
+    width: 100%;
     height: 100px;
+    position: absolute;
     //
    	// text-align: center;
     // position: absolute;
@@ -373,19 +374,20 @@ button{
     // margin-left: auto;
     // margin-right: auto;
     // margin-bottom: 100px;
-
 }
 
 .controls {
    	position: relative;
    	display: block;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .carousel-control.pet-form {
   	position: absolute;
-  	top: 25.5px;
+  	// top: 25.5px;
   	bottom: 0;
-  	left: 0;
+  	// left: 0;
   	background: #000000;
   	font-size: 5px;
   	background: none !important;
@@ -397,14 +399,14 @@ button{
     	font-size: 20px;
 }
 
-.pet-form.left {
-  	left: 0;
-}
-
-.pet-form.right {
-  	right: 0;
-
-}
+// .pet-form.left {
+//   	left: 0;
+// }
+//
+// .pet-form.right {
+//   	right: 0;
+//
+// }
 
 .carousel-control.pet-form:hover,
 .carousel-control.pet-form:focus {
@@ -485,7 +487,7 @@ button{
 .carousel-inner {
   // width: 90%;
   max-width: 1000px;
-  // height: 100%;
+  height: 100%;
   border-radius: 8px;
   background-color: transparent;
   margin: 0px;
@@ -507,6 +509,7 @@ button{
 
 #new-petition-form{
   width: 100%;
+  height: 80vh;
   margin: 0;
 }
 
