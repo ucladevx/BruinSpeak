@@ -7,6 +7,7 @@ var searchModule = (function () {
     var $searchExit = $('#search-btn-exit');
     var $searchInput = $('#search');
     var $navRems = $('.nav-rem');
+    var $typeahead = $('.typeahead');
 
     var ESC = 27;
     var ENTER = 13;
@@ -31,6 +32,7 @@ var searchModule = (function () {
 
       $searchForm.addClass('active');
       $searchInput.focus();
+      $('.tt-menu').css('display', 'none');
     }
 
     function handleKeyPress(e) {
