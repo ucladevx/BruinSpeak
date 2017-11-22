@@ -25,6 +25,25 @@
   </div>
 
   <div class="search-repeat">
+    <span class="search-title">Explore Tags</span>
+    <p class="search-description"> containing keyword '<%= @search %>'</p>
+  </div>
+  <div class="search-tags">
+    <ul>
+      <% @tags.each do |tag| %>
+        <div class="tag-container col-lg-3">
+          <%= link_to tag_path(tag.id) do %>
+
+            <img class= "tag-image" style="background-image: url('<%= image_url("tag.png") %>')"/>
+            <button class="trending-tag"><%= tag %></button>
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
+    <%= will_paginate @tags %>
+  </div>
+
+  <div class="search-repeat">
     <span class="search-title">Explore Petitions</span>
     <p class="search-description"> containing keyword '<%= @search %>'</p>
   </div>
@@ -41,5 +60,5 @@
       <% end %>
     </ul>
     <%= will_paginate @petitions %>
-</div>
+  </div>
 </div>

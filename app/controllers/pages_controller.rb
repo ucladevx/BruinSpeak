@@ -35,6 +35,7 @@ class PagesController < ApplicationController
     @search = params[:search]
     @search = @search.downcase
     @tags = ActsAsTaggableOn::Tag.where("lower(name) LIKE ?", "%" + @search + "%")
+                                 .paginate(page: params[:page], per_page: 12)
     @petitions = Petition.where("lower(title) LIKE ?", "%" + @search + "%")
                          .where(public: true)
                          .or(Petition.where("lower(description) LIKE ?", "%" + @search + "%"))
