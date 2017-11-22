@@ -131,7 +131,7 @@ function autocomplete()
     source: petitions.ttAdapter(),
     limit: 10,
     templates: {
-      header: '<h3 class="league-name">Petitions</h3>'
+      header: '<h4 class="league-name">Petitions</h4>'
     }
   },
   {
@@ -142,7 +142,7 @@ function autocomplete()
     },
     limit: 10,
     templates: {
-      header: '<h3 class="league-name">Users</h3>'
+      header: '<h4 class="league-name">Users</h4>'
     }
   },
   {
@@ -151,7 +151,7 @@ function autocomplete()
     source: tags.ttAdapter(),
     limit: 10,
     templates: {
-      header: '<h3 class="league-name">Tags</h3>'
+      header: '<h4 class="league-name">Tags</h4>'
     }
   })
 
