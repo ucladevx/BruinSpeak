@@ -47,7 +47,22 @@ how to read in the text, all examples online use csv???
 figure out the window size restriction in the csss
 */
 
+ var data = new Object();
+ var nodes = [];
 
+function jsonify(name, url) {
+	var obj = {};
+
+    obj.name = name;
+    obj.url = url;
+    console.log(obj);
+
+    nodes.push(obj);
+    console.log(nodes);
+
+    data.nodes = nodes;
+    console.log(data);
+}
 
 function getRandomColor() {
 	/*
@@ -60,7 +75,7 @@ function getRandomColor() {
 
  }
 
-function makeBubble(name) {
+function makeBubble(name, url) {
 
 if (count == 0)
 {
@@ -77,6 +92,8 @@ if (count == 0)
 		.attr("cx", x)
 		.attr("cy", y)
 		.style("fill", getRandomColor())
+		.attr('class', 'click-circle')
+		.attr("xlink:href", url)
 		.attr("r", maxsize);
 		/*
 		.attr("stroke", "black")
@@ -137,7 +154,12 @@ function nextBubble() {
 	}
 }
 
-
+svg.on('click', function() {
+        var coords = d3.mouse(this);
+        console.log(coords);
+        window.open(url, '_blank');
+        //alert("works");
+    });
 
 /*
 var circle = svg.append("circle")

@@ -22,9 +22,15 @@
          	</script>
          	-->
 
+
             <script>
+
             var name = "<%= tag.name %>";
-            makeBubble(name);
+            var url = "http://google.com/"; //change this later once figured out how to get from ruby
+            
+
+            jsonify(name, url); //jsonify the bubbles for easier documentation
+            makeBubble(name, url);
             </script>
 
             <%= link_to tag_path(tag.id) do %>
