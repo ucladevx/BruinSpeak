@@ -1,18 +1,18 @@
 <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Abel|Open+Sans|Source+Sans+Pro" %>
+<meta charset="utf-8"> <!-- supresses d3 is not defined errors -->
 <% @title = "Explore" %>
 <div class="center-info" id="explore-top" >
 <!-- style="background-image: url('<%= image_url("colorful_circles.png") %>')" -->
     <%= javascript_include_tag "explore", "data-turbolinks-track" => true  %>
     <h1 id="explore-title">Explore Petitions</h1>
-    <h2>Diverse Proposals. Be the change you want to see.</h2>
+    <h2>Diverse Proposals. Be the change you want to see.</h2> 
 
       		
     
-
-
+</div>
  <!--   <div class="container-fluid" id="explore-buttons-grid"> -->
    <!-- 	 <div class="row show-grid">  -->
-    	  <div id="explore-chart"></div>
+    	  <svg></svg>
             <% @tags.each do |tag| %>
             <!--
          	<script>
@@ -24,13 +24,14 @@
 
 
             <script>
-
             var name = "<%= tag.name %>";
             var url = "http://google.com/"; //change this later once figured out how to get from ruby
             
 
             jsonify(name, url); //jsonify the bubbles for easier documentation
-            makeBubble(name, url);
+           // makeBubble(name, url);
+
+           
             </script>
 
             <%= link_to tag_path(tag.id) do %>
@@ -46,7 +47,11 @@
             <% end %>
             <% end %>-->
 
+            <script>
+                createBubbles();
+            </script>
+
      <!--  </div> -->
  <!--   </div>  -->
-</div>
+
 
