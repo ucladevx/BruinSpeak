@@ -26,19 +26,12 @@
 //     }
 // });
 
-var maxsize = 120;
-//var x = 250;
-//var y = 150;
+var maxsize = 120; //max bubble size
+
 var count = 0;
 var svg;
-//var count = 0;
-//var rowCounter = 0;
 
-//var colorPick = 0;
- 
-
- //var data = new Object();
- var info = [];
+var info = []; //holds all the bubble objects
 
 function jsonify(name, url) {
 	//var obj = {};
@@ -87,7 +80,7 @@ function getRandomColor(num) {
      {
       return colors[0];
      }
-     return colors[1];
+     return colors[1]; //returns the bubble colors
      num++;
  }
 
@@ -99,7 +92,7 @@ function createBubbles() {
  
 
  var svg = d3.select("svg")
- 	.attr("width", window.innerWidth)
+ 	.attr("width", window.innerWidth) //create svg where the bubbles will go
  	.attr("height", height)
 //	.attr("transform", "translate(0,0)");
 
@@ -129,6 +122,19 @@ function createBubbles() {
   
         var lbl = svg.selectAll("g").interrupt().data([d]);  
         lbl.enter().append("g");
+
+  lbl.attr("pointer-events", "none")
+            .attr("transform", function(d){ return "translate(" + d.x + "," + d.y + ")"; })
+            .append("text")
+            .attr("text-anchor", "middle")
+            .text(function(d) {return d.name; })
+            .style("font-weight", "bold")
+            .style("fill", function(d){return d.color;})
+            .style({ 
+            "font-family":"Helvetica, sans-serif", //overwrite the old text with same bubble color to remove old text 
+            "font-size": "12px"
+          });
+
         lbl.attr("pointer-events", "none")
             .attr("transform", function(d){ return "translate(" + d.x + "," + d.y + ")"; })
             .append("text")
@@ -137,11 +143,9 @@ function createBubbles() {
             .transition()
             .style({
             "fill":"white", 
-            "font-family":"Helvetica, sans-serif",
+            "font-family":"Helvetica, sans-serif", //enlarge bubble text when hovered over 
             "font-size": "18px"
           });
-
-
   }
   )
 
