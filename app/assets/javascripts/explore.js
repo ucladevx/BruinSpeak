@@ -26,9 +26,6 @@
 //     }
 // });
 
-//http://vallandingham.me/bubble_charts_in_js.html
-//https://github.com/vlandham/bubble_chart/blob/gh-pages/src/bubble_chart.js
-
 var maxsize = 120;
 //var x = 250;
 //var y = 150;
@@ -38,11 +35,7 @@ var svg;
 //var rowCounter = 0;
 
 //var colorPick = 0;
-
-/*
-todo: randomize locations of the bubbles
-make sure they dont overlap
-*/
+ 
 
  //var data = new Object();
  var info = [];
@@ -86,7 +79,7 @@ function nextBubble() {
 
 
 function getRandomColor(num) {
-    console.log(num);
+    //console.log(num);
 
      var colors = ["#292E49",  "11998e"];
 
@@ -102,14 +95,13 @@ function getRandomColor(num) {
  var height = 1100;
 
 function createBubbles() {
-  console.log(info);
+  //console.log(info);
  
 
  var svg = d3.select("svg")
  	.attr("width", window.innerWidth)
  	.attr("height", height)
-  .attr("class", "bubble");
- //	.attr("transform", "translate(0,0)");
+//	.attr("transform", "translate(0,0)");
 
  var nodes = svg.selectAll("circle").data(info);
 
@@ -121,6 +113,7 @@ function createBubbles() {
   .style("fill", function(d){return d.color;})
   .attr("r", function(d){return d.r;});
 
+
   nodes.enter().append("text")
         .attr("x", function(d){ return d.x; })
         .attr("y", function(d){ return d.y; })
@@ -131,6 +124,37 @@ function createBubbles() {
             "font-family":"Helvetica, sans-serif",
             "font-size": "12px"
         });
+
+  nodes.on("mouseover", function(d){
+  
+        var lbl = svg.selectAll("g").interrupt().data([d]);  
+        lbl.enter().append("g");
+        lbl.attr("pointer-events", "none")
+            .attr("transform", function(d){ return "translate(" + d.x + "," + d.y + ")"; })
+            .append("text")
+            .attr("text-anchor", "middle")
+            .text(function(d) {return d.name; })
+            .transition()
+            .style({
+            "fill":"white", 
+            "font-family":"Helvetica, sans-serif",
+            "font-size": "18px"
+          });
+
+
+  }
+  )
+
+
+    .on("mouseout", function(d){
+            var lbl = svg.selectAll("g").data([]);
+            lbl.exit().transition()
+            //    .duration(200)
+               .style({"fill-opacity": 0.0})
+                .remove();
+        }
+    );
+
 
  
 }
