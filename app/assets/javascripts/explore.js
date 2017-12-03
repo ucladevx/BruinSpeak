@@ -96,8 +96,7 @@ function createBubbles() {
 
  var svg = d3.select("svg")
  	.attr("width", window.innerWidth) //create svg where the bubbles will go
- 	.attr("height", height)
-//	.attr("transform", "translate(0,0)");
+ 	.attr("height", height);
 
 var blue = svg.append("svg:defs")     //blue linear gradient
     .append("svg:linearGradient")
@@ -135,14 +134,22 @@ green.append("svg:stop")
 
  var nodes = svg.selectAll("circle").data(info);
 
- nodes.enter().append("circle")
+ nodes.enter()  
+  .append("circle")
   .attr("cx", function(d){ return d.x; })
   .attr("cy", function(d){ return d.y; }); 
 
  nodes.attr("r", 0)
   .style("fill", function(d){console.log('url(#' + d.color+ ')'); return 'url(#' + d.color+ ')';}) //get linear gradient color
  // .style("fill", "url(#green)")
-  .attr("r", function(d){return d.r;});
+  .attr("r", function(d){return d.r;})
+  .on("click", function(d) {
+    var durl = d.url; //get url of tag
+    durl = durl.slice(1); //remove leading /
+   var url = window.location.origin + "/" + durl;
+    //console.log(url);
+    window.open(url, "_self"); //open url in current view
+  });
 
 
   nodes.enter().append("text")
@@ -187,7 +194,6 @@ green.append("svg:stop")
   }
   )
 
-
     .on("mouseout", function(d){
             var lbl = svg.selectAll("g").data([]);
             lbl.exit().transition()
@@ -196,7 +202,6 @@ green.append("svg:stop")
                 .remove();
         }
     );
-
 
  
 }
