@@ -33,12 +33,61 @@ var svg;
 
 var info = []; //holds all the bubble objects
 
+var x = window.innerWidth/3;
+var y = 150;
+
+function xtrack(count){
+  if (count == 0)
+  {
+    //return default 200
+  }
+  else if (count < 3)
+  {
+    x+=200;
+  }
+  else if (count == 3)
+  {
+    x = window.innerWidth/3 + 20;
+  }
+  else if (count == 7)
+  {
+    x = window.innerWidth/3 -45;
+  }
+  else if (count == 12)
+  {
+    x = window.innerWidth/3 +55;
+  }
+  else 
+  {
+    x += 145;
+  }
+
+
+  return x; //return new x
+}
+
+function ytrack (count) {
+    if (count == 3)
+    {
+      y += 240;
+    }
+    else if (count == 7)
+    {
+      y += 140;
+    }
+    else if (count == 12)
+    {
+      y += 140;
+    }
+    return y; //return new y
+}
+
 function jsonify(name, url) {
 	//var obj = {};
     var obj = new Object();
 
-    obj.x = 45+(count*100);  //FIGURE OUT X AND Y 
-    obj.y = 50;
+    obj.x = xtrack(count);
+    obj.y = ytrack(count);
     obj.name = name;
     obj.url = url;
     obj.r = maxsize;
@@ -88,11 +137,10 @@ function getRandomColor(num) {
  } */
 
  var width = 1100;
- var height = 1100;
+ var height = 850;
 
 function createBubbles() {
-  //console.log(info);
- 
+  //console.log(info); 
 
  var svg = d3.select("svg")
  	.attr("width", window.innerWidth) //create svg where the bubbles will go
@@ -202,7 +250,6 @@ green.append("svg:stop")
                 .remove();
         }
     );
-
  
 }
 
