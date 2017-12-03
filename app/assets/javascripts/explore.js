@@ -45,11 +45,13 @@ function jsonify(name, url) {
 
     if (count < 3) 
     {
-      obj.color = "292E49";
+      obj.color = "blue";
+      obj.over = "#292E49";
     }
     else 
     {
-      obj.color = "11998e";
+      obj.color = "green";
+      obj.over = "#11998E";
     }
     //console.log(obj);
 
@@ -70,19 +72,20 @@ function nextBubble() {
   count++;
 }
 
-
+/*
 function getRandomColor(num) {
+
     //console.log(num);
 
-     var colors = ["#292E49",  "11998e"];
+   //  var colors = ["#292E49",  "11998e"];
 
      if (num < 3)
      {
-      return colors[0];
+      return "blue";
      }
-     return colors[1]; //returns the bubble colors
+     return "green"; //returns the bubble colors
      num++;
- }
+ } */
 
  var width = 1100;
  var height = 1100;
@@ -96,6 +99,40 @@ function createBubbles() {
  	.attr("height", height)
 //	.attr("transform", "translate(0,0)");
 
+var blue = svg.append("svg:defs")     //blue linear gradient
+    .append("svg:linearGradient")
+    .attr("id", "blue")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "0%")
+    .attr("y2", "100%")
+
+ blue.append("svg:stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#292E49")
+
+blue.append("svg:stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#536976")
+
+
+  var green = svg.append("svg:defs") //green linear gradient 
+    .append("svg:linearGradient")
+    .attr("id", "green")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "0%")
+    .attr("y2", "100%")
+
+ green.append("svg:stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#11998e")
+
+green.append("svg:stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#38ef7d")
+
+
  var nodes = svg.selectAll("circle").data(info);
 
  nodes.enter().append("circle")
@@ -103,7 +140,8 @@ function createBubbles() {
   .attr("cy", function(d){ return d.y; }); 
 
  nodes.attr("r", 0)
-  .style("fill", function(d){return d.color;})
+  .style("fill", function(d){console.log('url(#' + d.color+ ')'); return 'url(#' + d.color+ ')';}) //get linear gradient color
+ // .style("fill", "url(#green)")
   .attr("r", function(d){return d.r;});
 
 
@@ -128,11 +166,11 @@ function createBubbles() {
             .append("text")
             .attr("text-anchor", "middle")
             .text(function(d) {return d.name; })
-            .style("font-weight", "bold")
-            .style("fill", function(d){return d.color;})
+            //.style("font-weight", "bold")
+            .style("fill", function(d){return d.over;})
             .style({ 
             "font-family":"Helvetica, sans-serif", //overwrite the old text with same bubble color to remove old text 
-            "font-size": "12px"
+            "font-size": "12.1px"
           });
 
         lbl.attr("pointer-events", "none")
