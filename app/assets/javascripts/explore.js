@@ -188,7 +188,7 @@ green.append("svg:stop")
   .attr("cy", function(d){ return d.y; }); 
 
  nodes.attr("r", 0)
-  .style("fill", function(d){console.log('url(#' + d.color+ ')'); return 'url(#' + d.color+ ')';}) //get linear gradient color
+  .style("fill", function(d){ return 'url(#' + d.color+ ')';}) //get linear gradient color
  // .style("fill", "url(#green)")
   .attr("r", function(d){return d.r;})
   .on("click", function(d) {
