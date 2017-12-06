@@ -3,6 +3,25 @@
 
 <body style="background: linear-gradient(to top, rgb(124, 172, 249), rgb(255,255,255)) fixed;">
 <div style="width: 50%; margin: 0 auto; margin-top: 30px; font-size:500%; text-align: center; color: rgb(30, 56, 99)"> IMPACT </div>
+
+<div style="text-align: center;">
+<div class = "count count-impact" style="width: 100%; height: 50%; display: inline-block" >
+  <p class="count-text"> Successful Petitions </p>
+  <div id="count3" class="hidden"><%= @petitions_count %></div>
+  <div id="odometer3" class="odometer" style="size: 200%"></div>
+  <!-- <div id="odometer3" class="odometer odometer-auto-theme" style="size: 200%"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">2</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">3</span></span></span></span></span></div></div> -->
+</div>
+</div>
+
+<div style="text-align: center;">
+<div class = "count count-impact" style="width: 100%; height: 30%; display: inline-block" >
+  <p class="count-text"> Total number of Signatures </p>
+  <p style="font-family:Apple Chancery; font-size: 250%"> 563 </p>
+
+  <!-- //<div class= "pen-image" style="background-image: url('<%= image_url("tag.png") %>')"></div> -->
+</div>
+</div>
+
 <div style="width: 100%; height: 50%">
   <div style="float:left; margin-left: 2.5%; margin-top: 5%; height: 30%; width: 30%">
     <%= line_chart @data_petitions_started %>
@@ -14,4 +33,23 @@
     <%= line_chart @data_petitions_signed%>
   </div>
 </div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  //do work
+  setTimeout(function(){
+    var odometer3 = document.getElementById("odometer3");
+    odometer3.innerHTML = 23;
+  }, 1000);
+});
+
+document.addEventListener("turbolinks:load", function() {
+  setTimeout(function(){
+    var odometer3 = document.getElementById("odometer3");
+    odometer3.innerHTML = 23;
+  }, 1000);
+});
+
+</script>
 </body>

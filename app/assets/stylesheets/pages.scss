@@ -772,6 +772,10 @@ button{
 
 }
 
+.count-impact{
+
+}
+
 .trending-container{
   width: 50%;
   margin: 0 auto;
@@ -799,6 +803,15 @@ button{
   float: left;
   padding-left: 5px;
   padding-right: 15px;
+}
+
+.tag-image{
+  height: 25px;
+  width: 25px;
+  float:left;
+  border: none;
+  background: none;
+  // background-image: url('<%= image_url("tag.png") %>')
 }
 
 .tag-image{
