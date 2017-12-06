@@ -26,41 +26,237 @@
 //     }
 // });
 
-//http://vallandingham.me/bubble_charts_in_js.html
-//https://github.com/vlandham/bubble_chart/blob/gh-pages/src/bubble_chart.js
+var maxsize = 120; //max bubble size
 
-var maxsize = 120;
-var x = 250;
+var count = 0;
+var svg;
+
+var info = []; //holds all the bubble objects
+
+var x = window.innerWidth/3;
 var y = 150;
 
-var svg;
-var count = 0;
-var rowCounter = 0;
+function xtrack(count){
+  if (count == 0)
+  {
+    //return default 200
+  }
+  else if (count < 3)
+  {
+    x+=200;
+  }
+  else if (count == 3)
+  {
+    x = window.innerWidth/3 + 20;
+  }
+  else if (count == 7)
+  {
+    x = window.innerWidth/3 -45;
+  }
+  else if (count == 12)
+  {
+    x = window.innerWidth/3 +55;
+  }
+  else 
+  {
+    x += 145;
+  }
 
-var colorPick = 0;
+
+  return x; //return new x
+}
+
+function ytrack (count) {
+    if (count == 3)
+    {
+      y += 240;
+    }
+    else if (count == 7)
+    {
+      y += 140;
+    }
+    else if (count == 12)
+    {
+      y += 140;
+    }
+    return y; //return new y
+}
+
+function jsonify(name, url) {
+	//var obj = {};
+    var obj = new Object();
+
+    obj.x = xtrack(count);
+    obj.y = ytrack(count);
+    obj.name = name;
+    obj.url = url;
+    obj.r = maxsize;
+
+    if (count < 3) 
+    {
+      obj.color = "blue";
+      obj.over = "#292E49";
+    }
+    else 
+    {
+      obj.color = "green";
+      obj.over = "#11998E";
+    }
+    //console.log(obj);
+
+    info.push(obj);
+    //console.log(info);
+
+   // data.info = info;
+   // console.log(data);
+
+    nextBubble();
+}
+
+function nextBubble() {
+	if (maxsize > 80)
+ 	{
+		maxsize = maxsize - 10; //make the next bubble smaller
+	}
+  count++;
+}
 
 /*
-todo: randomize locations of the bubbles
-make sure they dont overlap
+function getRandomColor(num) {
 
-how to read in the text, all examples online use csv???
-figure out the window size restriction in the csss
-*/
+    //console.log(num);
+
+   //  var colors = ["#292E49",  "11998e"];
+
+     if (num < 3)
+     {
+      return "blue";
+     }
+     return "green"; //returns the bubble colors
+     num++;
+ } */
+
+ var width = 1100;
+ var height = 850;
+
+function createBubbles() {
+  //console.log(info); 
+
+ var svg = d3.select("svg")
+ 	.attr("width", window.innerWidth) //create svg where the bubbles will go
+ 	.attr("height", height);
+
+var blue = svg.append("svg:defs")     //blue linear gradient
+    .append("svg:linearGradient")
+    .attr("id", "blue")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "0%")
+    .attr("y2", "100%")
+
+ blue.append("svg:stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#292E49")
+
+blue.append("svg:stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#536976")
 
 
+  var green = svg.append("svg:defs") //green linear gradient 
+    .append("svg:linearGradient")
+    .attr("id", "green")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "0%")
+    .attr("y2", "100%")
 
-function getRandomColor() {
-	/*
-     var colours = ["#00c0f1", "#add036", "#ec2426", "#ffc116", "#FFF95F", "#83B8FD"];
-     return colours[Math.floor(Math.random() * 6)]
-     */
+ green.append("svg:stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#11998e")
 
-     var colors = ["#292E49",  "11998e"];
-     return colors[colorPick];
+green.append("svg:stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#38ef7d")
 
- }
 
-function makeBubble(name) {
+ var nodes = svg.selectAll("circle").data(info);
+
+ nodes.enter()  
+  .append("circle")
+  .attr("cx", function(d){ return d.x; })
+  .attr("cy", function(d){ return d.y; }); 
+
+ nodes.attr("r", 0)
+  .style("fill", function(d){ return 'url(#' + d.color+ ')';}) //get linear gradient color
+ // .style("fill", "url(#green)")
+  .attr("r", function(d){return d.r;})
+  .on("click", function(d) {
+    var durl = d.url; //get url of tag
+    durl = durl.slice(1); //remove leading /
+   var url = window.location.origin + "/" + durl;
+    //console.log(url);
+    window.open(url, "_self"); //open url in current view
+  });
+
+
+  nodes.enter().append("text")
+        .attr("x", function(d){ return d.x; })
+        .attr("y", function(d){ return d.y; })
+        .attr("text-anchor", "middle")
+        .text(function(d){ return d.name; })
+        .style({
+            "fill":"white", 
+            "font-family":"Helvetica, sans-serif",
+            "font-size": "12px"
+        });
+
+  nodes.on("mouseover", function(d){
+  
+        var lbl = svg.selectAll("g").interrupt().data([d]);  
+        lbl.enter().append("g");
+
+  lbl.attr("pointer-events", "none")
+            .attr("transform", function(d){ return "translate(" + d.x + "," + d.y + ")"; })
+            .append("text")
+            .attr("text-anchor", "middle")
+            .text(function(d) {return d.name; })
+            //.style("font-weight", "bold")
+            .style("fill", function(d){return d.over;})
+            .style({ 
+            "font-family":"Helvetica, sans-serif", //overwrite the old text with same bubble color to remove old text 
+            "font-size": "12.1px"
+          });
+
+        lbl.attr("pointer-events", "none")
+            .attr("transform", function(d){ return "translate(" + d.x + "," + d.y + ")"; })
+            .append("text")
+            .attr("text-anchor", "middle")
+            .text(function(d) {return d.name; })
+            .transition()
+            .style({
+            "fill":"white", 
+            "font-family":"Helvetica, sans-serif", //enlarge bubble text when hovered over 
+            "font-size": "18px"
+          });
+  }
+  )
+
+    .on("mouseout", function(d){
+            var lbl = svg.selectAll("g").data([]);
+            lbl.exit().transition()
+            //    .duration(200)
+               .style({"fill-opacity": 0.0})
+                .remove();
+        }
+    );
+ 
+}
+
+
+/*
+
+function makeBubble(name, url) {
 
 if (count == 0)
 {
@@ -71,16 +267,17 @@ if (count == 0)
 	.append("g")
 	.attr("transform", "translate(0,0)");
 }
-//	alert(name);
 
 	var circle = svg.append("circle")
 		.attr("cx", x)
 		.attr("cy", y)
 		.style("fill", getRandomColor())
+		.attr('class', 'click-circle')
+		.attr("xlink:href", url)
 		.attr("r", maxsize);
-		/*
-		.attr("stroke", "black")
-     	.attr("stroke-width", 2); */
+		
+		//.attr("stroke", "black")
+     	//.attr("stroke-width", 2); 
 
      	if (count == 2)
      	{
@@ -108,10 +305,12 @@ if (count == 0)
      	else if (maxsize >= 80)
      	{
      	var text = svg.append("text") 	//add text
-   			.attr("dx", x-((1/3)*maxsize))
+   			//.attr("dx", x-((1/3)*maxsize))
+   			.attr("dx", x)
    			.attr("dy", y)
    			.attr("font-size", "12px")
    			.attr("fill", "black")  	//black text everywhere else
+   			.attr("text-anchor", "middle")
    			.text(name);
      		x+=maxsize*2;
   			if (rowCounter == 4)	//new row, push bubbles down 1
@@ -137,25 +336,13 @@ function nextBubble() {
 	}
 }
 
+svg.on('click', function() {
+        var coords = d3.mouse(this);
+        console.log(coords);
+        window.open(url, '_blank');
+        //alert("works");
+    });
 
 
-/*
-var circle = svg.append("circle")
-	.attr("cx", 30)
-    .attr("cy", 30)
-     .attr("r", 20)
-     .style("fill", "blue");
 
-var circle2 = svg.append("circle")
-	.attr("cx", 90)
-    .attr("cy", 90)
-     .attr("r", 50);
-
-
-var circle3 = svg.append("circle")
-	.attr("cx", 300)
-	.attr("cy", 210)
-	.style("fill", "red")
-	.attr("r", 200);
-
-	*/
+*/
