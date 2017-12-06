@@ -26,20 +26,35 @@
   <h1 class="main-title"><%= @user.first_name + "'s Dashboard"%></h1>
   <br></br>
   <div class="popular">
-    <h1 class="home-popular-title">Featured</h1>
+    <h1 class="student-government-title">Petitions Addressed to Student Government:</h1>
+    <br></br>
+    <div id="wrapper">
+      <div id="status_active">Active</div>
+      <div id="status_progress">In Progress</div>
+      <div id="status_victory">Victory</div>
+    </div>
     <div class="home-petition-wrapper">
-      <ul class="petition-cards">
+      <ul id="active" class="connectedSortable">
           <% @petitions.each do |petition| %>
-            <li><%= render 'shared/post', petition: petition %></li>
+          <% if petition.status == "active" %>
+          <li id="<%= petition.id %>" class="ui-state-default"><%= render 'shared/post', petition: petition %></li>
           <% end %>
-          <% if @petitions.count % 3 == 1 %>
-            <li></li>
-            <li></li>
-          <% elsif @petitions.count % 3 == 2 %>
-            <li></li>
           <% end %>
       </ul>
-      <%= will_paginate @petitions %>
+      <ul id="progress" class="connectedSortable">
+          <% @petitions.each do |petition| %>
+          <% if petition.status == "in progress" %>
+          <li id="<%= petition.id %>" class="ui-state-default"><%= render 'shared/post', petition: petition %></li>
+          <% end %>
+          <% end %>
+      </ul>
+      <ul id="victory" class="connectedSortable">
+          <% @petitions.each do |petition| %>
+          <% if petition.status == "victory" %>
+          <li id="<%= petition.id %>" class="ui-state-default"><%= render 'shared/post', petition: petition %></li>
+          <% end %>
+          <% end %>
+      </ul>
     </div>
   </div>
 </div>

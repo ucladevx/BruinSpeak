@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   post '/petitions/:id/victory', to: 'petitions#change_to_victory', as: 'victory', :constraints => { :only_ajax => true }
   post '/petitions/:id/closed', to: 'petitions#change_to_closed', as: 'closed', :constraints => { :only_ajax => true }
   post '/petitions/:id/active', to: 'petitions#change_to_active', as: 'active', :constraints => { :only_ajax => true }
+  post '/petitions/:id/progress_status', to: 'petitions#change_status_progress', :constraints => { :only_ajax => true }
+  post '/petitions/:id/active_status', to: 'petitions#change_status_active', :constraints => { :only_ajax => true }
+  post '/petitions/:id/victory_status', to: 'petitions#change_status_victory', :constraints => { :only_ajax => true }
+
 
   post '/signatures', to: 'signatures#create', :constraints => { :only_ajax => true }
   delete '/signatures.:user_id', to: 'signatures#destroy', :constraints => { :only_ajax => true }

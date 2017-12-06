@@ -91,6 +91,24 @@ class PetitionsController < ApplicationController
     redirect_to @petition
   end
 
+  def change_status_progress
+    @petition = Petition.find(params[:id])
+    @petition.status = "in progress"
+    @petition.save
+  end
+
+  def change_status_victory
+    @petition = Petition.find(params[:id])
+    @petition.status = "victory"
+    @petition.save
+  end
+
+  def change_status_active
+    @petition = Petition.find(params[:id])
+    @petition.status = "active"
+    @petition.save
+  end
+
   private
   def gen_signatures_csv(petition)
     header = %w{first_name last_name email reason signed_at major year}

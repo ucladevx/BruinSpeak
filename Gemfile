@@ -78,6 +78,7 @@ gem 'd3_rails'
 
 gem 'chartjs-ror'
 
+gem 'jquery-ui-rails'
 
 group :development do
 

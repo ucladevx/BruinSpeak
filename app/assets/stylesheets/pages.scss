@@ -8,6 +8,54 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+#active, #progress, #victory {
+    border: 3px solid #eee;
+    border-color: gray;
+    width: 30%;
+    list-style-type: none;
+    margin-right: 20px;
+    height: 600px;
+    padding: 5px 5px 5px 5px;
+    float: left;
+    overflow: scroll;
+}
+
+#active li, #progress li, #victory li {
+    width: 100%;
+}
+
+.student-government-title {
+  font-style: italic;
+  font-size: 200%;
+}
+
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+#status_active {
+  width: 31.75%;
+  float: left;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+#status_progress {
+  width: 31.5%;
+  float: left;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+#status_victory {
+  width: 30%;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 200%;
+}
+
 * {
   box-sizing: border-box;
 }
