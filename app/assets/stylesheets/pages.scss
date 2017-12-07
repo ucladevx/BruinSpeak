@@ -540,12 +540,12 @@ button{
   margin-right: 0px;
 }
 
-#new-petition-container{
-  margin-top: 10px;
-  margin-bottom: 100px;
-  height: 85vh;
-  position: relative;
-}
+// #new-petition-container{
+//   margin-top: 10px;
+//   margin-bottom: 100px;
+//   height: 85vh;
+//   position: relative;
+// }
 
 #new-petition-title{
   text-align: center;
@@ -801,8 +801,9 @@ button{
   background-color: none;
   border: none;
   float: left;
-  padding-left: 5px;
+  padding-left: 15px;
   padding-right: 15px;
+  font-size: 20px;
 }
 
 .tag-image{
@@ -1403,4 +1404,153 @@ input, textarea {
     .member-desc p{
         margin-right: 40px;
     }
+}
+
+.x{
+  height: 90%;
+}
+
+
+#big-container{
+	width: 100vw;
+	height: 85vh;
+}
+
+.new-petition-title{
+	font-size: 48px;
+	margin-top: 25px;
+	margin-left: 25px;
+}
+
+#new-petition-container{
+	margin: 0 auto;
+	width: 50%;
+	align-content: center;
+	position: relative;
+  top: 45%;
+  transform: translateY(-50%);
+  height:70%;
+    // position:relative;
+}
+
+#container-dots{
+  position: absolute;
+  right: 0px;
+  top: 20%;
+  transform: translateY(50%);
+  padding-right: 5%;
+  z-index: 5;
+}
+
+.hidden{
+	display: none;
+}
+
+.q-cont{
+	width: 90%;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.question-title{
+	font-size: 36px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.question-description{
+	padding: 15px;
+}
+
+#next{
+	background-color: transparent;
+	border: none;
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	position: absolute;
+	right: 0;
+}
+
+.inputBox {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+  color: #555;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  /*height: 50px;*/
+  height: 100%;
+  /*left: 50%;*/
+  /*margin: -25px 0 0 -100px;*/
+  padding: 10px 0px;
+  position: relative;
+  top: 50%;
+  /*width: 200px;*/
+  width: 100%;
+  float: bottom;
+}
+
+*:focus {
+    outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: dodgerblue;
+}
+
+.inputBox:focus+.underline {
+  transform: scale(1);
+}
+
+.underline {
+  background-color: dodgerblue;
+  display: inline-block;
+  height: 5px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#q7{
+  margin-bottom: 5%;
+  width: 5px;
+  height: 5px;
+}
+
+#label-container{
+  width: 100%;
+}
+
+label{
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+  margin: 0px;
+}
+
+// for review-container div
+#review-form{
+	width: 80%;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+.question-review{
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.review-title{
+	font-size: 36px;
+	padding-bottom: 20px;
+	margin-bottom: 0px;
 }

@@ -1,112 +1,236 @@
-<div class="new-petition-container">
-  <div class="container padded petition-create--wrapper">
-    <h1 class="new-petition-title"><b>Create Petition</b></h1>
-    <%= form_for(@petition) do |f| %>
+<!-- holds all of the HTML for creating the petition -->
+<div id="big-container">
 
-    <% if @petition.errors.any? %>
-      <div id="error_explanation">
+		<div>
+			<p class="new-petition-title">New Petition</p>
+		</div>
 
-        <% @petition.errors.full_messages.each do |message| %>
-          <p class="petition-error"><%= message %></div>
-        <% end %>
-    <% end %>
+		<div id="new-petition-container">
 
-    <div id="new-petition-form" class="carousel slide hidden-xs" data-ride="carousel" data-interval="0">
+			<%= form_for(@petition, :html => {:class => 'x'}) do |f| %>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          <h2 class="new-petition-h2"><b>1. Add Your Petition Title</b></h2>
-          <div class="new-petition-tagline">This is the first thing people will see about your petition.
-            Get their attention with a short title that focuses on the change you’d like them to support.</div>
-          <div>
-            <%= f.text_field :title, placeholder: "Title", class: "petition-create--input" %>
-          </div><br>
+			<div id="0" class="question active">
 
-          <h2 class="new-petition-h2"><b>2. Add a Description</b></h2>
-          <div class="new-petition-tagline">People are more likely to support your petition if it’s clear why you care.
-            Explain how this change will impact the UCLA community.</div>
-          <div>
-            <%= f.text_area :description, placeholder: "Description", class: "petition-create--input" %>
-          </div>
-        </div>
+				<%= f.hidden_field :user_id, value: current_user.id %>
 
-        <div class="item">
-          <h2 class="new-petition-h2"><b>3. Choose Categories</b></h2>
-          <div class="new-petition-tagline">These are the filters you want to add for your petition,
-             add as many relevant tags as you can. This will help other people search
-             for your petition using BruinSpeak’s search feature.</div>
-          <div>
-            <%= f.text_field :tag_list, placeholder: "Tags", class: "petition-create--input" %>
-          </div><br>
+				<p class="question-title">Add Your Petition Title</p>
+				<p class="question-description">
+					This is the first thing people will see about your petition.
+					Get their attention with a short title that focuses on the change you’d like them to support.
+				</p>
+				<div class="q-cont">
+					<%= f.text_field :title, placeholder: "Title", class: "inputBox", id: "q0"%>
+					<span class="underline"></span>
+				</div>
 
-          <h2 class="new-petition-h2"><b>4. Add an Image</b></h2>
-          <div class="new-petition-tagline">Petitions with a photo receive many times more
-            signatures than those without. Include one that captures the emotion of your petition.</div>
-          <div>
-            <%= f.file_field :image %>
-          </div><br>
+			</div>
 
-          <h2 class="new-petition-h2"><b>5. Set a Goal</b></h2>
-          <div class="new-petition-tagline">Choose how many signatures you need for your petition to be successful.</div>
-          <div>
-            <%= f.number_field :goal, min: 10, value: 10, class: "petition-create--input" %>
-          </div>
-        </div>
+			<div id="1" class="question hidden">
+				<p class="question-title">Add a Description</p>
+				<p class="question-description">
+					People are more likely to support your petition if it’s clear why you care.
+					Explain how this change will impact the UCLA community.
+				</p>
+				<div class="q-cont">
+					<%= f.text_area :description, placeholder: "Description", class: "inputBox", id: "q1"%>
+					<span class="underline"></span>
+				</div>
+			</div>
 
-        <div class="item">
-          <h2 class="new-petition-h2"><b>6. Requesting Money</b></h2>
-          <div class="new-petition-tagline">Ask the student government for money for your cause.</div>
-          <div>
-            <%= f.number_field :money_request, min: 0, value: 0, class: "petition-create--input" %>
-          </div><br>
+			<div id="2" class="question hidden">
+				<p class="question-title">Choose Categories</p>
+				<p class="question-description">
+					These are the filters you want to add for your petition,add as many relevant tags as you can. This will help other people search for your petition using BruinSpeak’s search feature.
+				</p>
+				<div class="q-cont">
+					<%= f.text_field :tag_list, placeholder: "Tags", class: "inputBox", id: "q2"%>
+					<span class="underline"></span>
+				</div>
 
-          <h2 class="new-petition-h2"><b>7. Deliver To</b></h2>
-          <div class="new-petition-tagline">Who do you want to answer to this petiton?</div>
-          <div id="petition-recievers">
-            <div class="petition-recievers-wrapper">
-              <input placeholder="Who?" type="text" name="petition[recievers][]" , class="petition-create--input petition-create--input--recievers">
-              <button class="petition-create--btn">Remove</button>
-            </div>
-          </div>
-          <button class="btn btn-info" id="petition-recievers-button" style="margin-left:0; margin-bottom:30px; margin-top:10px">Add More</button>
-          <br>
+			</div>
 
-          <h2 class="new-petition-h2"><b>8. Make it Public</b></h2>
-          <div class="new-petition-tagline">Do you want to launch it right now or wait until later?</div>
-          <div>
-            <%= f.check_box :public %>
-          </div><br>
+			<div id="3" class="question hidden">
+				<p class="question-title">Add an Image</p>
+				<p class="question-description">
+					Petitions with a photo receive many times more signatures than those without. Include one that captures the emotion of your petition.
+				</p>
+				<div class="q-cont">
+					<%= f.file_field :image, class: "inputBox", id: "q3"%>
+					<span class="underline"></span>
+				</div>
 
-          <div>
-            <%= f.submit class: "btn btn-primary", :style => "margin: auto;" %>
-          </div>
-        </div>
-      </div>
+			</div>
 
-      <!-- <a href="#new-petition-form" data-slide="prev">
-        <span style="position:absolute; bottom:0; left:0">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#new-petition-form" data-slide="next">
-        <span style="position:absolute; bottom:0; right:0">Next</span>
-      </a> -->
-    </div>
+			<div id="4" class="question hidden">
+				<p class="question-title">Set a Goal</p>
+				<p class="question-description">
+					Choose how many signatures you need for your petition to be successful.
+				</p>
+				<div class="q-cont">
+					<%= f.number_field :goal, min: 10, value: 10, class: "inputBox", id: "q4"%>
+					<span class="underline"></span>
+				</div>
 
-    <% end %>
-  </div>
+			</div>
 
-</div>
+			<div id="5" class="question hidden">
+				<p class="question-title">Requesting Money</p>
+				<p class="question-description">
+					Ask the student government for money for your cause.
+				</p>
+				<div class="q-cont">
+					<%= f.number_field :money_request, min: 0, value: 0, class: "inputBox", id: "q5"%>
+					<span class="underline"></span>
+				</div>
 
-<!-- Left and right controls -->
-<div class="controlsBlock">
-  <div class="controls">
-    <a id="left-arrow-petition-form" class="left carousel-control pet-form" href="#new-petition-form" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a id="right-arrow-petition-form" class="right carousel-control pet-form" href="#new-petition-form" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    <div class="carousel-indicators pet-form">
-      <li data-target="#new-petition-form" data-slide-to="0" class="active"></li>
-      <li data-target="#new-petition-form" data-slide-to="1"></li>
-      <li data-target="#new-petition-form" data-slide-to="2"></li>
-    </div>
-  </div>
-</div>
+			</div>
+
+			<!-- check -->
+			<div id="6" class="question hidden">
+				<p class="question-title">Deliver To</p>
+				<p class="question-description">
+					Who do you want to answer to this petiton?
+				</p>
+				<div class="q-cont">
+					<input placeholder="Who?" type="text" name="petition[recievers][]" , class="inputBox", id: "q6">
+					<span class="underline"></span>
+					<button class="petition-create--btn">Remove</button>
+				</div>
+
+			</div>
+
+			<div id="7" class="question hidden">
+				<p class="question-title">Make it Public</p>
+				<p class="question-description">
+					Do you want to launch it right now or wait until later?
+				</p>
+				<div class="q-cont">
+					<div id="label container">
+						<label><%= f.check_box :public, class: "inputBox", id: "q7", value:"0" %>Wait</label>
+					</div>
+
+					<div>
+		          <%= f.submit class: "btn btn-primary", :style => "margin: auto;" %>
+		    	</div>
+
+					<span class="underline"></span>
+				</div>
+
+			</div>
+
+			<a id="next">Next</a>
+
+			<% if @petition.errors.any? %>
+				<div id="error_explanation">
+
+					<% @petition.errors.full_messages.each do |message| %>
+						<p class="petition-error"><%= message %></div>
+					<% end %>
+			<% end %>
+
+			<% end %>
+
+		</div>
+
+		<!-- holds the radio buttons to navigate between questions -->
+    <div id="container-dots">
+
+			<form id="dots">
+				<!-- dont remove the empty label tags, they are needed for the library to work -->
+
+				<div class="pretty p-default p-round p-fill">
+			        <input id="d1" type="radio" name="q" value="0">
+			        <div class="state p-info">
+			            <label></label>
+			        </div>
+			    </div><br>
+
+			    <div class="pretty p-default p-round p-fill">
+			        <input id="d2" type="radio" name="q" value="1">
+			        <div class="state p-info">
+			            <label></label>
+			        </div>
+			    </div><br>
+
+			    <div class="pretty p-default p-round p-fill">
+			        <input id="d3" type="radio" name="q" value="2">
+			        <div class="state p-info">
+			            <label></label>
+			        </div>
+			    </div><br>
+
+			    <div class="pretty p-default p-round p-fill">
+			        <input id="d4" type="radio" name="q" value="3">
+			        <div class="state p-info">
+			            <label></label>
+			        </div>
+			    </div><br>
+
+			    <div class="pretty p-default p-round p-fill">
+			        <input id="d5" type="radio" name="q" value="4">
+			        <div class="state p-info">
+			            <label></label>
+			        </div>
+			    </div><br>
+
+			    <div class="pretty p-default p-round p-fill">
+			        <input id="d6" type="radio" name="q" value="5">
+			        <div class="state p-info">
+			            <label></label>
+			        </div>
+			    </div><br>
+
+			    <div class="pretty p-default p-round p-fill">
+			        <input id="d7" type="radio" name="q" value="6">
+			        <div class="state p-info">
+			            <label></label>
+			        </div>
+			    </div><br>
+
+			    <div class="pretty p-default p-round p-fill">
+			        <input id="d8" type="radio" name="q" value="7">
+			        <div class="state p-info">
+			            <label></label>
+			        </div>
+			    </div><br>
+
+		    </form>
+		</div>
+	</div>
+
+	<!-- allows the user to review their responses to all questions -->
+	<!-- container is hidden until the previous questions have been answered -->
+	<!-- <div id="review-container" class="hidden">
+
+		<p class="new-petition-title">Review Petition</p>
+
+		<div id="review-form">
+
+
+			<p class="review-title">1. Add Your Petition Title</p>
+			<input id="q0" class="inputBox" type="text" name="q0">
+
+			<p class="review-title">2. Add a Description</p>
+			<input id="q1" class="inputBox" type="text" name="q1">
+
+			<p class="review-title">3. Choose Categories</p>
+			<input id="q2" class="inputBox" type="text" name="q2">
+
+			<p class="review-title">4. Add an Image</p>
+			<input id="q3" class="inputBox" type="text" name="q3">
+
+			<p class="review-title">5. Set a Goal</p>
+			<input id="q4" class="inputBox" type="text" name="q4">
+
+			<p class="review-title">6. Requesting Money</p>
+			<input id="q5" class="inputBox" type="text" name="q5">
+
+			<p class="review-title">7. Deliver To</p>
+			<input id="q6" class="inputBox" type="text" name="q6">
+
+			<p class="review-title">8. Make it Public</p>
+			<input id="q7" class="inputBox" type="text" name="q7">
+
+		</div>
+
+	</div> -->
